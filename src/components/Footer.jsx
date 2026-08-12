@@ -16,8 +16,15 @@ function TikTokMark(props) {
     </svg>
   );
 }
+function YouTubeMark(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" {...props}>
+      <path d="M23.5 6.7a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.6A3 3 0 0 0 .5 6.7 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.3 3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.3ZM9.6 15.5V8.5L15.8 12l-6.2 3.5Z" />
+    </svg>
+  );
+}
 
-const iconFor = { X: XMark, TikTok: TikTokMark };
+const iconFor = { X: XMark, TikTok: TikTokMark, YouTube: YouTubeMark };
 
 export default function Footer() {
   return (
