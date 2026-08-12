@@ -1,4 +1,4 @@
-import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard } from "lucide-react";
+import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard, KanbanSquare, Users, ShieldCheck } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -31,21 +31,56 @@ const services = [
   },
 ];
 
-const showcaseFeatures = [
+const showcases = [
   {
-    icon: ShoppingBag,
-    title: "Full ordering flow",
-    body: "Menu, live pricing by size, and a guided order form — no back-and-forth over DMs to get a quote.",
+    tag: "Client project",
+    name: "KKreations World",
+    subtitle: "Grazing, cakes & sweet treats — Sydney",
+    description:
+      "A full storefront rebuild for a Sydney home-bakery — grazing boxes, cupcake bouquets, strawberry towers, and custom cakes. Built to move customers off Instagram DMs and into a proper ordering flow: live pricing, guided order form, deposit payments, and order tracking, plus a dashboard for the business side.",
+    href: "https://hcmtech-official.github.io/hcm-tech/kkreations/",
+    features: [
+      {
+        icon: ShoppingBag,
+        title: "Full ordering flow",
+        body: "Menu, live pricing by size, and a guided order form — no back-and-forth over DMs to get a quote.",
+      },
+      {
+        icon: CreditCard,
+        title: "Deposit payments",
+        body: "Card via Stripe, plus Afterpay and Zip, so customers can lock in a date without paying in full upfront.",
+      },
+      {
+        icon: Truck,
+        title: "Order tracking & admin",
+        body: "A trackable order code for customers, and a business dashboard for active orders, revenue, and expenses.",
+      },
+    ],
   },
   {
-    icon: CreditCard,
-    title: "Deposit payments",
-    body: "Card via Stripe, plus Afterpay and Zip, so customers can lock in a date without paying in full upfront.",
-  },
-  {
-    icon: Truck,
-    title: "Order tracking & admin",
-    body: "A trackable order code for customers, and a business dashboard for active orders, revenue, and expenses.",
+    tag: "Internal tool",
+    name: "HCM Issue Tracker",
+    subtitle: "The board we use to run HCM's own build",
+    description:
+      "A lightweight kanban board built for HCM itself — anyone can raise an issue, and the team moves it through To do, In progress, and Done. No login needed to raise something; an admin view behind a password handles triage.",
+    href: "https://hcmtech-official.github.io/hcm-tech/issues/",
+    features: [
+      {
+        icon: KanbanSquare,
+        title: "Three-column board",
+        body: "To do, in progress, and done — a clear view of what's moving and what's stuck.",
+      },
+      {
+        icon: Users,
+        title: "Open to raise, gated to manage",
+        body: "Anyone can submit an issue with no login. Moving or closing one needs admin access.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Built the same way as everything else",
+        body: "A static page, vibe-coded like the rest of HCM's early tools — quick to stand up, easy to iterate on.",
+      },
+    ],
   },
 ];
 
@@ -116,54 +151,54 @@ export default function Tech() {
             Showcase
           </h2>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]">
-            <div className="p-8 sm:p-10">
+          <div className="mt-6 space-y-6">
+            {showcases.map((s) => (
               <div
-                className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
-                style={{ borderColor: d.color, color: d.color }}
+                key={s.name}
+                className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]"
               >
-                Client project
-              </div>
-              <h3 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
-                KKreations World
-              </h3>
-              <p className="mt-1 text-sm text-[var(--color-ink-dim)]">
-                Grazing, cakes &amp; sweet treats — Sydney
-              </p>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
-                A full storefront rebuild for a Sydney home-bakery — grazing
-                boxes, cupcake bouquets, strawberry towers, and custom cakes.
-                Built to move customers off Instagram DMs and into a proper
-                ordering flow: live pricing, guided order form, deposit
-                payments, and order tracking, plus a dashboard for the
-                business side.
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {showcaseFeatures.map((f) => (
-                  <div key={f.title}>
-                    <f.icon size={20} style={{ color: d.color }} />
-                    <h4 className="mt-3 font-display text-base font-bold">
-                      {f.title}
-                    </h4>
-                    <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-dim)]">
-                      {f.body}
-                    </p>
+                <div className="p-8 sm:p-10">
+                  <div
+                    className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+                    style={{ borderColor: d.color, color: d.color }}
+                  >
+                    {s.tag}
                   </div>
-                ))}
-              </div>
+                  <h3 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
+                    {s.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-[var(--color-ink-dim)]">{s.subtitle}</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                    {s.description}
+                  </p>
 
-              <a
-                href="https://hcmtech-official.github.io/hcm-tech/kkreations/"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
-                style={{ background: d.color, color: "var(--color-void)" }}
-              >
-                View the project
-                <ExternalLink size={16} />
-              </a>
-            </div>
+                  <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                    {s.features.map((f) => (
+                      <div key={f.title}>
+                        <f.icon size={20} style={{ color: d.color }} />
+                        <h4 className="mt-3 font-display text-base font-bold">
+                          {f.title}
+                        </h4>
+                        <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                          {f.body}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+                    style={{ background: d.color, color: "var(--color-void)" }}
+                  >
+                    View the project
+                    <ExternalLink size={16} />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
