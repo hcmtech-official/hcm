@@ -1,4 +1,4 @@
-import { ExternalLink, Globe, Wrench, Smartphone } from "lucide-react";
+import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import { divisions } from "../data/divisions";
 
@@ -27,6 +27,24 @@ const services = [
     icon: Wrench,
     title: "PC repair & builds",
     body: "Slow machines, failing drives, and custom builds. Hardware and software both, sorted properly instead of patched over.",
+  },
+];
+
+const showcaseFeatures = [
+  {
+    icon: ShoppingBag,
+    title: "Full ordering flow",
+    body: "Menu, live pricing by size, and a guided order form — no back-and-forth over DMs to get a quote.",
+  },
+  {
+    icon: CreditCard,
+    title: "Deposit payments",
+    body: "Card via Stripe, plus Afterpay and Zip, so customers can lock in a date without paying in full upfront.",
+  },
+  {
+    icon: Truck,
+    title: "Order tracking & admin",
+    body: "A trackable order code for customers, and a business dashboard for active orders, revenue, and expenses.",
   },
 ];
 
@@ -66,57 +84,86 @@ export default function Tech() {
       <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
-            Recent work
+            Source
+          </h2>
+          <a
+            href="https://github.com/hcmtech-official/hcm"
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-6 flex items-center justify-between rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-tech)]"
+          >
+            <div className="flex items-center gap-4">
+              <GithubMark />
+              <div>
+                <div className="font-display text-lg font-bold">GitHub</div>
+                <p className="text-sm text-[var(--color-ink-dim)]">
+                  Source for HCM's own sites and tools.
+                </p>
+              </div>
+            </div>
+            <ExternalLink
+              size={18}
+              className="text-[var(--color-ink-dim)] transition-colors group-hover:text-[var(--color-tech)]"
+            />
+          </a>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Showcase
           </h2>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <a
-              href="https://github.com/hcm-tech"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-between rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-tech)]"
-            >
-              <div className="flex items-center gap-4">
-                <GithubMark />
-                <div>
-                  <div className="font-display text-lg font-bold">GitHub</div>
-                  <p className="text-sm text-[var(--color-ink-dim)]">
-                    Source for HCM's own sites and tools.
-                  </p>
-                </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]">
+            <div className="p-8 sm:p-10">
+              <div
+                className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+                style={{ borderColor: d.color, color: d.color }}
+              >
+                Client project
               </div>
-              <ExternalLink
-                size={18}
-                className="text-[var(--color-ink-dim)] transition-colors group-hover:text-[var(--color-tech)]"
-              />
-            </a>
+              <h3 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
+                KKreations World
+              </h3>
+              <p className="mt-1 text-sm text-[var(--color-ink-dim)]">
+                Grazing, cakes &amp; sweet treats — Sydney
+              </p>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                A full storefront rebuild for a Sydney home-bakery — grazing
+                boxes, cupcake bouquets, strawberry towers, and custom cakes.
+                Built to move customers off Instagram DMs and into a proper
+                ordering flow: live pricing, guided order form, deposit
+                payments, and order tracking, plus a dashboard for the
+                business side.
+              </p>
 
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-between rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-tech)]"
-            >
-              <div className="flex items-center gap-4">
-                <Globe size={26} style={{ color: d.color }} />
-                <div>
-                  <div className="font-display text-lg font-bold">Cake Creation</div>
-                  <p className="text-sm text-[var(--color-ink-dim)]">
-                    Our latest build — a full storefront rebuild for a cake &amp;
-                    grazing business.
-                  </p>
-                </div>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {showcaseFeatures.map((f) => (
+                  <div key={f.title}>
+                    <f.icon size={20} style={{ color: d.color }} />
+                    <h4 className="mt-3 font-display text-base font-bold">
+                      {f.title}
+                    </h4>
+                    <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                      {f.body}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <ExternalLink
-                size={18}
-                className="text-[var(--color-ink-dim)] transition-colors group-hover:text-[var(--color-tech)]"
-              />
-            </a>
+
+              <a
+                href="https://hcmtech-official.github.io/hcm-tech/kkreations/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+                style={{ background: d.color, color: "var(--color-void)" }}
+              >
+                View the project
+                <ExternalLink size={16} />
+              </a>
+            </div>
           </div>
-          <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
-            Swap the GitHub org and Cake Creation URLs in{" "}
-            <code>src/pages/Tech.jsx</code> once both are live.
-          </p>
         </div>
       </section>
     </>

@@ -63,7 +63,7 @@ export const divisions = [
 ];
 
 export const socials = [
-  { name: "X", href: "https://x.com/hcm", handle: "@hcm" },
-  { name: "TikTok", href: "https://www.tiktok.com/@hcm", handle: "@hcm" },
-  { name: "YouTube", href: "https://www.youtube.com/@hcm", handle: "@hcm" },
+  { name: "X", href: "https://x.com/hcmtechx", handle: "@hcmtechx" },
+  { name: "TikTok", href: "https://www.tiktok.com/@hcmtechtiktok", handle: "@hcmtechtiktok" },
+  { name: "YouTube", href: "https://youtube.com/@hcmtechyoutube", handle: "@hcmtechyoutube" },
 ];
