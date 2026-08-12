@@ -72,6 +72,16 @@ export const divisions = [
       "Straight-talking car reviews, buying guides, and maintenance tips — no dealership spin.",
   },
   {
+    key: "markets",
+    code: "MKT",
+    name: "HCM Markets",
+    tagline: "It's your next trade.",
+    path: "/markets",
+    color: "var(--color-markets)",
+    summary:
+      "FX, derivatives, bonds and equities — market coverage and analysis in plain English.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

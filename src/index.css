@@ -24,6 +24,7 @@
   --color-ai: #4c8dff;        /* HCM AI */
   --color-education: #f472b6; /* HCM Education */
   --color-automobile: #ff5a36; /* HCM Automobile */
+  --color-markets: #10b981;    /* HCM Markets */
 }
 
 @layer base {

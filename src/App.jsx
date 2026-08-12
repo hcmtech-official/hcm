@@ -8,6 +8,7 @@ import Ai from "./pages/Ai";
 import Travel from "./pages/Travel";
 import Education from "./pages/Education";
 import Automobile from "./pages/Automobile";
+import Markets from "./pages/Markets";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -33,6 +34,7 @@ function Shell() {
           <Route path="/travel" element={<Travel />} />
           <Route path="/education" element={<Education />} />
           <Route path="/automobile" element={<Automobile />} />
+          <Route path="/markets" element={<Markets />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
