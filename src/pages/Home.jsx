@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { divisions } from "../data/divisions";
 import OrbitDiagram from "../components/OrbitDiagram";
+import ChatWidget from "../components/ChatWidget";
 
 export default function Home() {
   return (
@@ -64,6 +65,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ChatWidget />
     </>
   );
 }
