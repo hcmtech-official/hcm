@@ -1,5 +1,6 @@
 import { Bot, Workflow, LineChart } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
+import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "ai");
@@ -54,6 +55,7 @@ export default function Ai() {
           </div>
         </div>
       </section>
+      <AppBadges color={d.color} />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { Compass, Map, PlaneTakeoff } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
+import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "travel");
@@ -82,6 +83,7 @@ export default function Travel() {
           </div>
         </div>
       </section>
+      <AppBadges color={d.color} />
     </>
   );
 }

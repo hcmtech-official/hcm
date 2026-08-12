@@ -29,8 +29,12 @@ export default function Home() {
       <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-ink-dim)]">
-            The divisions
+            The HCM Universe
           </h2>
+          <p className="mt-2 max-w-lg text-sm text-[var(--color-ink-dim)]">
+            Six divisions, one brand — everything HCM has built so far lives
+            here.
+          </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {divisions.map((d) => (
               <Link

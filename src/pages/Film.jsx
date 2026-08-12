@@ -1,5 +1,6 @@
 import { Clapperboard, Film as FilmIcon, Camera } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
+import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "film");
@@ -36,6 +37,7 @@ export default function Film() {
           </div>
         </div>
       </section>
+      <AppBadges color={d.color} />
     </>
   );
 }

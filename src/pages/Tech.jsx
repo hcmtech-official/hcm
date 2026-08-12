@@ -1,5 +1,6 @@
 import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
+import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 function GithubMark(props) {
@@ -166,6 +167,7 @@ export default function Tech() {
           </div>
         </div>
       </section>
+      <AppBadges color={d.color} />
     </>
   );
 }

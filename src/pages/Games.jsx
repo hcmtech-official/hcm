@@ -1,5 +1,6 @@
 import { Gamepad2, Hammer, Trophy } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
+import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "games");
@@ -54,6 +55,7 @@ export default function Games() {
           </div>
         </div>
       </section>
+      <AppBadges color={d.color} />
     </>
   );
 }

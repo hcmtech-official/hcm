@@ -1,5 +1,6 @@
 import { Disc3, Mic2, Radio } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
+import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "music");
@@ -36,6 +37,7 @@ export default function Music() {
           </div>
         </div>
       </section>
+      <AppBadges color={d.color} />
     </>
   );
 }
