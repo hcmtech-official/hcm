@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- HCM brand tokens ---- */
+  --font-display: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --color-void: #08090d;
+  --color-void-soft: #101319;
+  --color-surface: #15181f;
+  --color-line: #262b35;
+  --color-ink: #eef0f4;
+  --color-ink-dim: #9aa0ad;
+
+  --color-core: #5b57ff;      /* HCM core / shared brand accent */
+  --color-core-soft: #8b88ff;
+
+  --color-tech: #22d3c7;      /* HCM Tech */
+  --color-travel: #f2a93b;    /* HCM Travel */
+  --color-games: #7ed957;     /* HCM Games */
+  --color-music: #c084fc;     /* HCM Music */
+  --color-film: #ef4a5f;      /* HCM Motion Pictures */
+  --color-ai: #4c8dff;        /* HCM AI */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-core);
+    color: white;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-core-soft);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-mono { font-family: var(--font-mono); }
+  .text-balance { text-wrap: balance; }
+}

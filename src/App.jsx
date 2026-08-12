@@ -1,0 +1,48 @@
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import NavHeader from "./components/NavHeader";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Tech from "./pages/Tech";
+import Ai from "./pages/Ai";
+import Travel from "./pages/Travel";
+import Games from "./pages/Games";
+import Music from "./pages/Music";
+import Film from "./pages/Film";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+function Shell() {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
+      <NavHeader />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tech" element={<Tech />} />
+          <Route path="/ai" element={<Ai />} />
+          <Route path="/travel" element={<Travel />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/film" element={<Film />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <HashRouter>
+      <Shell />
+    </HashRouter>
+  );
+}
