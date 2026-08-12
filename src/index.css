@@ -23,6 +23,7 @@
   --color-film: #ef4a5f;      /* HCM Motion Pictures */
   --color-ai: #4c8dff;        /* HCM AI */
   --color-education: #f472b6; /* HCM Education */
+  --color-automobile: #ff5a36; /* HCM Automobile */
 }
 
 @layer base {

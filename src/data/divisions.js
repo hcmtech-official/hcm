@@ -62,6 +62,16 @@ export const divisions = [
       "Short, plain-English lessons on one useful skill at a time — pay only if it's worth it to you.",
   },
   {
+    key: "automobile",
+    code: "AUTO",
+    name: "HCM Automobile",
+    tagline: "It's your garage.",
+    path: "/automobile",
+    color: "var(--color-automobile)",
+    summary:
+      "Straight-talking car reviews, buying guides, and maintenance tips — no dealership spin.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",
