@@ -1,4 +1,4 @@
-import { Coins, TrendingUp, Landmark, LineChart } from "lucide-react";
+import { Coins, TrendingUp, Landmark, LineChart, Bitcoin, PieChart } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -25,6 +25,16 @@ const coverage = [
     icon: LineChart,
     title: "Equities & indices",
     body: "Company earnings, sector moves, and the indices that sum up how markets are actually doing.",
+  },
+  {
+    icon: Bitcoin,
+    title: "Crypto",
+    body: "Bitcoin, ether, and the rest — price moves, regulation, and what's actually changed versus what's just noise.",
+  },
+  {
+    icon: PieChart,
+    title: "Mutual funds & ETFs",
+    body: "How pooled funds and index-tracking ETFs actually work, and what to check before picking one over the other.",
   },
 ];
 
@@ -68,7 +78,7 @@ export default function Markets() {
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
             Coverage
           </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {coverage.map((c) => (
               <div
                 key={c.title}
