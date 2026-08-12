@@ -33,7 +33,7 @@ export default function Home() {
             The HCM Universe
           </h2>
           <p className="mt-2 max-w-lg text-sm text-[var(--color-ink-dim)]">
-            Six divisions, one brand — everything HCM has built so far lives
+            One universe, one brand — everything HCM has built so far lives
             here.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

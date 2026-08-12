@@ -23,7 +23,7 @@ function answerFor(raw) {
 
   if (/\b(divisions?|brands?|universe|what.*(offer|do you do)|list)\b/.test(q)) {
     const names = divisions.map((d) => d.name).join(", ");
-    return `HCM is one brand across six divisions: ${names}. Tap any of them on this page, or ask me about one by name.`;
+    return `HCM is one brand across every division: ${names}. Tap any of them on this page, or ask me about one by name.`;
   }
 
   if (/\b(app|ios|android|iphone|play store|app store)\b/.test(q)) {
@@ -44,7 +44,7 @@ function answerFor(raw) {
   }
 
   if (/\b(who|hcm\b.*(is|stand)|what is hcm)\b/.test(q)) {
-    return "HCM is one brand built across six divisions — Tech, AI, Travel, Games, Music, and Motion Pictures. Each runs independently but shares the same foundation.";
+    return "HCM is one brand, one universe — Tech, AI, Travel, Education, Games, Music, and Motion Pictures. Each division runs independently but shares the same foundation.";
   }
 
   if (/\b(hi|hello|hey)\b/.test(q)) {

@@ -22,6 +22,7 @@
   --color-music: #c084fc;     /* HCM Music */
   --color-film: #ef4a5f;      /* HCM Motion Pictures */
   --color-ai: #4c8dff;        /* HCM AI */
+  --color-education: #f472b6; /* HCM Education */
 }
 
 @layer base {

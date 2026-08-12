@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { divisions } from "../data/divisions";
 
-// Six divisions placed evenly around a central HCM core. Pure SVG,
+// Divisions placed evenly around a central HCM core. Pure SVG,
 // no animation libraries required — a CSS transition handles the
 // draw-in and the hover states.
 export default function OrbitDiagram() {
@@ -26,7 +26,7 @@ export default function OrbitDiagram() {
         viewBox={`0 0 ${size} ${size}`}
         className="h-auto w-full"
         role="img"
-        aria-label="HCM at the center, connected to its six divisions"
+        aria-label="HCM at the center, connected to each division"
       >
         {points.map((p) => (
           <line

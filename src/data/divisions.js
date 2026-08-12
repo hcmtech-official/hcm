@@ -52,6 +52,16 @@ export const divisions = [
     summary: "Sound built and shared on your terms.",
   },
   {
+    key: "education",
+    code: "EDU",
+    name: "HCM Education",
+    tagline: "It's your five minutes.",
+    path: "/education",
+    color: "var(--color-education)",
+    summary:
+      "Short, plain-English lessons on one useful skill at a time — pay only if it's worth it to you.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

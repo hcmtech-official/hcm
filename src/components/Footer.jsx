@@ -34,8 +34,8 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="font-display text-xl font-bold">HCM</div>
             <p className="mt-2 max-w-xs text-sm text-[var(--color-ink-dim)]">
-              One brand. Six worlds — tech, AI, travel, games, music and motion
-              pictures, built by the same hands.
+              One brand, one universe — tech, AI, travel, education, games,
+              music and motion pictures, built by the same hands.
             </p>
           </div>
 
