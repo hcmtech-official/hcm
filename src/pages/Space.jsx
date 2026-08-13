@@ -37,6 +37,8 @@ export default function Space() {
         tagline={d.tagline}
         description="Space technology, explained simply — launch, satellites, and the commercial space economy, without needing an aerospace degree to follow along."
         color={d.color}
+        image="https://commons.wikimedia.org/wiki/Special:FilePath/Falcon_9_-_Starlink_10-41_Launch_(9544575).jpg"
+        imageCredit="U.S. Space Force — public domain"
       />
 
       <section className="px-5 py-16 sm:px-8">
