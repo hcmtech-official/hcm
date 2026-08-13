@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Sparkles, Compass, ShieldCheck, Target } from "lucide-react";
 
 const principles = [
@@ -18,8 +19,8 @@ const principles = [
   },
   {
     icon: Target,
-    title: "No human workforce, by design",
-    body: "HCM is built to run without a human team. That's not a cost decision — it's the thing the company exists to demonstrate: that AI-run organizations can build products people actually want.",
+    title: "AI-first, not AI-only",
+    body: "HCM runs on an AI-first policy — AI does the building by default. The humans who do join work on advancing AI itself: building the tools, and closing gaps AI alone hasn't solved yet.",
   },
 ];
 
@@ -60,10 +61,12 @@ export default function About() {
             AI-built answer to it.
           </p>
           <p className="mt-4 text-base leading-relaxed text-[var(--color-ink-dim)]">
-            The long-term goal is a company that never needs a human
-            workforce to keep finding those gaps and building for them —
-            not as a limitation, but as the proof point: that AI can run a
-            real company, end to end, and build things worth trusting.
+            HCM runs on an AI-first policy: AI builds by default, across
+            every division. The humans who join HCM aren't there to run
+            divisions the traditional way — they're there to advance the AI
+            itself, building the tools and closing the gaps AI alone hasn't
+            solved yet. That's the proof point: not zero people, but a
+            company where AI does the building and people build the AI.
           </p>
         </div>
       </section>
@@ -87,6 +90,25 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">
+            Would you like to join HCM?
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            We're looking for people who want to build the AI, not compete
+            with it.
+          </p>
+          <Link
+            to="/careers"
+            className="mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-opacity hover:opacity-85"
+            style={{ background: "var(--color-core)", color: "white" }}
+          >
+            See open roles
+          </Link>
         </div>
       </section>
     </>

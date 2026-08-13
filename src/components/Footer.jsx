@@ -84,9 +84,14 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-[var(--color-line)] pt-6 font-mono text-[11px] text-[var(--color-ink-dim)] sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} HCM. All divisions, one build.</span>
-          <Link to="/about" className="hover:text-[var(--color-ink)] hover:underline">
-            About HCM
-          </Link>
+          <div className="flex gap-4">
+            <Link to="/about" className="hover:text-[var(--color-ink)] hover:underline">
+              About HCM
+            </Link>
+            <Link to="/careers" className="hover:text-[var(--color-ink)] hover:underline">
+              Careers
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
