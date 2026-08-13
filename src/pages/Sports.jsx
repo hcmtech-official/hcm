@@ -1,4 +1,4 @@
-import { Trophy, Radar, Eye, Sparkles } from "lucide-react";
+import { Trophy, Radar, Eye, Sparkles, Gauge, ArrowRight } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -29,6 +29,11 @@ const sports = [
     note: "Ball-tracking has decided LBW calls for years — now bat and ball sensors are reading spin, seam, and impact on every delivery.",
     img: wm("Cricket bat 01.jpg"),
   },
+  {
+    name: "Formula 1",
+    note: "Red Bull Racing runs close to four billion race-strategy simulations on cloud AI before a single lights-out.",
+    img: wm("Formula one.jpg"),
+  },
 ];
 
 const shifts = [
@@ -56,7 +61,7 @@ export default function Sports() {
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Four of the biggest sports in the world, and the same story behind all of them: AI is already changing how they're played, officiated, and watched."
+        description="Five of the biggest sports in the world, and the same story behind all of them: AI is already changing how they're played, officiated, and watched."
         color={d.color}
       />
 
@@ -65,7 +70,7 @@ export default function Sports() {
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
             The top sports
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {sports.map((s) => (
               <div
                 key={s.name}
@@ -81,6 +86,32 @@ export default function Sports() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-6 flex items-center gap-3">
+            <Gauge size={22} style={{ color: d.color }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              Where AI already runs deepest: Formula 1
+            </h2>
+          </div>
+          <p className="max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            No sport here is more AI-run than F1 already is. Oracle Red
+            Bull Racing runs close to four billion Monte Carlo race
+            simulations across a season, processes roughly 2TB of
+            telemetry per car per session, and now races with a live AI
+            strategy agent on the pit wall — reading tyre wear, weather,
+            and rival strategy in real time, alongside the engineers, not
+            instead of them.
+          </p>
+          <p className="mt-4 flex items-start gap-2 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            <ArrowRight size={18} style={{ color: d.color }} className="mt-1 shrink-0" />
+            That's the pattern HCM Sports wants to explore everywhere else
+            on this page: AI handling scale no human team could process by
+            hand, with people still making the calls that matter.
+          </p>
         </div>
       </section>
 

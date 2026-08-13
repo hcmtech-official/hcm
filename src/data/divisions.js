@@ -252,6 +252,16 @@ export const divisions = [
       "Exploring how AI is already reshaping football, basketball, baseball, and cricket — and what's next.",
   },
   {
+    key: "hr",
+    code: "HR",
+    name: "HCM HR",
+    tagline: "It's your next hire.",
+    path: "/hr",
+    color: "var(--color-hr)",
+    summary:
+      "Exploring what a fully AI-run HR function could look like — hiring, onboarding, and performance, built the way HCM builds everything else.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

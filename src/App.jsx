@@ -28,6 +28,7 @@ import Books from "./pages/Books";
 import Kids from "./pages/Kids";
 import Toys from "./pages/Toys";
 import Sports from "./pages/Sports";
+import HR from "./pages/HR";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -73,6 +74,7 @@ function Shell() {
           <Route path="/kids" element={<Kids />} />
           <Route path="/toys" element={<Toys />} />
           <Route path="/sports" element={<Sports />} />
+          <Route path="/hr" element={<HR />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
