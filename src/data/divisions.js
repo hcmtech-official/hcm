@@ -115,11 +115,11 @@ export const divisions = [
     key: "labs",
     code: "LABS",
     name: "HCM Labs",
-    tagline: "It's your next material.",
+    tagline: "It's what's next.",
     path: "/labs",
     color: "var(--color-labs)",
     summary:
-      "R&D and materials innovation — what's changing in advanced materials, manufacturing, and applied science.",
+      "HCM's experimental arm — early AI-driven prototypes and ideas, live before they're finished.",
   },
   {
     key: "space",
