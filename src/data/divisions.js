@@ -212,6 +212,46 @@ export const divisions = [
       "HCM's research bench for AI hardware — sample gadget concepts, ahead of anything actually being built.",
   },
   {
+    key: "books",
+    code: "BOOKS",
+    name: "HCM Books",
+    tagline: "It's your next read.",
+    path: "/books",
+    color: "var(--color-books)",
+    summary:
+      "AI-focused books, written and published under the HCM name — starting with AI Psychology.",
+  },
+  {
+    key: "kids",
+    code: "KIDS",
+    name: "HCM Kids",
+    tagline: "It's your first lesson.",
+    path: "/kids",
+    color: "var(--color-kids)",
+    summary:
+      "Books and animation that teach kids about AI the way stories always taught kids anything — through a good one.",
+  },
+  {
+    key: "toys",
+    code: "TOYS",
+    name: "HCM Toys",
+    tagline: "It's your playmate.",
+    path: "/toys",
+    color: "var(--color-toys)",
+    summary:
+      "AI-driven toy concepts for kids — researched first, pitched honestly, nothing overpromised.",
+  },
+  {
+    key: "sports",
+    code: "SPORT",
+    name: "HCM Sports",
+    tagline: "It's your game.",
+    path: "/sports",
+    color: "var(--color-sports)",
+    summary:
+      "Exploring how AI is already reshaping football, basketball, baseball, and cricket — and what's next.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

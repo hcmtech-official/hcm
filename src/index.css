@@ -38,6 +38,10 @@
   --color-crypto: #f7931a;     /* HCM Crypto */
   --color-investors: #0f766e;  /* HCM Investors */
   --color-gadgets: #8b5cf6;    /* HCM Gadgets */
+  --color-books: #92400e;      /* HCM Books */
+  --color-kids: #fcd34d;       /* HCM Kids */
+  --color-toys: #fb7185;       /* HCM Toys */
+  --color-sports: #16a34a;     /* HCM Sports */
 }
 
 @layer base {
