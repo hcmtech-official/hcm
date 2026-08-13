@@ -22,6 +22,8 @@ import Law from "./pages/Law";
 import Hustle from "./pages/Hustle";
 import Watches from "./pages/Watches";
 import Crypto from "./pages/Crypto";
+import Investors from "./pages/Investors";
+import Gadgets from "./pages/Gadgets";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -61,6 +63,8 @@ function Shell() {
           <Route path="/hustle" element={<Hustle />} />
           <Route path="/watches" element={<Watches />} />
           <Route path="/crypto" element={<Crypto />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/gadgets" element={<Gadgets />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />

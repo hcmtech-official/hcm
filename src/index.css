@@ -36,6 +36,8 @@
   --color-hustle: #ef4444;     /* HCM Hustle */
   --color-watches: #d4af37;    /* HCM Watches */
   --color-crypto: #f7931a;     /* HCM Crypto */
+  --color-investors: #0f766e;  /* HCM Investors */
+  --color-gadgets: #8b5cf6;    /* HCM Gadgets */
 }
 
 @layer base {

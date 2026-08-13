@@ -6,7 +6,7 @@ export const divisions = [
   {
     key: "tech",
     code: "TECH",
-    name: "HCM Tech",
+    name: "HCM Workshop",
     tagline: "It's your build.",
     path: "/tech",
     color: "var(--color-tech)",
@@ -190,6 +190,26 @@ export const divisions = [
     color: "var(--color-crypto)",
     summary:
       "HCM's early-stage concept for its own token — the idea, the tokenomics, and the roadmap, laid out honestly.",
+  },
+  {
+    key: "investors",
+    code: "INV",
+    name: "HCM Investors",
+    tagline: "It's your position.",
+    path: "/investors",
+    color: "var(--color-investors)",
+    summary:
+      "An illustrative annual report, built the way real investor relations pages are — across the US, Australian, and Indian markets.",
+  },
+  {
+    key: "gadgets",
+    code: "GADGET",
+    name: "HCM Gadgets",
+    tagline: "It's your next device.",
+    path: "/gadgets",
+    color: "var(--color-gadgets)",
+    summary:
+      "HCM's research bench for AI hardware — sample gadget concepts, ahead of anything actually being built.",
   },
   {
     key: "film",

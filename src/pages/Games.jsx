@@ -1,4 +1,4 @@
-import { Gamepad2, Hammer, Trophy, ExternalLink, MousePointerClick, Flame, Smartphone, Target, Layers, Star } from "lucide-react";
+import { Gamepad2, Hammer, Trophy, ExternalLink, MousePointerClick, Flame, Smartphone, Target, Layers, Star, Cpu, Monitor, Rocket } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -73,6 +73,24 @@ const showcases = [
         body: "Clear each level with shots to spare to earn up to three stars.",
       },
     ],
+  },
+];
+
+const platforms = [
+  {
+    icon: Gamepad2,
+    title: "Console",
+    body: "PlayStation and Xbox — the platforms our future titles are built to eventually ship on, alongside browser and mobile.",
+  },
+  {
+    icon: Monitor,
+    title: "PC",
+    body: "The latest gaming hardware sets the bar we're building toward — higher-fidelity titles than a browser game alone can deliver.",
+  },
+  {
+    icon: Rocket,
+    title: "Engine roadmap",
+    body: "The plan is to build on Unreal Engine and Unity — the same engines behind most console and PC titles — once HCM Gaming moves past browser games.",
   },
 ];
 
@@ -164,6 +182,38 @@ export default function Games() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-2 flex items-center gap-3">
+            <Cpu size={22} style={{ color: d.color }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              Consoles & platforms
+            </h2>
+          </div>
+          <p className="mb-6 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            Browser games are where HCM Gaming started — not where it stops.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {platforms.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6"
+              >
+                <p.icon size={22} style={{ color: d.color }} />
+                <h3 className="mt-4 font-display text-lg font-bold">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {p.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Plan stage — current titles are browser games; console/PC builds
+            are the direction, not something shipping yet.
+          </p>
         </div>
       </section>
       <AppBadges color={d.color} />
