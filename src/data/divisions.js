@@ -102,12 +102,12 @@ export const divisions = [
       "Plain-English information on diabetes, heart health, and addiction recovery — a starting point, not a diagnosis.",
   },
   {
-    key: "news",
-    code: "NEWS",
-    name: "HCM News",
+    key: "media",
+    code: "MEDIA",
+    name: "HCM Media",
     tagline: "It's your full picture.",
-    path: "/news",
-    color: "var(--color-news)",
+    path: "/media",
+    color: "var(--color-media)",
     summary:
       "Synthesized news — one story pulled together from many sources instead of ten versions of the same headline.",
   },

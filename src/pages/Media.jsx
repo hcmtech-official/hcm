@@ -3,7 +3,7 @@ import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
-const d = divisions.find((x) => x.key === "news");
+const d = divisions.find((x) => x.key === "media");
 
 const offerings = [
   {
@@ -28,7 +28,7 @@ const offerings = [
   },
 ];
 
-export default function News() {
+export default function Media() {
   return (
     <>
       <DivisionHero

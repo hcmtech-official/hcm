@@ -11,7 +11,7 @@ import Automobile from "./pages/Automobile";
 import Markets from "./pages/Markets";
 import Property from "./pages/Property";
 import Health from "./pages/Health";
-import News from "./pages/News";
+import Media from "./pages/Media";
 import Labs from "./pages/Labs";
 import Space from "./pages/Space";
 import Robotics from "./pages/Robotics";
@@ -46,7 +46,7 @@ function Shell() {
           <Route path="/markets" element={<Markets />} />
           <Route path="/property" element={<Property />} />
           <Route path="/health" element={<Health />} />
-          <Route path="/news" element={<News />} />
+          <Route path="/media" element={<Media />} />
           <Route path="/labs" element={<Labs />} />
           <Route path="/space" element={<Space />} />
           <Route path="/robotics" element={<Robotics />} />
