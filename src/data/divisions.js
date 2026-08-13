@@ -36,7 +36,7 @@ export const divisions = [
   {
     key: "games",
     code: "GAMES",
-    name: "HCM Games",
+    name: "HCM Gaming",
     tagline: "It's your arena.",
     path: "/games",
     color: "var(--color-games)",
@@ -150,6 +150,26 @@ export const divisions = [
     color: "var(--color-merch)",
     summary:
       "Oversized tees, a drop-shoulder hoodie, stickers, and a cap — a small first drop, orderable straight from the page.",
+  },
+  {
+    key: "law",
+    code: "LAW",
+    name: "HCM Law",
+    tagline: "It's your fine print.",
+    path: "/law",
+    color: "var(--color-law)",
+    summary:
+      "Law that runs on IT systems — creator law, platform law, gig-work law — explained for people who aren't lawyers.",
+  },
+  {
+    key: "rideshare",
+    code: "RIDE",
+    name: "HCM Ride Sharing",
+    tagline: "It's your shift.",
+    path: "/rideshare",
+    color: "var(--color-rideshare)",
+    summary:
+      "Tools for Uber, DoorDash, and Uber Eats workers to manage time, budget earnings, and know their rights.",
   },
   {
     key: "film",

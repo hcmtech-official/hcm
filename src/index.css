@@ -18,7 +18,7 @@
 
   --color-tech: #22d3c7;      /* HCM Tech */
   --color-travel: #f2a93b;    /* HCM Travel */
-  --color-games: #7ed957;     /* HCM Games */
+  --color-games: #7ed957;     /* HCM Gaming */
   --color-music: #c084fc;     /* HCM Music */
   --color-film: #ef4a5f;      /* HCM Motion Pictures */
   --color-ai: #4c8dff;        /* HCM AI */
@@ -32,6 +32,8 @@
   --color-space: #6366f1;      /* HCM Space */
   --color-robotics: #64748b;   /* HCM Robotics */
   --color-merch: #fb3d81;      /* HCM Merchandise */
+  --color-law: #1e3a8a;        /* HCM Law */
+  --color-rideshare: #ef4444;  /* HCM Ride Sharing */
 }
 
 @layer base {

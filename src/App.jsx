@@ -18,6 +18,8 @@ import Robotics from "./pages/Robotics";
 import About from "./pages/About";
 import Merchandise from "./pages/Merchandise";
 import Careers from "./pages/Careers";
+import Law from "./pages/Law";
+import RideShare from "./pages/RideShare";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -53,6 +55,8 @@ function Shell() {
           <Route path="/about" element={<About />} />
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/law" element={<Law />} />
+          <Route path="/rideshare" element={<RideShare />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
