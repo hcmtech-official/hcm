@@ -1,4 +1,4 @@
-import { Gamepad2, Hammer, Trophy, ExternalLink, MousePointerClick, Flame, Smartphone } from "lucide-react";
+import { Gamepad2, Hammer, Trophy, ExternalLink, MousePointerClick, Flame, Smartphone, Target, Layers, Star } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -46,6 +46,31 @@ const showcases = [
         icon: Smartphone,
         title: "Play anywhere",
         body: "Runs straight in the browser on desktop or mobile — no install, no account.",
+      },
+    ],
+  },
+  {
+    tag: "Browser game",
+    name: "Spicy Sling",
+    subtitle: "Physics-based slingshot puzzler, level by level",
+    description:
+      "Drag back on the slingshot, aim at the towers, and release to smash the spicy enemies stacked inside. Four handcrafted levels of wood, stone, and ice blocks, with a star rating on every clear — built for quick replays and higher scores.",
+    href: "https://hcmtech-official.github.io/spicy-escape/games/spicy-sling/",
+    features: [
+      {
+        icon: Target,
+        title: "Precision aiming",
+        body: "Drag-and-release controls with a live trajectory preview before you let go.",
+      },
+      {
+        icon: Layers,
+        title: "Destructible towers",
+        body: "Wood, stone, and ice blocks each react differently — plan your shot to bring them down.",
+      },
+      {
+        icon: Star,
+        title: "Star ratings",
+        body: "Clear each level with shots to spare to earn up to three stars.",
       },
     ],
   },
