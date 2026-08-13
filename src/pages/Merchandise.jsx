@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shirt, Sticker, Package, Mail } from "lucide-react";
+import { Shirt, Sticker, Package, Mail, ExternalLink, Gamepad2, ShoppingBag } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import { divisions } from "../data/divisions";
 
@@ -39,6 +39,21 @@ const products = [
     price: "$12",
     blurb: "A vinyl sheet with a sticker for every division — one for the laptop, one for the bottle.",
     hasSize: false,
+  },
+];
+
+const clientShowcases = [
+  {
+    icon: ShoppingBag,
+    name: "KKreations Merchandise",
+    blurb: "A branded storefront sample for KKreations World — tote bags, aprons, mugs and more, styled to their own cream, berry and gold look.",
+    href: "https://hcmtech-official.github.io/hcm-tech/kkreations/merchandise/",
+  },
+  {
+    icon: Gamepad2,
+    name: "K-Creation Arcade",
+    blurb: "A small branded games page built for the same client — a fun, on-brand way to keep customers engaged.",
+    href: "https://hcmtech-official.github.io/hcm-tech/kkreations/games/",
   },
 ];
 
@@ -112,6 +127,42 @@ export default function Merchandise() {
                   {p.price}
                 </div>
               </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Client showcase
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            HCM also builds merch and commerce experiences for clients — here's a
+            sample built for KKreations World, a Sydney cakes and grazing business.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {clientShowcases.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-col rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-opacity hover:opacity-85"
+              >
+                <s.icon size={22} style={{ color: d.color }} />
+                <h3 className="mt-4 font-display text-lg font-bold">{s.name}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {s.blurb}
+                </p>
+                <span
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
+                  style={{ color: d.color }}
+                >
+                  View sample
+                  <ExternalLink size={14} />
+                </span>
+              </a>
             ))}
           </div>
         </div>
