@@ -25,6 +25,12 @@
   --color-education: #f472b6; /* HCM Education */
   --color-automobile: #ff5a36; /* HCM Automobile */
   --color-markets: #10b981;    /* HCM Markets */
+  --color-property: #ca8a04;   /* HCM Property */
+  --color-health: #22c55e;     /* HCM Health */
+  --color-news: #d946ef;       /* HCM News */
+  --color-labs: #0ea5e9;       /* HCM Labs */
+  --color-space: #6366f1;      /* HCM Space */
+  --color-robotics: #64748b;   /* HCM Robotics */
 }
 
 @layer base {

@@ -82,6 +82,66 @@ export const divisions = [
       "FX, derivatives, bonds and equities — market coverage and analysis in plain English.",
   },
   {
+    key: "property",
+    code: "PROP",
+    name: "HCM Property",
+    tagline: "It's your next move.",
+    path: "/property",
+    color: "var(--color-property)",
+    summary:
+      "A fully online real estate agency — no branch office, no walk-ins, just listings, inspections, and offers handled digitally.",
+  },
+  {
+    key: "health",
+    code: "HEALTH",
+    name: "HCM Health",
+    tagline: "It's your wellbeing.",
+    path: "/health",
+    color: "var(--color-health)",
+    summary:
+      "Plain-English information on diabetes, heart health, and addiction recovery — a starting point, not a diagnosis.",
+  },
+  {
+    key: "news",
+    code: "NEWS",
+    name: "HCM News",
+    tagline: "It's your full picture.",
+    path: "/news",
+    color: "var(--color-news)",
+    summary:
+      "Synthesized news — one story pulled together from many sources instead of ten versions of the same headline.",
+  },
+  {
+    key: "labs",
+    code: "LABS",
+    name: "HCM Labs",
+    tagline: "It's your next material.",
+    path: "/labs",
+    color: "var(--color-labs)",
+    summary:
+      "R&D and materials innovation — what's changing in advanced materials, manufacturing, and applied science.",
+  },
+  {
+    key: "space",
+    code: "SPACE",
+    name: "HCM Space",
+    tagline: "It's your orbit.",
+    path: "/space",
+    color: "var(--color-space)",
+    summary:
+      "Space technology coverage — launch, satellites, and the commercial space economy, explained simply.",
+  },
+  {
+    key: "robotics",
+    code: "ROBOT",
+    name: "HCM Robotics",
+    tagline: "It's your automation.",
+    path: "/robotics",
+    color: "var(--color-robotics)",
+    summary:
+      "What's happening in robotics right now — humanoids, warehouse automation, and AI-driven machines.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

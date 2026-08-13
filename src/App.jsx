@@ -9,6 +9,12 @@ import Travel from "./pages/Travel";
 import Education from "./pages/Education";
 import Automobile from "./pages/Automobile";
 import Markets from "./pages/Markets";
+import Property from "./pages/Property";
+import Health from "./pages/Health";
+import News from "./pages/News";
+import Labs from "./pages/Labs";
+import Space from "./pages/Space";
+import Robotics from "./pages/Robotics";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -35,6 +41,12 @@ function Shell() {
           <Route path="/education" element={<Education />} />
           <Route path="/automobile" element={<Automobile />} />
           <Route path="/markets" element={<Markets />} />
+          <Route path="/property" element={<Property />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/labs" element={<Labs />} />
+          <Route path="/space" element={<Space />} />
+          <Route path="/robotics" element={<Robotics />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
