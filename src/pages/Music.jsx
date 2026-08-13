@@ -1,6 +1,7 @@
 import { Disc3, Mic2, Radio } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
+import VideoEmbed from "../components/VideoEmbed";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "music");
@@ -34,6 +35,21 @@ export default function Music() {
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">{o.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-md">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Sample work
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            A first piece out of HCM Music — early, and a sign of where this
+            division is headed.
+          </p>
+          <div className="mt-6">
+            <VideoEmbed id="GvlHxFwQ6QM" title="HCM Music sample" vertical />
           </div>
         </div>
       </section>
