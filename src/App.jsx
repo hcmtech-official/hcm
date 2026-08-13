@@ -19,7 +19,9 @@ import About from "./pages/About";
 import Merchandise from "./pages/Merchandise";
 import Careers from "./pages/Careers";
 import Law from "./pages/Law";
-import RideShare from "./pages/RideShare";
+import Hustle from "./pages/Hustle";
+import Watches from "./pages/Watches";
+import Crypto from "./pages/Crypto";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -56,7 +58,9 @@ function Shell() {
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/law" element={<Law />} />
-          <Route path="/rideshare" element={<RideShare />} />
+          <Route path="/hustle" element={<Hustle />} />
+          <Route path="/watches" element={<Watches />} />
+          <Route path="/crypto" element={<Crypto />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />

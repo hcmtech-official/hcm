@@ -1,15 +1,15 @@
-import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock } from "lucide-react";
+import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
-const d = divisions.find((x) => x.key === "rideshare");
+const d = divisions.find((x) => x.key === "hustle");
 
 const tools = [
   {
     icon: Clock,
     title: "Shift & time tracker",
-    body: "Log on/off times across Uber, DoorDash, and Uber Eats in one place, so you can actually see which hours and platforms pay off.",
+    body: "Log on/off times across every platform you drive or deliver for, so you can see which hours actually pay off.",
   },
   {
     icon: PiggyBank,
@@ -19,7 +19,20 @@ const tools = [
   {
     icon: TrendingUp,
     title: "Earnings optimizer",
-    body: "See which hours, zones, and platforms are actually worth logging on for, based on your own history — not a generic heatmap.",
+    body: "An algorithm that learns which hours, zones, and platforms are actually worth logging on for, based on your own history — not a generic heatmap everyone else is looking at too.",
+  },
+];
+
+const innovation = [
+  {
+    icon: ShieldAlert,
+    title: "HCM SOS Band — a concept",
+    body: "A wrist-worn safety device for drivers and riders: automatic crash detection, an SOS button that doesn't need you to unlock a phone, and a live location ping to an emergency contact the moment impact is detected.",
+  },
+  {
+    icon: WatchIcon,
+    title: "Why wrist, not just phone",
+    body: "Phone-based crash detection already exists, but it's one more thing to reach for after an impact. A dedicated band stays on through a shift and works even if the phone doesn't.",
   },
 ];
 
@@ -41,15 +54,17 @@ const rights = [
   },
 ];
 
-export default function RideShare() {
+export default function Hustle() {
   return (
     <>
       <DivisionHero
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Built for people driving or delivering through Uber, DoorDash, and Uber Eats — tools to make the hours you work actually count, plus a plain-English read on the rights that come with the job."
+        description="Built for the rideshare, delivery, and gig economy — tools to make the hours you work actually count, safety tech worth having, and a plain-English read on the rights that come with the job."
         color={d.color}
+        image="https://commons.wikimedia.org/wiki/Special:FilePath/Wolt%20delivery%20in%20Baku%20(15722).jpg?width=1600"
+        imageCredit="Photo via Wikimedia Commons"
       />
 
       <section className="px-5 py-16 sm:px-8">
@@ -71,6 +86,35 @@ export default function RideShare() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Innovation
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            Software helps with time and money — hardware is where we're
+            looking next, starting with driver safety.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {innovation.map((i) => (
+              <div
+                key={i.title}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6"
+              >
+                <i.icon size={22} style={{ color: d.color }} />
+                <h3 className="mt-4 font-display text-lg font-bold">{i.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {i.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Concept stage — nothing built yet.
+          </p>
         </div>
       </section>
 

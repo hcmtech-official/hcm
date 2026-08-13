@@ -33,7 +33,9 @@
   --color-robotics: #64748b;   /* HCM Robotics */
   --color-merch: #fb3d81;      /* HCM Merchandise */
   --color-law: #1e3a8a;        /* HCM Law */
-  --color-rideshare: #ef4444;  /* HCM Ride Sharing */
+  --color-hustle: #ef4444;     /* HCM Hustle */
+  --color-watches: #d4af37;    /* HCM Watches */
+  --color-crypto: #f7931a;     /* HCM Crypto */
 }
 
 @layer base {

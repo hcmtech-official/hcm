@@ -159,17 +159,37 @@ export const divisions = [
     path: "/law",
     color: "var(--color-law)",
     summary:
-      "Law that runs on IT systems — creator law, platform law, gig-work law — explained for people who aren't lawyers.",
+      "Social media law, country by country — what creators, platforms, and corporates actually have to comply with.",
   },
   {
-    key: "rideshare",
-    code: "RIDE",
-    name: "HCM Ride Sharing",
-    tagline: "It's your shift.",
-    path: "/rideshare",
-    color: "var(--color-rideshare)",
+    key: "hustle",
+    code: "HUSTLE",
+    name: "HCM Hustle",
+    tagline: "It's your grind.",
+    path: "/hustle",
+    color: "var(--color-hustle)",
     summary:
-      "Tools for Uber, DoorDash, and Uber Eats workers to manage time, budget earnings, and know their rights.",
+      "Tools and safety tech for the rideshare, delivery, and gig economy — built to help you earn more per hour worked.",
+  },
+  {
+    key: "watches",
+    code: "WATCH",
+    name: "HCM Watches",
+    tagline: "It's your time.",
+    path: "/watches",
+    color: "var(--color-watches)",
+    summary:
+      "Swiss watchmaking as the benchmark, AI as the concept — what a genuinely intelligent watch could look like.",
+  },
+  {
+    key: "crypto",
+    code: "CRYPTO",
+    name: "HCM Crypto",
+    tagline: "It's your ledger.",
+    path: "/crypto",
+    color: "var(--color-crypto)",
+    summary:
+      "HCM's early-stage concept for its own token — the idea, the tokenomics, and the roadmap, laid out honestly.",
   },
   {
     key: "film",
