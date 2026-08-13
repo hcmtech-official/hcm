@@ -37,6 +37,8 @@ export default function Robotics() {
         tagline={d.tagline}
         description="Where robotics actually stands right now — humanoids, warehouse automation, and the AI making machines more capable, minus the hype."
         color={d.color}
+        image="https://commons.wikimedia.org/wiki/Special:FilePath/Amazon_warehouse_robot_2020.JPG"
+        imageCredit="CC BY-SA 4.0, via Wikimedia Commons"
       />
 
       <section className="px-5 py-16 sm:px-8">
