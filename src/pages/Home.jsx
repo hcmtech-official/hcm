@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { divisions } from "../data/divisions";
 import OrbitDiagram from "../components/OrbitDiagram";
 import ChatWidget from "../components/ChatWidget";
@@ -63,6 +63,34 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-12 sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 sm:flex-row sm:items-center sm:p-8">
+          <div>
+            <div
+              className="font-mono text-[11px] uppercase tracking-[0.2em]"
+              style={{ color: "var(--color-core-soft)" }}
+            >
+              We're hiring
+            </div>
+            <h2 className="mt-2 font-display text-xl font-bold sm:text-2xl">
+              Would you like to join HCM?
+            </h2>
+            <p className="mt-1 text-sm text-[var(--color-ink-dim)]">
+              AI builds first here — we're looking for people who want to
+              build the AI itself.
+            </p>
+          </div>
+          <Link
+            to="/careers"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+            style={{ background: "var(--color-core)", color: "white" }}
+          >
+            See open roles
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
