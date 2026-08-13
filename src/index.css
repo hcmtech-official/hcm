@@ -31,6 +31,7 @@
   --color-labs: #0ea5e9;       /* HCM Labs */
   --color-space: #6366f1;      /* HCM Space */
   --color-robotics: #64748b;   /* HCM Robotics */
+  --color-merch: #fb3d81;      /* HCM Merchandise */
 }
 
 @layer base {

@@ -142,6 +142,16 @@ export const divisions = [
       "What's happening in robotics right now — humanoids, warehouse automation, and AI-driven machines.",
   },
   {
+    key: "merchandise",
+    code: "MERCH",
+    name: "HCM Merchandise",
+    tagline: "It's your fit.",
+    path: "/merchandise",
+    color: "var(--color-merch)",
+    summary:
+      "Oversized tees, a drop-shoulder hoodie, stickers, and a cap — a small first drop, orderable straight from the page.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

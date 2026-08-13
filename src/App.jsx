@@ -16,6 +16,7 @@ import Labs from "./pages/Labs";
 import Space from "./pages/Space";
 import Robotics from "./pages/Robotics";
 import About from "./pages/About";
+import Merchandise from "./pages/Merchandise";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -49,6 +50,7 @@ function Shell() {
           <Route path="/space" element={<Space />} />
           <Route path="/robotics" element={<Robotics />} />
           <Route path="/about" element={<About />} />
+          <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
