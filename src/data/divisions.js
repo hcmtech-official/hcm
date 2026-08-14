@@ -109,7 +109,7 @@ export const divisions = [
     path: "/media",
     color: "var(--color-media)",
     summary:
-      "Synthesized news — one story pulled together from many sources instead of ten versions of the same headline.",
+      "Synthesized news, free for everyone — the best reporting shouldn't require five subscriptions to piece together.",
   },
   {
     key: "labs",

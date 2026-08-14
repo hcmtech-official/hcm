@@ -1,4 +1,4 @@
-import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2, Zap, Droplet, Battery, Dices, ScanEye, GraduationCap, NotebookPen, Smartphone } from "lucide-react";
+import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2, Zap, Droplet, Battery, Dices, ScanEye, GraduationCap, NotebookPen, Smartphone, Mic } from "lucide-react";
 import { Link } from "react-router-dom";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
@@ -75,6 +75,11 @@ const otherProducts = [
 
 const phoneFeatures = [
   {
+    icon: Mic,
+    title: "HCM Voice — completely hands-free",
+    body: "No touchscreen required for any of it. Hands stay on the wheel or on the delivery, not on the phone — because reaching for a screen mid-shift is exactly the kind of small distraction that turns into a bad outcome. Say what you need; the phone handles the rest.",
+  },
+  {
     icon: ShieldAlert,
     title: "Protection built in, not bolted on",
     body: "Safety features that don't need a separate app or a wearable to work — the phone itself is the safety device, always on, never forgotten at home.",
@@ -87,7 +92,7 @@ const phoneFeatures = [
   {
     icon: NotebookPen,
     title: "A real log, not a memory",
-    body: "One tap to log an incident — a bad passenger, a threatening customer, a platform that shorted a payout — timestamped and stored, so it's evidence later, not just a story nobody believed.",
+    body: "Say the word and it's logged — a bad passenger, a threatening customer, a platform that shorted a payout — timestamped and stored hands-free, so it's evidence later, not just a story nobody believed.",
   },
   {
     icon: ScanEye,
@@ -303,8 +308,8 @@ export default function Hustle() {
           </div>
           <p className="mb-6 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
             Not a regular phone with a gig app installed on it — a device
-            designed around one job from the ground up, built to put the
-            edge back on the worker's side.
+            designed around one job from the ground up, completely
+            hands-free, built to put the edge back on the worker's side.
           </p>
 
           <div className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
@@ -315,7 +320,7 @@ export default function Hustle() {
             />
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {phoneFeatures.map((f) => (
               <div
                 key={f.title}

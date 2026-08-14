@@ -61,6 +61,18 @@
     <text x="0" y="-165" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="42" fill="#EEF0F4" letter-spacing="1">HCM EDGE</text>
     <text x="0" y="-125" text-anchor="middle" font-family="IBM Plex Mono" font-size="15" fill="#F87171" letter-spacing="3">BUILT FOR THE GIG</text>
 
+    <!-- voice-first waveform badge -->
+    <g transform="translate(0,-95)">
+      <rect x="-100" y="-16" width="200" height="32" rx="16" fill="#15171C" stroke="#2A2D36" stroke-width="1.5"/>
+      <g stroke="#F87171" stroke-width="3" stroke-linecap="round">
+        <line x1="-66" y1="-6" x2="-66" y2="6"/>
+        <line x1="-54" y1="-10" x2="-54" y2="10"/>
+        <line x1="-42" y1="-4" x2="-42" y2="4"/>
+        <line x1="-30" y1="-9" x2="-30" y2="9"/>
+      </g>
+      <text x="4" y="5" font-family="IBM Plex Mono" font-size="12" fill="#EEF0F4" letter-spacing="1">HANDS-FREE</text>
+    </g>
+
     <!-- "shift score" card -->
     <rect x="-160" y="-70" width="320" height="130" rx="20" fill="#15171C" stroke="#2A2D36" stroke-width="2"/>
     <text x="-135" y="-28" font-family="IBM Plex Mono" font-size="13" fill="#9AA0AD" letter-spacing="1">TODAY'S EDGE SCORE</text>
