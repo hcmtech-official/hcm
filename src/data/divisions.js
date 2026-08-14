@@ -262,6 +262,16 @@ export const divisions = [
       "Exploring what a fully AI-run HR function could look like — hiring, onboarding, and performance, built the way HCM builds everything else.",
   },
   {
+    key: "electronics",
+    code: "CHIP",
+    name: "HCM Electronics",
+    tagline: "It's your silicon.",
+    path: "/electronics",
+    color: "var(--color-electronics)",
+    summary:
+      "Tracking the chips actually running the AI boom — NVIDIA's lineup and the Chinese chipmakers racing to catch up.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

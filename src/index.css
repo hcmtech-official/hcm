@@ -43,6 +43,7 @@
   --color-toys: #fb7185;       /* HCM Toys */
   --color-sports: #16a34a;     /* HCM Sports */
   --color-hr: #fdba74;         /* HCM HR */
+  --color-electronics: #38bdf8; /* HCM Electronics */
 }
 
 @layer base {

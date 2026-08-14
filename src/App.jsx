@@ -29,6 +29,7 @@ import Kids from "./pages/Kids";
 import Toys from "./pages/Toys";
 import Sports from "./pages/Sports";
 import HR from "./pages/HR";
+import Electronics from "./pages/Electronics";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -75,6 +76,7 @@ function Shell() {
           <Route path="/toys" element={<Toys />} />
           <Route path="/sports" element={<Sports />} />
           <Route path="/hr" element={<HR />} />
+          <Route path="/electronics" element={<Electronics />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
