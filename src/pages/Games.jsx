@@ -1,4 +1,4 @@
-import { Gamepad2, Hammer, Trophy, ExternalLink, MousePointerClick, Flame, Smartphone, Target, Layers, Star, Cpu, Monitor, Rocket } from "lucide-react";
+import { Gamepad2, Hammer, Trophy, ExternalLink, MousePointerClick, Flame, Smartphone, Target, Layers, Star, Cpu, Monitor, Rocket, Heart } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -168,16 +168,31 @@ export default function Games() {
                     ))}
                   </div>
 
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-8 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
-                    style={{ background: d.color, color: "var(--color-void)" }}
-                  >
-                    Play now
-                    <ExternalLink size={16} />
-                  </a>
+                  <div className="mt-8 flex flex-wrap items-center gap-3">
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+                      style={{ background: d.color, color: "var(--color-void)" }}
+                    >
+                      Play now
+                      <ExternalLink size={16} />
+                    </a>
+                    <a
+                      href="https://www.paypal.com/donate/?business=hcmuniverse@gmail.com&currency_code=AUD"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--color-games)]"
+                      style={{ borderColor: "var(--color-line)" }}
+                    >
+                      <Heart size={16} style={{ color: d.color }} />
+                      Support this game
+                    </a>
+                  </div>
+                  <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+                    Support goes to hcmuniverse@gmail.com via PayPal.
+                  </p>
                 </div>
               </div>
             ))}
