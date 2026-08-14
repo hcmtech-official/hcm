@@ -1,9 +1,27 @@
-import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon } from "lucide-react";
+import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "hustle");
+
+const categories = [
+  {
+    icon: Car,
+    title: "Rideshare & food delivery",
+    body: "Uber, DoorDash, Uber Eats, and the rest — the most visible slice of the gig economy, and where most of this started.",
+  },
+  {
+    icon: Package,
+    title: "Package delivery",
+    body: "Amazon Flex and similar programs — drivers running their own routes and hours, paid per delivery block rather than per hour.",
+  },
+  {
+    icon: SprayCan,
+    title: "Home services & cleaning",
+    body: "Platforms like Airtasker and Handy-style cleaning gigs — the same gig-economy structure, just off the road and inside people's homes.",
+  },
+];
 
 const tools = [
   {
@@ -20,6 +38,11 @@ const tools = [
     icon: TrendingUp,
     title: "Earnings optimizer",
     body: "An algorithm that learns which hours, zones, and platforms are actually worth logging on for, based on your own history — not a generic heatmap everyone else is looking at too.",
+  },
+  {
+    icon: MapPin,
+    title: "Toilet finder",
+    body: "A real problem nobody builds for: mid-shift, on the road, needing a toilet. Knows your shift from the time tracker, then shows the nearest public or business restroom that's actually open right now — not just nearby on a map, but open at this hour, on this day.",
   },
 ];
 
@@ -61,7 +84,7 @@ export default function Hustle() {
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Built for the rideshare, delivery, and gig economy — tools to make the hours you work actually count, safety tech worth having, and a plain-English read on the rights that come with the job."
+        description="Built for the whole gig economy — rideshare, delivery, package runs, and home services — tools to make the hours you work actually count, safety tech worth having, and a plain-English read on the rights that come with the job."
         color={d.color}
         image="https://commons.wikimedia.org/wiki/Special:FilePath/Wolt%20delivery%20in%20Baku%20(15722).jpg?width=1600"
         imageCredit="Photo via Wikimedia Commons"
@@ -70,9 +93,31 @@ export default function Hustle() {
       <section className="px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
-            Tools
+            Who it's for
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {categories.map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6"
+              >
+                <c.icon size={22} style={{ color: d.color }} />
+                <h3 className="mt-4 font-display text-lg font-bold">{c.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {c.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Tools
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {tools.map((t) => (
               <div
                 key={t.title}
