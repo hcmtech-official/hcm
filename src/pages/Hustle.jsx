@@ -1,4 +1,4 @@
-import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2 } from "lucide-react";
+import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2, Zap, Droplet, Battery } from "lucide-react";
 import { Link } from "react-router-dom";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
@@ -57,6 +57,19 @@ const innovation = [
     icon: WatchIcon,
     title: "Why wrist, not just phone",
     body: "Phone-based crash detection already exists, but it's one more thing to reach for after an impact. A dedicated band stays on through a shift and works even if the phone doesn't.",
+  },
+];
+
+const otherProducts = [
+  {
+    icon: Zap,
+    title: "HCM Shift Shot",
+    body: "A small-format shot for the moment between drop-offs, not a whole can — lower caffeine than Surge, same L-theanine pairing so it doesn't spike and crash mid-route.",
+  },
+  {
+    icon: Droplet,
+    title: "HCM Recharge",
+    body: "No caffeine at all — an electrolyte mix for the parts of a shift that are about heat and hydration, not alertness. Built for the hours after a Surge, not instead of sleep.",
   },
 ];
 
@@ -153,6 +166,81 @@ export default function Hustle() {
           </p>
           <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
             Coming soon — nothing published yet.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-2 flex items-center gap-3">
+            <Battery size={22} style={{ color: d.color }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              Products
+            </h2>
+          </div>
+          <p className="mb-6 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            The real problem: fatigue creeps in on the back half of a long
+            shift, and most energy drinks are built for a 20-minute study
+            session, not eight hours behind the wheel. HCM's line is built
+            for the shift, not the sprint.
+          </p>
+
+          <div className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]">
+            <div className="grid gap-8 p-8 sm:grid-cols-[1fr_1.4fr] sm:p-10">
+              <img
+                src="./products/hcm-surge-can.svg"
+                alt="HCM Surge energy drink can"
+                className="mx-auto w-48 sm:w-full"
+              />
+              <div>
+                <div
+                  className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+                  style={{ borderColor: d.color, color: d.color }}
+                >
+                  Flagship product
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-bold">HCM Surge</h3>
+                <p className="mt-1 text-sm text-[var(--color-ink-dim)]">
+                  Zero sugar, zero crash — built for the whole shift, not the first hour of it.
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                  Caffeine paired with L-theanine for a smoother lift
+                  without the jitters or the crash, electrolytes (sodium,
+                  potassium, magnesium) because dehydration makes fatigue
+                  worse than caffeine alone can fix, and B-vitamins to
+                  support energy metabolism through a long day, not just
+                  the first thirty minutes of it.
+                </p>
+                <ul className="mt-4 space-y-1 font-mono text-[11px] text-[var(--color-ink-dim)]">
+                  <li>· Caffeine + L-theanine (smoother lift, no jitters)</li>
+                  <li>· Electrolytes — sodium, potassium, magnesium</li>
+                  <li>· B3, B6, B12 for sustained energy metabolism</li>
+                  <li>· Zero sugar, transparent dosing on the label</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {otherProducts.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6"
+              >
+                <p.icon size={22} style={{ color: d.color }} />
+                <h3 className="mt-4 font-display text-lg font-bold">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {p.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Concept stage — nothing formulated or for sale yet. Energy
+            products help with alertness; they're not a substitute for an
+            actual break when you're genuinely exhausted, especially
+            behind the wheel.
           </p>
         </div>
       </section>
