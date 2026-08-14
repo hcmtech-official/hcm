@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <radialGradient id="glowSky" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A3D46"/>
+      <stop offset="100%" stop-color="#101319"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#8B88FF" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="600" fill="#08090d"/>
+  <circle cx="500" cy="260" r="380" fill="url(#glowSky)"/>
+
+  <!-- ground line -->
+  <line x1="0" y1="480" x2="1000" y2="480" stroke="#2A2D36" stroke-width="2"/>
+
+  <!-- rotor arms + rotors (retracted-for-road look, angled up) -->
+  <g stroke="#4A4D57" stroke-width="8" stroke-linecap="round">
+    <line x1="260" y1="330" x2="180" y2="230"/>
+    <line x1="740" y1="330" x2="820" y2="230"/>
+  </g>
+  <g fill="none" stroke="#EF4444" stroke-width="4" opacity="0.85">
+    <ellipse cx="180" cy="230" rx="70" ry="14"/>
+    <ellipse cx="820" cy="230" rx="70" ry="14"/>
+  </g>
+
+  <!-- vehicle body: low, wide, aerodynamic -->
+  <path d="M 200 420
+           Q 220 340 320 330
+           L 400 300
+           Q 500 280 600 300
+           L 680 330
+           Q 780 340 800 420
+           Q 800 460 760 460
+           L 240 460
+           Q 200 460 200 420 Z"
+        fill="url(#bodyGrad)" stroke="#4A4D57" stroke-width="3"/>
+
+  <!-- glass canopy -->
+  <path d="M 400 302 Q 500 282 600 302 L 640 335 L 360 335 Z" fill="url(#glassGrad)" opacity="0.55"/>
+
+  <!-- HCM orbit mark on the nose -->
+  <g transform="translate(500,395) scale(0.6)">
+    <g stroke="#EEF0F4" stroke-opacity="0.7" stroke-width="8" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-42"/>
+      <line x1="0" y1="0" x2="36" y2="21"/>
+      <line x1="0" y1="0" x2="-36" y2="21"/>
+    </g>
+    <circle cx="0" cy="-42" r="10" fill="#EEF0F4"/>
+    <circle cx="36" cy="21" r="10" fill="#EEF0F4"/>
+    <circle cx="-36" cy="21" r="10" fill="#EEF0F4"/>
+    <circle cx="0" cy="0" r="16" fill="#EEF0F4"/>
+  </g>
+
+  <!-- wheels, low profile -->
+  <circle cx="290" cy="460" r="34" fill="#17171B" stroke="#4A4D57" stroke-width="4"/>
+  <circle cx="710" cy="460" r="34" fill="#17171B" stroke="#4A4D57" stroke-width="4"/>
+
+  <!-- underglow -->
+  <ellipse cx="500" cy="472" rx="260" ry="10" fill="#EF4444" opacity="0.35"/>
+
+  <text x="500" y="560" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="30" fill="#EEF0F4" letter-spacing="2">HCM SKYLINE — CONCEPT</text>
+</svg>
