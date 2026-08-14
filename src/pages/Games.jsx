@@ -74,6 +74,31 @@ const showcases = [
       },
     ],
   },
+  {
+    tag: "Browser game",
+    name: "Netball Shootout",
+    subtitle: "Beat the clock, beat the Goal Keeper",
+    description:
+      "A 60-second shooting drill — move along the baseline, charge your shot, and sink goals before time runs out. Shots from behind the gold line score double, clean swishes earn a bonus, and a defender jumps to block anything careless.",
+    href: "https://hcmtech-official.github.io/hcm-tech/games/netball-shootout.html",
+    features: [
+      {
+        icon: Trophy,
+        title: "Super shots",
+        body: "Shoot from behind the gold line for double points — risk versus reward on every attempt.",
+      },
+      {
+        icon: MousePointerClick,
+        title: "Charge-and-release aim",
+        body: "Hold to charge power, drag to aim, or just drag-and-release straight on the court.",
+      },
+      {
+        icon: Smartphone,
+        title: "Streaks and a live defender",
+        body: "Build a scoring streak while a jumping Goal Keeper tries to block your shot.",
+      },
+    ],
+  },
 ];
 
 const platforms = [
