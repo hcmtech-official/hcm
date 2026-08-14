@@ -123,6 +123,28 @@ export default function University() {
       </section>
 
       <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            The degree
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            What it actually looks like when it lands in your hands.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--color-line)]">
+            <img
+              src="./credentials/degree.svg"
+              alt="Sample HCM University degree design"
+              className="w-full"
+            />
+          </div>
+          <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            A sample of the degree design — no course is open yet, this is
+            the format every degree will follow.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-3xl rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
           <SparklesIcon size={22} style={{ color: "var(--color-core-soft)" }} />
           <h2 className="mt-4 font-display text-xl font-bold sm:text-2xl">

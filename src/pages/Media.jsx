@@ -87,6 +87,17 @@ export default function Media() {
             is the chance to create something real, not a role that may
             not exist by the time you graduate.
           </p>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--color-line)]">
+            <img
+              src="./credentials/certificate.svg"
+              alt="Sample HCM Media certificate design"
+              className="w-full"
+            />
+          </div>
+          <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            A sample of the certificate design — no certification track is
+            live yet, this is the format it will follow.
+          </p>
         </div>
       </section>
       <AppBadges color={d.color} />
