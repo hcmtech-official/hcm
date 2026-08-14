@@ -32,12 +32,22 @@ const sports = [
   {
     name: "Formula 1",
     note: "Red Bull Racing runs close to four billion race-strategy simulations on cloud AI before a single lights-out.",
-    img: wm("Formula one.jpg"),
+    img: wm("2024-08-25 Motorsport, Formel 1, Großer Preis der Niederlande 2024 STP 3912 by Stepro.jpg"),
   },
   {
     name: "Golf",
     note: "Phone-camera AI swing coaches now give real-time voice cues between reps — the same feedback loop that used to require a swing-analysis lab.",
     img: wm("Golfer swing.jpg"),
+  },
+  {
+    name: "UFC",
+    note: "Wearable and biometric data now shapes fight camps directly — load management and recovery tracking built to catch overtraining before it becomes an injury.",
+    img: wm("PLMMA Cage-Octagon MMA.JPG"),
+  },
+  {
+    name: "Billiards",
+    note: "Trajectory-prediction overlays are creeping into broadcasts the same way they did in snooker — showing the shot a player is lining up before they take it.",
+    img: wm("8-ball Rack in Billiards.jpg"),
   },
 ];
 
@@ -66,7 +76,7 @@ export default function Sports() {
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Six of the biggest sports in the world, and the same story behind all of them: AI is already changing how they're played, officiated, and watched."
+        description="Some of the biggest sports in the world, and the same story behind all of them: AI is already changing how they're played, officiated, and watched."
         color={d.color}
       />
 
