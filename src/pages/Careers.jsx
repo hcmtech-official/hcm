@@ -110,11 +110,15 @@ export default function Careers() {
               className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
               style={{ borderColor: "var(--color-core)", color: "var(--color-core-soft)" }}
             >
-              HCM · 2046 · Speculative
+              Open now · Remote
             </div>
             <h3 className="mt-4 font-display text-2xl font-bold">
               AI Judgment Steward
             </h3>
+            <p className="mt-2 text-sm text-[var(--color-ink-dim)]">
+              A real role, defined 20 years ahead of where most companies
+              are thinking — because that's how far ahead HCM builds.
+            </p>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
               By 2046, AI runs almost everything at HCM end to end — sourcing,
               building, shipping, support. What it still can't do on its own
@@ -141,7 +145,7 @@ export default function Careers() {
               style={{ background: "var(--color-core)", color: "white" }}
             >
               <Mail size={16} />
-              Apply anyway
+              Apply for this role
             </a>
           </div>
         </div>
@@ -152,12 +156,12 @@ export default function Careers() {
           <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
             <Sparkles size={22} style={{ color: "var(--color-core-soft)" }} />
             <h3 className="mt-4 font-display text-xl font-bold">
-              No open roles listed yet
+              Don't see your fit above?
             </h3>
             <p className="mt-2 max-w-lg text-sm leading-relaxed text-[var(--color-ink-dim)]">
-              HCM is early, and new divisions get built as gaps get found —
-              hiring will follow the same pattern. If that sounds like your
-              kind of problem to work on, reach out anyway.
+              HCM is early, and new roles get defined the same way new
+              divisions do — around a real gap someone spotted. If that's
+              you, reach out anyway.
             </p>
             <a
               href={`mailto:${CAREERS_EMAIL}`}
