@@ -28,8 +28,24 @@ const locations = [
 ];
 
 const offWorld = [
-  { city: "Artemis Base Camp", region: "The Moon, lunar south pole" },
-  { city: "Mars Base Alpha", region: "Mars" },
+  {
+    city: "Artemis Base Camp",
+    region: "The Moon, lunar south pole",
+    note: "NASA's planned permanent lunar outpost — dome habitats shielded by a layer of lunar regolith, built for a sustained human presence rather than a short visit.",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Artemis%20Base%20Camp.png?width=1200",
+  },
+  {
+    city: "Mars Base Alpha",
+    region: "Mars",
+    note: "SpaceX's name for the first Mars settlement — the earliest structures are expected to be landed Starships themselves, before purpose-built habitats follow.",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/PIA23302-FirstHumansOnMars-ArtistConcept.jpg?width=1200",
+  },
+  {
+    city: "Selk Crater",
+    region: "Titan, Saturn's largest moon",
+    note: "The likely next stop after Mars — Titan has a dense atmosphere that actually shields against radiation, unlike Mars, plus abundant organic chemistry. NASA's Dragonfly rotorcraft lands there in 2034.",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Df-aerial.jpg?width=1200",
+  },
 ];
 
 const openRoles = [
@@ -52,6 +68,11 @@ const openRoles = [
     title: "Off-World Operations Scout",
     location: "Mars Base Alpha, Mars",
     body: "Same brief, further out — laying the groundwork for HCM's eventual presence at Mars Base Alpha, years ahead of anyone actually being there.",
+  },
+  {
+    title: "Off-World Operations Scout",
+    location: "Selk Crater, Titan",
+    body: "The furthest-out version of the role — Titan is the realistic candidate after Mars, and this one starts the groundwork decades before anyone else even gets there.",
   },
 ];
 
@@ -127,24 +148,30 @@ export default function Careers() {
             <Rocket size={14} style={{ color: "var(--color-core-soft)" }} />
             Off-world — future
           </div>
-          <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {offWorld.map((l) => (
               <div
                 key={l.city}
-                className="rounded-xl border border-dashed border-[var(--color-line)] bg-transparent px-4 py-3"
+                className="overflow-hidden rounded-2xl border border-dashed border-[var(--color-line)] bg-[var(--color-surface)]"
               >
-                <div className="font-display text-sm font-bold">{l.city}</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                  {l.region}
+                <img src={l.img} alt={l.city} loading="lazy" className="h-40 w-full object-cover" />
+                <div className="p-4">
+                  <div className="font-display text-sm font-bold">{l.city}</div>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                    {l.region}
+                  </div>
+                  <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink-dim)]">
+                    {l.note}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
-            Not real HCM locations yet — named for where humanity's own
-            off-world bases are actually planned (SpaceX's Mars Base Alpha,
-            NASA's Artemis Base Camp), marking where "where HCM exists"
-            goes next, eventually.
+          <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Not real HCM locations yet — named for and pictured using
+            humanity's own real off-world plans, marking where "where HCM
+            exists" goes next, eventually. Photos: NASA / Wikimedia
+            Commons, public domain and CC-licensed concept art.
           </p>
         </div>
       </section>
