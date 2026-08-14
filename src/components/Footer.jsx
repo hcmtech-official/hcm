@@ -32,7 +32,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="font-display text-xl font-bold">HCM</div>
+            <div className="flex items-center gap-2">
+              <img src="./logo-icon.svg" alt="" width="24" height="24" className="rounded-[6px]" />
+              <div className="font-display text-xl font-bold">HCM</div>
+            </div>
             <p className="mt-2 max-w-xs text-sm text-[var(--color-ink-dim)]">
               One brand, one universe — tech, AI, travel, education, games,
               music and motion pictures, built by the same hands.
