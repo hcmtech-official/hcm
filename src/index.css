@@ -44,6 +44,7 @@
   --color-sports: #16a34a;     /* HCM Sports */
   --color-hr: #fdba74;         /* HCM HR */
   --color-electronics: #38bdf8; /* HCM Electronics */
+  --color-podcast: #e11d48;    /* HCM Podcast */
 }
 
 @layer base {
@@ -78,4 +79,9 @@
   .font-display { font-family: var(--font-display); }
   .font-mono { font-family: var(--font-mono); }
   .text-balance { text-wrap: balance; }
+}
+
+@keyframes map-pulse {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.6); opacity: 0; }
 }

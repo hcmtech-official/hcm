@@ -100,6 +100,9 @@ export default function Footer() {
             <Link to="/careers" className="hover:text-[var(--color-ink)] hover:underline">
               Careers
             </Link>
+            <Link to="/podcast" className="hover:text-[var(--color-ink)] hover:underline">
+              Podcast
+            </Link>
           </div>
         </div>
       </div>

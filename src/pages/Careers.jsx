@@ -1,4 +1,5 @@
-import { Sparkles, GitBranch, Mail } from "lucide-react";
+import { Sparkles, GitBranch, Mail, Globe2, Clock } from "lucide-react";
+import WorldMap from "../components/WorldMap";
 
 const CAREERS_EMAIL = "careers@hcmtech-official.com";
 
@@ -15,6 +16,15 @@ const whatWeLookFor = [
     title: "Fine owning something end to end",
     body: "Small team, AI-first tooling, real ownership — you'll take a gap from idea to shipped division, not one slice of a bigger process.",
   },
+];
+
+const locations = [
+  { city: "Sydney", region: "Australia" },
+  { city: "Singapore", region: "Singapore" },
+  { city: "Tokyo", region: "Japan" },
+  { city: "Mumbai", region: "India" },
+  { city: "New York", region: "United States" },
+  { city: "London", region: "United Kingdom" },
 ];
 
 export default function Careers() {
@@ -53,6 +63,86 @@ export default function Careers() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-2 flex items-center gap-3">
+            <Globe2 size={22} style={{ color: "var(--color-core-soft)" }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              Where HCM exists
+            </h2>
+          </div>
+          <p className="mb-6 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            No head office — HCM is built to work across time zones from
+            day one. Six cities where the AI-first team currently connects
+            from:
+          </p>
+          <WorldMap />
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {locations.map((l) => (
+              <div
+                key={l.city}
+                className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3"
+              >
+                <div className="font-display text-sm font-bold">{l.city}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                  {l.region}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-6 flex items-center gap-3">
+            <Clock size={22} style={{ color: "var(--color-core-soft)" }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              A role, 20 years from now
+            </h2>
+          </div>
+          <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
+            <div
+              className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+              style={{ borderColor: "var(--color-core)", color: "var(--color-core-soft)" }}
+            >
+              HCM · 2046 · Speculative
+            </div>
+            <h3 className="mt-4 font-display text-2xl font-bold">
+              AI Judgment Steward
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+              By 2046, AI runs almost everything at HCM end to end — sourcing,
+              building, shipping, support. What it still can't do on its own
+              is decide what to do when the right answer genuinely depends on
+              judgment: two reasonable outcomes, real consequences, and no
+              clean rule to fall back on. That's this job.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+              You'd review the hardest calls surfaced across every division —
+              not to override AI by default, but to catch what it missed, add
+              context it didn't have, and feed that judgment back in so the
+              system gets better at recognizing similar situations on its
+              own next time. Less "approve or reject a queue," more defining
+              what good judgment actually looks like, case by case, for a
+              company that changes what it builds every few months.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+              No formal path exists into this role yet — the job itself is
+              still being defined by whoever ends up doing it first.
+            </p>
+            <a
+              href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent("AI Judgment Steward — expression of interest")}`}
+              className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+              style={{ background: "var(--color-core)", color: "white" }}
+            >
+              <Mail size={16} />
+              Apply anyway
+            </a>
           </div>
         </div>
       </section>
