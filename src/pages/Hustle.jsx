@@ -1,4 +1,4 @@
-import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2, Zap, Droplet, Battery } from "lucide-react";
+import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2, Zap, Droplet, Battery, Dices, ScanEye, GraduationCap, NotebookPen, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
@@ -70,6 +70,29 @@ const otherProducts = [
     icon: Droplet,
     title: "HCM Recharge",
     body: "No caffeine at all — an electrolyte mix for the parts of a shift that are about heat and hydration, not alertness. Built for the hours after a Surge, not instead of sleep.",
+  },
+];
+
+const phoneFeatures = [
+  {
+    icon: ShieldAlert,
+    title: "Protection built in, not bolted on",
+    body: "Safety features that don't need a separate app or a wearable to work — the phone itself is the safety device, always on, never forgotten at home.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Training that lives on the device",
+    body: "Short, practical modules — de-escalation, first aid basics, know-your-rights — built into the phone itself, not a course you have to go find somewhere else.",
+  },
+  {
+    icon: NotebookPen,
+    title: "A real log, not a memory",
+    body: "One tap to log an incident — a bad passenger, a threatening customer, a platform that shorted a payout — timestamped and stored, so it's evidence later, not just a story nobody believed.",
+  },
+  {
+    icon: ScanEye,
+    title: "Pattern detection, working for you",
+    body: "The phone learns your own patterns — the zones, hours, and situations that have actually cost you before — and flags them before you're in one again, instead of after.",
   },
 ];
 
@@ -241,6 +264,74 @@ export default function Hustle() {
             products help with alertness; they're not a substitute for an
             actual break when you're genuinely exhausted, especially
             behind the wheel.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
+          <Dices size={22} style={{ color: d.color }} />
+          <h2 className="mt-4 font-display text-xl font-bold sm:text-2xl">
+            Gig work is structured like gambling — the odds just aren't advertised
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            By definition, gambling is a system where the odds favor the
+            house, and the player is statistically likely to lose over
+            time. Gig work shares more of that structure than anyone
+            involved likes to say out loud: variable payouts, algorithmic
+            dispatch nobody outside the platform can see, and a worker who
+            usually finds out a shift didn't pay off only once it's
+            already over.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            Gig workers aren't the problem here — the odds are. HCM
+            Hustle exists to shift them: not by changing the platforms,
+            but by giving the worker something they've never had in this
+            equation — visibility into their own pattern, early enough to
+            act on it.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-2 flex items-center gap-3">
+            <Smartphone size={22} style={{ color: d.color }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              HCM Edge — a phone built for the gig, not adapted to it
+            </h2>
+          </div>
+          <p className="mb-6 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            Not a regular phone with a gig app installed on it — a device
+            designed around one job from the ground up, built to put the
+            edge back on the worker's side.
+          </p>
+
+          <div className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
+            <img
+              src="./products/hcm-edge-phone.svg"
+              alt="HCM Edge concept phone for gig workers"
+              className="w-full"
+            />
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {phoneFeatures.map((f) => (
+              <div
+                key={f.title}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6"
+              >
+                <f.icon size={22} style={{ color: d.color }} />
+                <h3 className="mt-4 font-display text-lg font-bold">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {f.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Concept stage — a design direction, not hardware in
+            development yet.
           </p>
         </div>
       </section>
