@@ -1,4 +1,5 @@
-import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan } from "lucide-react";
+import { Clock, PiggyBank, TrendingUp, Gavel, ShieldAlert, FileClock, Watch as WatchIcon, MapPin, Car, Package, SprayCan, Music2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -131,6 +132,28 @@ export default function Hustle() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
+          <Music2 size={22} style={{ color: d.color }} />
+          <h2 className="mt-4 font-display text-xl font-bold sm:text-2xl">
+            The playlist
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            A playlist made by{" "}
+            <Link to="/music" className="underline decoration-dotted underline-offset-4" style={{ color: d.color }}>
+              HCM Music
+            </Link>{" "}
+            specifically for a shift, not a commute — built to hold energy
+            through a long stretch behind the wheel or on your feet,
+            without the jarring drops or lyrics-heavy tracks that pull
+            focus off the road.
+          </p>
+          <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Coming soon — nothing published yet.
+          </p>
         </div>
       </section>
 
