@@ -134,7 +134,7 @@ export default function Education() {
                       <ExternalLink size={16} />
                     </a>
                     <a
-                      href="https://www.paypal.com/paypalme/hcmtech"
+                      href="https://www.paypal.com/donate/?business=hcmuniverse@gmail.com&currency_code=AUD"
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--color-education)]"
@@ -145,9 +145,10 @@ export default function Education() {
                     </a>
                   </div>
                   <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
-                    Lesson content and the PayPal link are placeholders — swap
-                    both in <code>src/pages/Education.jsx</code> once the
-                    lesson is written and the account is live.
+                    Lesson content is still a placeholder — swap it in{" "}
+                    <code>src/pages/Education.jsx</code> once the lesson is
+                    written. Support goes to hcmuniverse@gmail.com via
+                    PayPal.
                   </p>
                 </div>
               </div>
