@@ -85,11 +85,11 @@ export const divisions = [
     key: "property",
     code: "PROP",
     name: "HCM Property",
-    tagline: "It's your next move.",
+    tagline: "It's your home.",
     path: "/property",
     color: "var(--color-property)",
     summary:
-      "A fully online real estate agency — no branch office, no walk-ins, just listings, inspections, and offers handled digitally.",
+      "A roof over your head shouldn't be an investment vehicle. HCM Property is our case for taking speculation out of housing entirely.",
   },
   {
     key: "health",
