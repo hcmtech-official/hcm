@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Mail } from "lucide-react";
 import { divisions } from "../data/divisions";
 import OrbitDiagram from "../components/OrbitDiagram";
 import ChatWidget from "../components/ChatWidget";
@@ -91,6 +91,34 @@ export default function Home() {
             See open roles
             <ArrowRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-12 sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 sm:flex-row sm:items-center sm:p-8">
+          <div>
+            <div
+              className="font-mono text-[11px] uppercase tracking-[0.2em]"
+              style={{ color: "var(--color-core-soft)" }}
+            >
+              Contact us
+            </div>
+            <h2 className="mt-2 font-display text-xl font-bold sm:text-2xl">
+              Questions about any division?
+            </h2>
+            <p className="mt-1 text-sm text-[var(--color-ink-dim)]">
+              Whether it's Tech, Merchandise, or anything else HCM builds —
+              one inbox reaches all of it.
+            </p>
+          </div>
+          <a
+            href="mailto:hcmuniverse@gmail.com"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+            style={{ background: "var(--color-core)", color: "white" }}
+          >
+            <Mail size={16} />
+            hcmuniverse@gmail.com
+          </a>
         </div>
       </section>
 

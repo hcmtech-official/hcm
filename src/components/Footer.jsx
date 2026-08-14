@@ -40,6 +40,12 @@ export default function Footer() {
               One brand, one universe — tech, AI, travel, education, games,
               music and motion pictures, built by the same hands.
             </p>
+            <a
+              href="mailto:hcmuniverse@gmail.com"
+              className="mt-3 inline-block text-sm text-[var(--color-ink-dim)] hover:text-[var(--color-ink)] hover:underline"
+            >
+              hcmuniverse@gmail.com
+            </a>
           </div>
 
           <div>
