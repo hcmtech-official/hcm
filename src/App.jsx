@@ -31,6 +31,8 @@ import Sports from "./pages/Sports";
 import HR from "./pages/HR";
 import Electronics from "./pages/Electronics";
 import Bank from "./pages/Bank";
+import Drones from "./pages/Drones";
+import Green from "./pages/Green";
 import Podcast from "./pages/Podcast";
 import University from "./pages/University";
 import Certification from "./pages/Certification";
@@ -82,6 +84,8 @@ function Shell() {
           <Route path="/hr" element={<HR />} />
           <Route path="/electronics" element={<Electronics />} />
           <Route path="/bank" element={<Bank />} />
+          <Route path="/drones" element={<Drones />} />
+          <Route path="/green" element={<Green />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/university" element={<University />} />
           <Route path="/certification" element={<Certification />} />

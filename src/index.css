@@ -46,6 +46,8 @@
   --color-electronics: #38bdf8; /* HCM Electronics */
   --color-podcast: #e11d48;    /* HCM Podcast */
   --color-bank: #2563eb;       /* HCM Bank */
+  --color-drones: #0284c7;     /* HCM Drones */
+  --color-green: #065f46;      /* HCM Green */
 }
 
 @layer base {

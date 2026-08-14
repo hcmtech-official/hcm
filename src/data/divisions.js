@@ -282,6 +282,26 @@ export const divisions = [
       "A place to deposit your data instead of losing track of it — see what's stored, and choose whether to sell access, on your terms.",
   },
   {
+    key: "drones",
+    code: "DRONE",
+    name: "HCM Drones",
+    tagline: "It's your airspace.",
+    path: "/drones",
+    color: "var(--color-drones)",
+    summary:
+      "What drones can already do, and what a genuinely futuristic one would look like — swarm-native, self-directed, built for a job, not a hobby.",
+  },
+  {
+    key: "green",
+    code: "GREEN",
+    name: "HCM Green",
+    tagline: "It's every planet.",
+    path: "/green",
+    color: "var(--color-green)",
+    summary:
+      "A protection framework for Earth, the Moon, and Mars — built now, before there's a mess to clean up on any of them.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",
