@@ -77,11 +77,15 @@ export default function Media() {
           <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
             HCM Media's coverage of certification and credentialing holds
             to one principle: never sell the effort without being honest
-            about where it leads. It's the same standard{" "}
+            about where it leads — and "leads to a job" is quietly
+            becoming the wrong promise to make anyway. It's the same
+            thinking{" "}
             <Link to="/university" className="underline decoration-dotted underline-offset-4" style={{ color: d.color }}>
               HCM University
             </Link>{" "}
-            is built around.
+            is built around: what a credential should actually guarantee
+            is the chance to create something real, not a role that may
+            not exist by the time you graduate.
           </p>
         </div>
       </section>

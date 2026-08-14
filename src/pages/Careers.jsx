@@ -32,6 +32,29 @@ const offWorld = [
   { city: "Mars Base Alpha", region: "Mars" },
 ];
 
+const openRoles = [
+  {
+    title: "Systems Integrity Lead",
+    location: "Remote",
+    body: "Owns what happens when AI-built systems disagree with each other across divisions — the referee role for a company with 20+ moving parts.",
+  },
+  {
+    title: "Creative Partnerships Lead",
+    location: "Remote",
+    body: "The human relationship layer behind HCM University's launch guarantee — lining up real funding, distribution, and platform partners before a course opens.",
+  },
+  {
+    title: "Off-World Operations Scout",
+    location: "Artemis Base Camp, The Moon",
+    body: "Early-stage groundwork for what an HCM presence on the Moon would actually need — logistics, comms latency, and what 'a division' even means off-planet.",
+  },
+  {
+    title: "Off-World Operations Scout",
+    location: "Mars Base Alpha, Mars",
+    body: "Same brief, further out — laying the groundwork for HCM's eventual presence at Mars Base Alpha, years ahead of anyone actually being there.",
+  },
+];
+
 export default function Careers() {
   return (
     <>
@@ -176,6 +199,32 @@ export default function Careers() {
               <Mail size={16} />
               Apply for this role
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Other roles we've got going
+          </h2>
+          <div className="space-y-4">
+            {openRoles.map((r) => (
+              <div
+                key={r.title + r.location}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="font-display text-lg font-bold">{r.title}</h3>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-core-soft)]">
+                    {r.location}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  {r.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
