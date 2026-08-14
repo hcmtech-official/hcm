@@ -34,6 +34,11 @@ const sports = [
     note: "Red Bull Racing runs close to four billion race-strategy simulations on cloud AI before a single lights-out.",
     img: wm("Formula one.jpg"),
   },
+  {
+    name: "Golf",
+    note: "Phone-camera AI swing coaches now give real-time voice cues between reps — the same feedback loop that used to require a swing-analysis lab.",
+    img: wm("Golfer swing.jpg"),
+  },
 ];
 
 const shifts = [
@@ -61,7 +66,7 @@ export default function Sports() {
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Five of the biggest sports in the world, and the same story behind all of them: AI is already changing how they're played, officiated, and watched."
+        description="Six of the biggest sports in the world, and the same story behind all of them: AI is already changing how they're played, officiated, and watched."
         color={d.color}
       />
 
@@ -70,7 +75,7 @@ export default function Sports() {
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
             The top sports
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {sports.map((s) => (
               <div
                 key={s.name}
