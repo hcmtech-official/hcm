@@ -27,7 +27,7 @@ const sports = [
   {
     name: "Cricket",
     note: "Ball-tracking has decided LBW calls for years — now bat and ball sensors are reading spin, seam, and impact on every delivery.",
-    img: wm("Cricket bat 01.jpg"),
+    img: wm("Barsapara Cricket Stadium match under floodlights.jpg"),
   },
   {
     name: "Formula 1",
