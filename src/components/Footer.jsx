@@ -106,6 +106,9 @@ export default function Footer() {
             <Link to="/university" className="hover:text-[var(--color-ink)] hover:underline">
               University
             </Link>
+            <Link to="/certification" className="hover:text-[var(--color-ink)] hover:underline">
+              Certification
+            </Link>
           </div>
         </div>
       </div>

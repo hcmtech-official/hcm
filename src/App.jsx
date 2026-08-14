@@ -32,6 +32,7 @@ import HR from "./pages/HR";
 import Electronics from "./pages/Electronics";
 import Podcast from "./pages/Podcast";
 import University from "./pages/University";
+import Certification from "./pages/Certification";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
@@ -81,6 +82,7 @@ function Shell() {
           <Route path="/electronics" element={<Electronics />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/university" element={<University />} />
+          <Route path="/certification" element={<Certification />} />
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
