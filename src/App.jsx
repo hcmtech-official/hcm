@@ -30,6 +30,7 @@ import Toys from "./pages/Toys";
 import Sports from "./pages/Sports";
 import HR from "./pages/HR";
 import Electronics from "./pages/Electronics";
+import Bank from "./pages/Bank";
 import Podcast from "./pages/Podcast";
 import University from "./pages/University";
 import Certification from "./pages/Certification";
@@ -80,6 +81,7 @@ function Shell() {
           <Route path="/sports" element={<Sports />} />
           <Route path="/hr" element={<HR />} />
           <Route path="/electronics" element={<Electronics />} />
+          <Route path="/bank" element={<Bank />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/university" element={<University />} />
           <Route path="/certification" element={<Certification />} />

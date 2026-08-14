@@ -45,6 +45,7 @@
   --color-hr: #fdba74;         /* HCM HR */
   --color-electronics: #38bdf8; /* HCM Electronics */
   --color-podcast: #e11d48;    /* HCM Podcast */
+  --color-bank: #2563eb;       /* HCM Bank */
 }
 
 @layer base {

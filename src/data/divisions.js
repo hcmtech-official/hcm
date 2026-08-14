@@ -272,6 +272,16 @@ export const divisions = [
       "Tracking the chips actually running the AI boom — NVIDIA's lineup and the Chinese chipmakers racing to catch up.",
   },
   {
+    key: "bank",
+    code: "BANK",
+    name: "HCM Bank",
+    tagline: "It's your data.",
+    path: "/bank",
+    color: "var(--color-bank)",
+    summary:
+      "A place to deposit your data instead of losing track of it — see what's stored, and choose whether to sell access, on your terms.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",
