@@ -5,30 +5,24 @@ import { divisions } from "../data/divisions";
 
 const d = divisions.find((x) => x.key === "watches");
 
-const wm = (name) =>
-  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(name)}?width=900`;
-
-const inspiration = [
+const designs = [
   {
-    name: "Rolex Submariner",
-    note: "The reference point for a tool watch — everything after it gets compared back to this.",
-    img: wm("Rolex Submariner watch 16613.JPG"),
-    credit: "Wikimedia Commons",
-    creditHref: "https://commons.wikimedia.org/wiki/File:Rolex_Submariner_watch_16613.JPG",
+    name: "HCM Halo",
+    inspired: "Inspired by the classic dive tool-watch — bold bezel, high-contrast markers.",
+    note: "The bezel and ticks stay — but the hands are gone. An open status halo shows what the AI is doing at a glance, and the center mark is HCM's own orbit, not a pair of hands.",
+    img: "./watch-concepts/concept-a-halo.svg",
   },
   {
-    name: "Omega Speedmaster",
-    note: "Proof that a watch can be a genuine instrument and still look this good on a wrist.",
-    img: wm("Omega speedmaster.jpg"),
-    credit: "Wikimedia Commons",
-    creditHref: "https://commons.wikimedia.org/wiki/File:Omega_speedmaster.jpg",
+    name: "HCM Chrono",
+    inspired: "Inspired by the classic chronograph — a serious instrument with sub-dials.",
+    note: "Three sub-dials remain, exactly where a chronograph's would be — but each one is a live glance: a voice waveform, battery, and messages, instead of stopwatch counters.",
+    img: "./watch-concepts/concept-b-chrono.svg",
   },
   {
-    name: "Patek Philippe Nautilus",
-    note: "The case shape we keep coming back to when we sketch what an HCM watch should feel like.",
-    img: wm("Patek-Philippe-Nautilus-5711.jpg"),
-    credit: "Wikimedia Commons",
-    creditHref: "https://commons.wikimedia.org/wiki/File:Patek-Philippe-Nautilus-5711.jpg",
+    name: "HCM Porthole",
+    inspired: "Inspired by the classic integrated-bracelet dress watch — porthole case, horizontal ribbing.",
+    note: "Same octagonal case and ribbed dial texture that made that silhouette iconic — reimagined with the ribbing as a backdrop for a voice waveform instead of hour markers.",
+    img: "./watch-concepts/concept-c-porthole.svg",
   },
 ];
 
@@ -57,43 +51,47 @@ export default function Watches() {
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Swiss watchmaking sets the bar for what a watch should feel like on the wrist. HCM Watches is exploring what an AI-native watch could be — without giving up any of that."
+        description="Swiss watchmaking set the silhouettes that still define what a great watch looks like. HCM Watches takes three of those silhouettes and asks what they'd look like built for an AI, not a mechanical movement."
         color={d.color}
       />
 
       <section className="px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
-            The benchmark
+            Three original concepts
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
-            Before designing anything new, it's worth looking at what
-            already set the standard.
+            Each one borrows the shape and structure of a classic watch
+            archetype, not a specific brand or model — then replaces
+            everything a mechanical movement used to do with something
+            an AI actually needs to show.
           </p>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
-            {inspiration.map((w) => (
+            {designs.map((w) => (
               <div
                 key={w.name}
                 className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]"
               >
-                <img src={w.img} alt={w.name} loading="lazy" className="h-52 w-full object-cover" />
+                <img src={w.img} alt={w.name} loading="lazy" className="aspect-square w-full object-cover" style={{ background: "#101319" }} />
                 <div className="p-5">
                   <h3 className="font-display text-lg font-bold">{w.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                  <p
+                    className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em]"
+                    style={{ color: d.color }}
+                  >
+                    {w.inspired}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-dim)]">
                     {w.note}
                   </p>
-                  <a
-                    href={w.creditHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3 block font-mono text-[10px] text-[var(--color-ink-dim)] hover:underline"
-                  >
-                    Photo: {w.credit}, CC BY-SA
-                  </a>
                 </div>
               </div>
             ))}
           </div>
+          <p className="mt-6 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Original concept designs — not photos of, or renders based on,
+            any real watch brand or model.
+          </p>
         </div>
       </section>
 
@@ -120,9 +118,7 @@ export default function Watches() {
             ))}
           </div>
           <p className="mt-6 font-mono text-[11px] text-[var(--color-ink-dim)]">
-            Concept stage — no product exists yet. The photos above are
-            references for the design language, not renders of an HCM
-            product.
+            Concept stage — no product exists yet.
           </p>
         </div>
       </section>
