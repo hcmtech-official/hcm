@@ -1,4 +1,4 @@
-import { Sparkles, GitBranch, Mail, Globe2, Clock } from "lucide-react";
+import { Sparkles, GitBranch, Mail, Globe2, Clock, Rocket } from "lucide-react";
 import WorldMap from "../components/WorldMap";
 
 const CAREERS_EMAIL = "careers@hcmtech-official.com";
@@ -25,6 +25,11 @@ const locations = [
   { city: "Mumbai", region: "India" },
   { city: "New York", region: "United States" },
   { city: "London", region: "United Kingdom" },
+];
+
+const offWorld = [
+  { city: "Artemis Base Camp", region: "The Moon, lunar south pole" },
+  { city: "Mars Base Alpha", region: "Mars" },
 ];
 
 export default function Careers() {
@@ -94,6 +99,30 @@ export default function Careers() {
               </div>
             ))}
           </div>
+
+          <div className="mt-8 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            <Rocket size={14} style={{ color: "var(--color-core-soft)" }} />
+            Off-world — future
+          </div>
+          <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {offWorld.map((l) => (
+              <div
+                key={l.city}
+                className="rounded-xl border border-dashed border-[var(--color-line)] bg-transparent px-4 py-3"
+              >
+                <div className="font-display text-sm font-bold">{l.city}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                  {l.region}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Not real HCM locations yet — named for where humanity's own
+            off-world bases are actually planned (SpaceX's Mars Base Alpha,
+            NASA's Artemis Base Camp), marking where "where HCM exists"
+            goes next, eventually.
+          </p>
         </div>
       </section>
 
