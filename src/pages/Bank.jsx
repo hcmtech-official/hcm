@@ -1,4 +1,4 @@
-import { Vault, Eye, Tag, ShieldCheck, AlertTriangle, KeyRound } from "lucide-react";
+import { Vault, Eye, Tag, ShieldCheck, AlertTriangle, KeyRound, Hash, Quote } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -53,6 +53,60 @@ export default function Bank() {
             who's touched it, or where it went. HCM Bank starts from a
             simple idea — data should have the same custody and consent
             expectations money does.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
+          <Quote size={22} style={{ color: d.color }} />
+          <h2 className="mt-4 font-display text-xl font-bold sm:text-2xl">
+            Where this comes from
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            Picture an ordinary doctor's appointment. Partway through, the
+            practitioner asks, almost in passing: "Do you mind if I use an
+            AI tool to transcribe this?" — followed by, "Your data will be
+            stored in Australia, that's fine, right?" There's no real
+            pause to think it over. The professional is already reaching
+            for the recorder, the appointment is moving on, and you're
+            already in a vulnerable position just by being the patient in
+            the room. Technically, consent was given. But nobody was
+            actually handed a real choice — what data, stored where,
+            controlled by whom — only a few seconds to agree while
+            something else was already in motion.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            That's the exact situation HCM Bank is built to prevent. The
+            practitioner shouldn't be the one asking a rushed yes-or-no
+            question mid-appointment. The AI service should have to come
+            to the patient first — request access against their own
+            personal ID, the way a transaction requests authorization from
+            a wallet address — and the patient should see exactly what
+            would be collected and where it would go before anything is
+            recorded, not while it's already happening.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-2 flex items-center gap-3">
+            <Hash size={22} style={{ color: d.color }} />
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+              The token model
+            </h2>
+          </div>
+          <p className="max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            Every HCM Bank account gets its own personal ID — a hash,
+            similar in spirit to a cryptocurrency wallet address. It
+            doesn't reveal anything on its own. It's simply what any
+            outside service — a clinic's transcription tool, an app, a
+            company — has to present a request against before it can
+            collect or store anything. The request itself shows exactly
+            what's being asked for and why, in advance, so the decision
+            happens before data collection starts — not as a rushed
+            verbal yes squeezed into the middle of it.
           </p>
         </div>
       </section>
