@@ -40,6 +40,21 @@ const sports = [
     img: wm("Golfer swing.jpg"),
   },
   {
+    name: "NRL",
+    note: "Rugby league clubs now run GPS and heart-rate tracking every session — load management data that decides who's actually fit to play, not just who says they are.",
+    img: wm("Rugby League Formation and Positions.jpg"),
+  },
+  {
+    name: "AFL",
+    note: "Player-tracking data across an 18-a-side, full-ground game generates some of the densest data sets in sport — used to model fatigue and rotation in real time.",
+    img: wm("Australian Rules football umpire goal.JPG"),
+  },
+  {
+    name: "Soccer",
+    note: "Semi-automated offside technology is already deciding World Cup goals — limb-tracking at up to 50 times a second, faster than any linesman's flag.",
+    img: wm("SoFi Stadium soccer game.jpg"),
+  },
+  {
     name: "UFC",
     note: "Wearable and biometric data now shapes fight camps directly — load management and recovery tracking built to catch overtraining before it becomes an injury.",
     img: wm("PLMMA Cage-Octagon MMA.JPG"),
@@ -85,7 +100,7 @@ export default function Sports() {
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
             The top sports
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {sports.map((s) => (
               <div
                 key={s.name}
