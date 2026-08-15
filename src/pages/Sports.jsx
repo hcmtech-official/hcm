@@ -42,12 +42,12 @@ const sports = [
   {
     name: "NRL",
     note: "Rugby league clubs now run GPS and heart-rate tracking every session — load management data that decides who's actually fit to play, not just who says they are.",
-    img: wm("Rugby League Formation and Positions.jpg"),
+    img: wm("Harry Grant (rugby league).jpg"),
   },
   {
     name: "AFL",
     note: "Player-tracking data across an 18-a-side, full-ground game generates some of the densest data sets in sport — used to model fatigue and rotation in real time.",
-    img: wm("Australian Rules football umpire goal.JPG"),
+    img: wm("Alex Rance and Lance Franklin marking contest.jpg"),
   },
   {
     name: "Soccer",
