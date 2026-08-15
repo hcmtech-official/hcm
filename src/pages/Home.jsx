@@ -10,7 +10,7 @@ export default function Home() {
       <section className="px-5 pb-16 pt-16 text-center sm:px-8 sm:pt-24">
         <div className="mx-auto max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-ink-dim)]">
-            One brand, one universe
+            One brand. Many worlds. One universe.
           </p>
           <h1 className="mt-4 font-display text-balance text-5xl font-bold leading-[1.02] sm:text-7xl">
             HCM
