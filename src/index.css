@@ -48,6 +48,9 @@
   --color-bank: #2563eb;       /* HCM Bank */
   --color-drones: #0284c7;     /* HCM Drones */
   --color-green: #065f46;      /* HCM Green */
+  --color-moon: #94a3b8;       /* off-world map: Moon */
+  --color-mars: #dc2626;       /* off-world map: Mars */
+  --color-titan: #d97706;      /* off-world map: Titan */
 }
 
 @layer base {

@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Sparkles, GitBranch, Mail, Globe2, Clock, Rocket } from "lucide-react";
 import WorldMap from "../components/WorldMap";
+import PlanetDotMap from "../components/PlanetDotMap";
 
 const CAREERS_EMAIL = "careers@hcmtech-official.com";
 
@@ -48,6 +50,13 @@ const offWorld = [
   },
 ];
 
+const planets = [
+  { key: "earth", label: "Earth", color: "var(--color-core)" },
+  { key: "moon", label: "Moon", color: "var(--color-moon)" },
+  { key: "mars", label: "Mars", color: "var(--color-mars)" },
+  { key: "titan", label: "Titan", color: "var(--color-titan)" },
+];
+
 const openRoles = [
   {
     title: "Systems Integrity Lead",
@@ -77,6 +86,9 @@ const openRoles = [
 ];
 
 export default function Careers() {
+  const [planet, setPlanet] = useState("earth");
+  const active = planets.find((p) => p.key === planet);
+
   return (
     <>
       <section className="border-b border-[var(--color-line)] px-5 py-20 sm:px-8 sm:py-28">
@@ -126,23 +138,77 @@ export default function Careers() {
           </div>
           <p className="mb-6 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
             No head office — HCM is built to work across time zones from
-            day one. Six cities where the AI-first team currently connects
-            from:
+            day one, on this world and, eventually, on the others too.
           </p>
-          <WorldMap />
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {locations.map((l) => (
-              <div
-                key={l.city}
-                className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3"
+
+          <div className="mb-6 flex flex-wrap gap-2">
+            {planets.map((p) => (
+              <button
+                key={p.key}
+                onClick={() => setPlanet(p.key)}
+                className="rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.15em] transition-colors"
+                style={
+                  planet === p.key
+                    ? { borderColor: p.color, color: p.color, background: `color-mix(in srgb, ${p.color} 12%, transparent)` }
+                    : { borderColor: "var(--color-line)", color: "var(--color-ink-dim)" }
+                }
               >
-                <div className="font-display text-sm font-bold">{l.city}</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                  {l.region}
-                </div>
-              </div>
+                {p.label}
+              </button>
             ))}
           </div>
+
+          {planet === "earth" && (
+            <>
+              <WorldMap />
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                {locations.map((l) => (
+                  <div
+                    key={l.city}
+                    className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3"
+                  >
+                    <div className="font-display text-sm font-bold">{l.city}</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                      {l.region}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {planet === "moon" && (
+            <PlanetDotMap
+              image="https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=1400"
+              color={active.color}
+              x={50}
+              y={86}
+              label="Artemis Base Camp"
+              region="Lunar south pole"
+            />
+          )}
+
+          {planet === "mars" && (
+            <PlanetDotMap
+              image="https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS%20Mars%20true%20color.jpg?width=1400"
+              color={active.color}
+              x={50}
+              y={50}
+              label="Mars Base Alpha"
+              region="Site not yet confirmed"
+            />
+          )}
+
+          {planet === "titan" && (
+            <PlanetDotMap
+              image="https://commons.wikimedia.org/wiki/Special:FilePath/Df-aerial.jpg?width=1400"
+              color={active.color}
+              x={50}
+              y={55}
+              label="Selk Crater"
+              region="Dragonfly landing site, 2034"
+            />
+          )}
 
           <div className="mt-8 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
             <Rocket size={14} style={{ color: "var(--color-core-soft)" }} />
