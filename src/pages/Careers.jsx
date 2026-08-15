@@ -85,6 +85,39 @@ const openRoles = [
   },
 ];
 
+const futureRoles = [
+  {
+    tag: "Open now · Remote, Earth",
+    title: "AI Judgment Steward",
+    subtitle: "A real role, defined 20 years ahead of where most companies are thinking — because that's how far ahead HCM builds.",
+    body: [
+      "By 2046, AI runs almost everything at HCM end to end — sourcing, building, shipping, support. What it still can't do on its own is decide what to do when the right answer genuinely depends on judgment: two reasonable outcomes, real consequences, and no clean rule to fall back on. That's this job.",
+      "You'd review the hardest calls surfaced across every division — not to override AI by default, but to catch what it missed, add context it didn't have, and feed that judgment back in so the system gets better at recognizing similar situations on its own next time.",
+      "No formal path exists into this role yet — the job itself is still being defined by whoever ends up doing it first.",
+    ],
+  },
+  {
+    tag: "Open now · Mars Base Alpha",
+    title: "Life Support Continuity Steward",
+    subtitle: "The job that exists because getting it wrong means people don't get air or water.",
+    body: [
+      "At Mars Base Alpha, life support — oxygen, water recycling, pressure, temperature — runs on automated systems making constant micro-adjustments no person could track by hand. This role holds final authority over those systems for the moments the automated call and the safe call might not be the same thing.",
+      "Not a technician swapping parts — someone reviewing every system-flagged anomaly, deciding when to trust the automation and when to override it, then feeding every real edge case back in so it's caught automatically next time.",
+      "No formal path into this yet — Mars Base Alpha hasn't been built. It's on this page because that thinking has to start before someone's already living there depending on it, not after.",
+    ],
+  },
+  {
+    tag: "Open now · Earth-based, Titan operations",
+    title: "Deep-Time Mission Steward",
+    subtitle: "Titan is roughly 70 light-minutes from Earth — too far for a joystick.",
+    body: [
+      "With a one-way signal delay over an hour, nothing on Titan can be controlled in real time. Missions like Dragonfly (landing 2034) run on pre-set autonomous judgment for days between check-ins. This role defines the boundaries of that judgment in advance — what the craft decides on its own, what it holds for a human — then refines it, transmission by transmission, against what actually comes back.",
+      "Closer to writing the rules a capable but isolated colleague has to live by, than operating anything directly.",
+      "No formal path yet — defined here ahead of the mission actually needing it filled.",
+    ],
+  },
+];
+
 export default function Careers() {
   const [planet, setPlanet] = useState("earth");
   const active = planets.find((p) => p.key === planet);
@@ -179,10 +212,10 @@ export default function Careers() {
 
           {planet === "moon" && (
             <PlanetDotMap
-              image="https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=1400"
+              image="https://commons.wikimedia.org/wiki/Special:FilePath/Lunar%20south%20pole.jpg?width=1400"
               color={active.color}
               x={50}
-              y={86}
+              y={50}
               label="Artemis Base Camp"
               region="Lunar south pole"
             />
@@ -190,7 +223,7 @@ export default function Careers() {
 
           {planet === "mars" && (
             <PlanetDotMap
-              image="https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS%20Mars%20true%20color.jpg?width=1400"
+              image="https://commons.wikimedia.org/wiki/Special:FilePath/Fretted%20Terrain%20on%20Mars%20(45787397151).jpg?width=1400"
               color={active.color}
               x={50}
               y={50}
@@ -201,10 +234,10 @@ export default function Careers() {
 
           {planet === "titan" && (
             <PlanetDotMap
-              image="https://commons.wikimedia.org/wiki/Special:FilePath/Df-aerial.jpg?width=1400"
+              image="https://commons.wikimedia.org/wiki/Special:FilePath/Huygens%20surface%20and%20sky%20of%20Titan.jpg?width=1400"
               color={active.color}
               x={50}
-              y={55}
+              y={62}
               label="Selk Crater"
               region="Dragonfly landing site, 2034"
             />
@@ -243,55 +276,42 @@ export default function Careers() {
       </section>
 
       <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           <div className="mb-6 flex items-center gap-3">
             <Clock size={22} style={{ color: "var(--color-core-soft)" }} />
             <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
-              A role, 20 years from now
+              Job openings, on three worlds
             </h2>
           </div>
-          <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10">
-            <div
-              className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
-              style={{ borderColor: "var(--color-core)", color: "var(--color-core-soft)" }}
-            >
-              Open now · Remote
-            </div>
-            <h3 className="mt-4 font-display text-2xl font-bold">
-              AI Judgment Steward
-            </h3>
-            <p className="mt-2 text-sm text-[var(--color-ink-dim)]">
-              A real role, defined 20 years ahead of where most companies
-              are thinking — because that's how far ahead HCM builds.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
-              By 2046, AI runs almost everything at HCM end to end — sourcing,
-              building, shipping, support. What it still can't do on its own
-              is decide what to do when the right answer genuinely depends on
-              judgment: two reasonable outcomes, real consequences, and no
-              clean rule to fall back on. That's this job.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
-              You'd review the hardest calls surfaced across every division —
-              not to override AI by default, but to catch what it missed, add
-              context it didn't have, and feed that judgment back in so the
-              system gets better at recognizing similar situations on its
-              own next time. Less "approve or reject a queue," more defining
-              what good judgment actually looks like, case by case, for a
-              company that changes what it builds every few months.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
-              No formal path exists into this role yet — the job itself is
-              still being defined by whoever ends up doing it first.
-            </p>
-            <a
-              href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent("AI Judgment Steward — expression of interest")}`}
-              className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
-              style={{ background: "var(--color-core)", color: "white" }}
-            >
-              <Mail size={16} />
-              Apply for this role
-            </a>
+          <div className="space-y-6">
+            {futureRoles.map((r) => (
+              <div
+                key={r.title}
+                className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10"
+              >
+                <div
+                  className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+                  style={{ borderColor: "var(--color-core)", color: "var(--color-core-soft)" }}
+                >
+                  {r.tag}
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-bold">{r.title}</h3>
+                <p className="mt-2 text-sm text-[var(--color-ink-dim)]">{r.subtitle}</p>
+                {r.body.map((p, i) => (
+                  <p key={i} className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                    {p}
+                  </p>
+                ))}
+                <a
+                  href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(`${r.title} — expression of interest`)}`}
+                  className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+                  style={{ background: "var(--color-core)", color: "white" }}
+                >
+                  <Mail size={16} />
+                  Apply for this role
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 export default function PlanetDotMap({ image, color, x, y, label, region }) {
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
+    <div className="relative aspect-[940/477] w-full overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
       <div
         className="absolute inset-0"
         style={{
@@ -12,13 +12,14 @@ export default function PlanetDotMap({ image, color, x, y, label, region }) {
         alt={label}
         className="absolute inset-0 h-full w-full object-cover"
         style={{
-          filter: "brightness(0.5) contrast(1.15) saturate(1.1)",
+          filter: "grayscale(0.6) brightness(0.4) contrast(1.35)",
+          mixBlendMode: "screen",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(160deg, color-mix(in srgb, ${color} 22%, transparent), transparent 60%)`,
+          background: `linear-gradient(160deg, color-mix(in srgb, ${color} 26%, transparent), transparent 60%)`,
           mixBlendMode: "overlay",
         }}
       />
