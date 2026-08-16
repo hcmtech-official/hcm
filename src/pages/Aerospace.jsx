@@ -48,13 +48,13 @@ export default function Aerospace() {
         <div className="mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
             <img
-              src="./aerospace/hcm-airways-flight.svg"
-              alt="HCM Airways autonomous ULR concept aircraft"
+              src="./aerospace/hcm-airways-purple.jpeg"
+              alt="HCM Airways autonomous ULR concept aircraft in HCM livery"
               className="w-full"
             />
           </div>
           <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
-            Original concept design, inspired by the latest ultra-long-range
+            Concept livery design, inspired by the latest ultra-long-range
             widebody airframes — not a real Airbus or any other
             manufacturer's aircraft.
           </p>
