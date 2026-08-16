@@ -322,6 +322,16 @@ export const divisions = [
       "A fully AI-run theme park — zero human staff, robot hosts, and zones built to let you live inside different worlds of AI for a day.",
   },
   {
+    key: "posters",
+    code: "POST",
+    name: "HCM Posters",
+    tagline: "It's your wall.",
+    path: "/posters",
+    color: "var(--color-posters)",
+    summary:
+      "A gallery of HCM's posters and logos across every division — the brand, laid out.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",
