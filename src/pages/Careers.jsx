@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Sparkles, GitBranch, Mail, Globe2, Clock, Rocket } from "lucide-react";
-import WorldMap from "../components/WorldMap";
 import StaticPlanet from "../components/StaticPlanet";
 
 const CAREERS_EMAIL = "careers@hcmtech-official.com";
@@ -217,9 +216,21 @@ export default function Careers() {
 
           {planet === "earth" && (
             <>
-              <WorldMap />
+              <StaticPlanet
+                image={active.image}
+                color={active.hex}
+                markers={[
+                  { x: 68, y: 78, label: "Sydney" },
+                  { x: 58, y: 56, label: "Singapore" },
+                  { x: 66, y: 34, label: "Tokyo" },
+                  { x: 50, y: 50, label: "Mumbai" },
+                  { x: 25, y: 40, label: "New York" },
+                  { x: 40, y: 24, label: "London" },
+                ]}
+              />
               <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
-                Real Blue Marble Earth imagery.
+                Real photograph of Earth — the Blue Marble, taken from
+                Apollo 17.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
                 {locations.map((l) => (
@@ -239,7 +250,11 @@ export default function Careers() {
 
           {planet === "moon" && (
             <>
-              <StaticPlanet image={active.image} color={active.hex} x={50} y={88} label="Artemis Base Camp" />
+              <StaticPlanet
+                image={active.image}
+                color={active.hex}
+                markers={[{ x: 50, y: 88, label: "Artemis Base Camp" }]}
+              />
               <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
                 Real photograph of the Moon.
               </p>
@@ -254,7 +269,11 @@ export default function Careers() {
 
           {planet === "mars" && (
             <>
-              <StaticPlanet image={active.image} color={active.hex} x={50} y={50} label="Mars Base Alpha" />
+              <StaticPlanet
+                image={active.image}
+                color={active.hex}
+                markers={[{ x: 50, y: 50, label: "Mars Base Alpha" }]}
+              />
               <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
                 Real photograph of Mars.
               </p>
@@ -269,7 +288,11 @@ export default function Careers() {
 
           {planet === "titan" && (
             <>
-              <StaticPlanet image={active.image} color={active.hex} x={50} y={45} label="Kraken Station" />
+              <StaticPlanet
+                image={active.image}
+                color={active.hex}
+                markers={[{ x: 50, y: 45, label: "Kraken Station" }]}
+              />
               <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
                 Real Cassini photograph of Titan — its surface is
                 permanently hidden under haze, so this hazy amber disc is

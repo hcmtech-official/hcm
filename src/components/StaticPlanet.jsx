@@ -1,4 +1,4 @@
-export default function StaticPlanet({ image, color, x, y, label }) {
+export default function StaticPlanet({ image, color, markers = [] }) {
   return (
     <div className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
       <div
@@ -9,12 +9,16 @@ export default function StaticPlanet({ image, color, x, y, label }) {
       />
       <img
         src={image}
-        alt={label}
+        alt="Planet"
         className="absolute inset-0 h-full w-full object-contain p-4"
         loading="lazy"
       />
-      {x != null && y != null && (
-        <div className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${x}%`, top: `${y}%` }}>
+      {markers.map((m) => (
+        <div
+          key={m.label}
+          className="absolute -translate-x-1/2 -translate-y-1/2"
+          style={{ left: `${m.x}%`, top: `${m.y}%` }}
+        >
           <span
             className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
             style={{ background: color, animation: "map-pulse 2.2s ease-out infinite" }}
@@ -23,15 +27,15 @@ export default function StaticPlanet({ image, color, x, y, label }) {
             className="relative block h-2.5 w-2.5 rounded-full"
             style={{ background: color, boxShadow: `0 0 10px 2px ${color}` }}
           />
-          {label && (
+          {m.label && (
             <div className="absolute left-1/2 top-4 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/70 px-2 py-1">
               <span className="font-mono text-[10px] font-medium uppercase tracking-[0.08em] text-white">
-                {label}
+                {m.label}
               </span>
             </div>
           )}
         </div>
-      )}
+      ))}
     </div>
   );
 }
