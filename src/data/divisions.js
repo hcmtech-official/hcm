@@ -332,6 +332,16 @@ export const divisions = [
       "A gallery of HCM's posters and logos across every division — the brand, laid out.",
   },
   {
+    key: "print",
+    code: "PRINT",
+    name: "HCM Print",
+    tagline: "It's your build.",
+    path: "/print",
+    color: "var(--color-print)",
+    summary:
+      "3D printing, tracked properly — multi-material, metal, and construction-scale printing, and where it's actually headed.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",
