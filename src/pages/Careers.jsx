@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Sparkles, GitBranch, Mail, Globe2, Clock, Rocket } from "lucide-react";
-import Globe from "../components/Globe";
+import WorldMap from "../components/WorldMap";
+import StaticPlanet from "../components/StaticPlanet";
 
 const CAREERS_EMAIL = "careers@hcmtech-official.com";
 
@@ -55,28 +56,28 @@ const planets = [
     label: "Earth",
     color: "var(--color-core)",
     hex: "#5B57FF",
-    texture: "https://commons.wikimedia.org/wiki/Special:FilePath/Blue%20Marble%202002.png?width=2048",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Earth%20seen%20from%20Apollo%2017.jpg?width=1200",
   },
   {
     key: "moon",
     label: "Moon",
     color: "var(--color-moon)",
     hex: "#94a3b8",
-    texture: "https://commons.wikimedia.org/wiki/Special:FilePath/Solarsystemscope%20texture%202k%20moon.jpg?width=2048",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=1200",
   },
   {
     key: "mars",
     label: "Mars",
     color: "var(--color-mars)",
     hex: "#dc2626",
-    texture: "https://commons.wikimedia.org/wiki/Special:FilePath/Solarsystemscope%20texture%202k%20mars.jpg?width=2048",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS%20Mars%20true%20color.jpg?width=1200",
   },
   {
     key: "titan",
     label: "Titan",
     color: "var(--color-titan)",
     hex: "#d97706",
-    proceduralTexture: "titan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Titan%20in%20true%20color.jpg?width=1200",
   },
 ];
 
@@ -214,68 +215,73 @@ export default function Careers() {
             ))}
           </div>
 
-          <Globe
-            key={planet}
-            textureUrl={active.texture}
-            proceduralTexture={active.proceduralTexture}
-            color={active.hex}
-            markers={
-              planet === "earth"
-                ? locations
-                : planet === "moon"
-                ? [{ lat: -89.5, lon: 0, label: "Artemis Base Camp" }]
-                : planet === "mars"
-                ? [{ lat: 5, lon: -30, label: "Mars Base Alpha" }]
-                : [{ lat: 7, lon: 161, label: "Selk Crater" }]
-            }
-          />
-          <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
-            Drag to rotate.{" "}
-            {planet === "earth" && "Real Blue Marble Earth imagery."}
-            {planet === "moon" && "Real NASA lunar surface data."}
-            {planet === "mars" && "Real NASA Mars surface data."}
-            {planet === "titan" &&
-              "Titan's surface is permanently hidden under haze — this shows how it actually looks from outside, based on real Cassini imagery: a hazy amber globe with soft atmospheric banding, not a fabricated surface."}
-          </p>
-
           {planet === "earth" && (
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-              {locations.map((l) => (
-                <div
-                  key={l.city}
-                  className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3"
-                >
-                  <div className="font-display text-sm font-bold">{l.city}</div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                    {l.region}
+            <>
+              <WorldMap />
+              <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+                Real Blue Marble Earth imagery.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                {locations.map((l) => (
+                  <div
+                    key={l.city}
+                    className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3"
+                  >
+                    <div className="font-display text-sm font-bold">{l.city}</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                      {l.region}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </>
           )}
+
           {planet === "moon" && (
-            <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
-              <div className="font-display text-sm font-bold">Artemis Base Camp</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                Lunar south pole
+            <>
+              <StaticPlanet image={active.image} color={active.hex} x={50} y={88} label="Artemis Base Camp" />
+              <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+                Real photograph of the Moon.
+              </p>
+              <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
+                <div className="font-display text-sm font-bold">Artemis Base Camp</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                  Lunar south pole
+                </div>
               </div>
-            </div>
+            </>
           )}
+
           {planet === "mars" && (
-            <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
-              <div className="font-display text-sm font-bold">Mars Base Alpha</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                Site not yet confirmed
+            <>
+              <StaticPlanet image={active.image} color={active.hex} x={50} y={50} label="Mars Base Alpha" />
+              <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+                Real photograph of Mars.
+              </p>
+              <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
+                <div className="font-display text-sm font-bold">Mars Base Alpha</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                  Site not yet confirmed
+                </div>
               </div>
-            </div>
+            </>
           )}
+
           {planet === "titan" && (
-            <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
-              <div className="font-display text-sm font-bold">Selk Crater</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                Dragonfly landing site, 2034
+            <>
+              <StaticPlanet image={active.image} color={active.hex} x={50} y={45} label="Selk Crater" />
+              <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
+                Real Cassini photograph of Titan — its surface is
+                permanently hidden under haze, so this hazy amber disc is
+                genuinely how it looks from outside, not a stand-in.
+              </p>
+              <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
+                <div className="font-display text-sm font-bold">Selk Crater</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
+                  Dragonfly landing site, 2034
+                </div>
               </div>
-            </div>
+            </>
           )}
 
           <div className="mt-8 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
