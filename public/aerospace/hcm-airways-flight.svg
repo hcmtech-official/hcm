@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B3D91"/>
+      <stop offset="35%" stop-color="#1E6FD9"/>
+      <stop offset="70%" stop-color="#6FB3F2"/>
+      <stop offset="100%" stop-color="#CFE6FA"/>
+    </linearGradient>
+
+    <linearGradient id="fuselage" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#F1F3F6"/>
+      <stop offset="60%" stop-color="#CDD3DC"/>
+      <stop offset="100%" stop-color="#9AA2B0"/>
+    </linearGradient>
+
+    <linearGradient id="fuselageShine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="wing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E7EAEE"/>
+      <stop offset="100%" stop-color="#A7AFBC"/>
+    </linearGradient>
+
+    <radialGradient id="engineFace" cx="42%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#9C99FF"/>
+      <stop offset="35%" stop-color="#2A2D5A"/>
+      <stop offset="75%" stop-color="#0B0D12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="engineBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFBFC"/>
+      <stop offset="50%" stop-color="#D2D7DE"/>
+      <stop offset="100%" stop-color="#9AA2B0"/>
+    </linearGradient>
+
+    <linearGradient id="stripeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4038D6"/>
+      <stop offset="50%" stop-color="#8B88FF"/>
+      <stop offset="100%" stop-color="#4038D6"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="78%" cy="12%" r="35%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1800" height="1050" fill="url(#sky)"/>
+  <rect width="1800" height="1050" fill="url(#sunGlow)"/>
+
+  <!-- distant cloud layer -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="150" cy="900" rx="220" ry="55"/>
+    <ellipse cx="420" cy="950" rx="280" ry="65"/>
+    <ellipse cx="760" cy="920" rx="250" ry="55"/>
+    <ellipse cx="1100" cy="970" rx="300" ry="70"/>
+    <ellipse cx="1460" cy="930" rx="260" ry="58"/>
+    <ellipse cx="1720" cy="890" rx="200" ry="50"/>
+  </g>
+  <g fill="#FFFFFF" opacity="0.75">
+    <ellipse cx="280" cy="1000" rx="320" ry="60"/>
+    <ellipse cx="700" cy="1020" rx="360" ry="65"/>
+    <ellipse cx="1150" cy="1010" rx="340" ry="62"/>
+    <ellipse cx="1600" cy="1000" rx="280" ry="55"/>
+  </g>
+
+  <!-- aircraft group, banked slightly for a dynamic in-flight feel -->
+  <g transform="translate(900,470) rotate(-7) translate(-900,-470)">
+
+    <!-- vertical tail fin -->
+    <path d="M 1470 500 L 1560 300 L 1610 308 L 1560 510 Z" fill="url(#wing)" stroke="#7A8290" stroke-width="2"/>
+    <path d="M 1560 300 L 1610 308 L 1590 380 L 1548 376 Z" fill="url(#stripeGrad)"/>
+    <g transform="translate(1578,340) scale(0.34)">
+      <g stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="10" stroke-linecap="round">
+        <line x1="0" y1="0" x2="0" y2="-42"/>
+        <line x1="0" y1="0" x2="36" y2="21"/>
+        <line x1="0" y1="0" x2="-36" y2="21"/>
+      </g>
+      <circle cx="0" cy="-42" r="10" fill="#FFFFFF"/>
+      <circle cx="36" cy="21" r="10" fill="#FFFFFF"/>
+      <circle cx="-36" cy="21" r="10" fill="#FFFFFF"/>
+      <circle cx="0" cy="0" r="16" fill="#FFFFFF"/>
+    </g>
+
+    <!-- horizontal stabilizer -->
+    <path d="M 1500 510 L 1640 470 L 1660 488 L 1540 535 Z" fill="url(#wing)" stroke="#7A8290" stroke-width="2"/>
+
+    <!-- main fuselage -->
+    <path d="M 160 510
+             Q 170 460 260 452
+             L 1420 440
+             Q 1500 442 1530 480
+             Q 1500 510 1420 512
+             L 260 520
+             Q 175 516 160 510 Z"
+          fill="url(#fuselage)" stroke="#7A8290" stroke-width="2"/>
+    <path d="M 160 510 Q 110 502 90 492 Q 108 480 160 452 Z" fill="url(#fuselage)" stroke="#7A8290" stroke-width="2"/>
+
+    <!-- top shine -->
+    <path d="M 220 458 Q 700 445 1400 445 Q 1440 446 1460 455 L 1460 464 Q 900 454 220 468 Z" fill="url(#fuselageShine)" opacity="0.7"/>
+
+    <!-- cockpit -->
+    <path d="M 150 480 L 190 474 L 192 492 L 152 496 Z" fill="#0B0D12" opacity="0.85"/>
+
+    <!-- cabin windows -->
+    <rect x="230" y="472" width="1150" height="7" rx="3" fill="#0B0D12" opacity="0.5"/>
+
+    <!-- livery stripe -->
+    <path d="M 210 492 L 1440 482 L 1440 496 L 210 506 Z" fill="url(#stripeGrad)"/>
+
+    <!-- titles -->
+    <text x="640" y="466" font-family="Bricolage Grotesque" font-weight="800" font-size="24" letter-spacing="5" fill="#14151f">HCM AIRWAYS</text>
+
+    <!-- wing -->
+    <path d="M 780 510 L 660 660 L 740 672 L 900 520 Z" fill="url(#wing)" stroke="#7A8290" stroke-width="2"/>
+    <path d="M 660 660 L 640 628 L 668 632 L 686 662 Z" fill="url(#wing)" stroke="#7A8290" stroke-width="2"/>
+    <path d="M 900 520 L 960 508 L 960 520 L 900 530 Z" fill="url(#wing)" opacity="0.9"/>
+
+    <!-- engine pylon + nacelle -->
+    <rect x="735" y="600" width="16" height="46" fill="#A7AFBC"/>
+    <ellipse cx="700" cy="652" rx="120" ry="66" fill="url(#engineBody)" stroke="#7A8290" stroke-width="2"/>
+    <ellipse cx="602" cy="652" rx="46" ry="64" fill="url(#engineFace)"/>
+    <ellipse cx="602" cy="652" rx="46" ry="64" fill="none" stroke="#B3B1FF" stroke-width="2" opacity="0.75"/>
+    <g stroke="#4A4D6A" stroke-width="2" opacity="0.8">
+      <line x1="602" y1="596" x2="602" y2="708"/>
+      <line x1="562" y1="620" x2="642" y2="684"/>
+      <line x1="562" y1="684" x2="642" y2="620"/>
+    </g>
+    <circle cx="602" cy="652" r="10" fill="#EEF0F4"/>
+    <path d="M 660 606 Q 720 600 800 618" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.6" stroke-linecap="round"/>
+  </g>
+</svg>

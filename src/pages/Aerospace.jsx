@@ -48,7 +48,7 @@ export default function Aerospace() {
         <div className="mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
             <img
-              src="./aerospace/hcm-airways-concept.svg"
+              src="./aerospace/hcm-airways-flight.svg"
               alt="HCM Airways autonomous ULR concept aircraft"
               className="w-full"
             />
