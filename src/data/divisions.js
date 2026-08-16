@@ -302,6 +302,16 @@ export const divisions = [
       "A protection framework for Earth, the Moon, and Mars — built now, before there's a mess to clean up on any of them.",
   },
   {
+    key: "aerospace",
+    code: "AERO",
+    name: "HCM Aerospace",
+    tagline: "It's your journey.",
+    path: "/aerospace",
+    color: "var(--color-aerospace)",
+    summary:
+      "HCM Airways — a fully autonomous ULR concept airline. No pilot, no cabin crew, no human anywhere in the journey.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

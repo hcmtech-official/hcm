@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#1a1f3a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#08090d" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="fuselage" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F7FA"/>
+      <stop offset="38%" stop-color="#E4E8EE"/>
+      <stop offset="55%" stop-color="#B9C0CC"/>
+      <stop offset="100%" stop-color="#7C8494"/>
+    </linearGradient>
+
+    <linearGradient id="fuselageShine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="wing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D7DCE3"/>
+      <stop offset="100%" stop-color="#8B93A3"/>
+    </linearGradient>
+
+    <radialGradient id="engineFace" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#8B88FF"/>
+      <stop offset="35%" stop-color="#2A2D5A"/>
+      <stop offset="75%" stop-color="#0B0D12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="engineBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDEFF3"/>
+      <stop offset="50%" stop-color="#C3C9D3"/>
+      <stop offset="100%" stop-color="#7C8494"/>
+    </linearGradient>
+
+    <linearGradient id="stripeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4038D6"/>
+      <stop offset="50%" stop-color="#726FFF"/>
+      <stop offset="100%" stop-color="#4038D6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1800" height="900" fill="#080910"/>
+  <ellipse cx="900" cy="460" rx="820" ry="420" fill="url(#bgGlow)"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="900" cy="740" rx="560" ry="26" fill="#000000" opacity="0.55"/>
+
+  <!-- horizontal stabilizer (tail wing) -->
+  <path d="M 1500 470 L 1640 430 L 1660 448 L 1540 495 Z" fill="url(#wing)" stroke="#5C6472" stroke-width="2"/>
+
+  <!-- vertical tail fin -->
+  <path d="M 1470 460 L 1560 260 L 1610 268 L 1560 470 Z" fill="url(#wing)" stroke="#5C6472" stroke-width="2"/>
+  <!-- tail fin livery stripe + logo -->
+  <path d="M 1560 260 L 1610 268 L 1590 340 L 1548 336 Z" fill="url(#stripeGrad)"/>
+  <g transform="translate(1578,300) scale(0.34)">
+    <g stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="10" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-42"/>
+      <line x1="0" y1="0" x2="36" y2="21"/>
+      <line x1="0" y1="0" x2="-36" y2="21"/>
+    </g>
+    <circle cx="0" cy="-42" r="10" fill="#FFFFFF"/>
+    <circle cx="36" cy="21" r="10" fill="#FFFFFF"/>
+    <circle cx="-36" cy="21" r="10" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="16" fill="#FFFFFF"/>
+  </g>
+
+  <!-- main fuselage -->
+  <path d="M 160 470
+           Q 170 420 260 412
+           L 1420 400
+           Q 1500 402 1530 440
+           Q 1500 470 1420 472
+           L 260 480
+           Q 175 476 160 470 Z"
+        fill="url(#fuselage)" stroke="#5C6472" stroke-width="2"/>
+  <!-- nose cone -->
+  <path d="M 160 470 Q 110 462 90 452 Q 108 440 160 412 Z" fill="url(#fuselage)" stroke="#5C6472" stroke-width="2"/>
+
+  <!-- fuselage top shine -->
+  <path d="M 220 418 Q 700 405 1400 405 Q 1440 406 1460 415 L 1460 424 Q 900 414 220 428 Z" fill="url(#fuselageShine)" opacity="0.6"/>
+
+  <!-- cockpit windows -->
+  <path d="M 150 440 L 190 434 L 192 452 L 152 456 Z" fill="#0B0D12" opacity="0.85"/>
+
+  <!-- cabin window strip -->
+  <g fill="#0B0D12" opacity="0.55">
+    <rect x="230" y="432" width="1150" height="7" rx="3"/>
+  </g>
+
+  <!-- livery stripe along fuselage -->
+  <path d="M 210 452 L 1440 442 L 1440 456 L 210 466 Z" fill="url(#stripeGrad)"/>
+
+  <!-- HCM AIRWAYS titles -->
+  <text x="640" y="424" font-family="Bricolage Grotesque" font-weight="800" font-size="26" letter-spacing="5" fill="#14151f">HCM AIRWAYS</text>
+
+  <!-- wing (main, swept, going back-down toward engine) -->
+  <path d="M 780 470 L 660 620 L 740 632 L 900 480 Z" fill="url(#wing)" stroke="#5C6472" stroke-width="2"/>
+  <!-- winglet -->
+  <path d="M 660 620 L 640 588 L 668 592 L 686 622 Z" fill="url(#wing)" stroke="#5C6472" stroke-width="2"/>
+
+  <!-- engine pylon -->
+  <rect x="735" y="560" width="16" height="46" fill="#8B93A3"/>
+
+  <!-- engine nacelle, large ULR-style turbofan, side view -->
+  <g>
+    <ellipse cx="700" cy="612" rx="120" ry="66" fill="url(#engineBody)" stroke="#5C6472" stroke-width="2"/>
+    <ellipse cx="602" cy="612" rx="46" ry="64" fill="url(#engineFace)"/>
+    <ellipse cx="602" cy="612" rx="46" ry="64" fill="none" stroke="#9A97FF" stroke-width="2" opacity="0.7"/>
+    <!-- fan blades suggestion -->
+    <g stroke="#4A4D6A" stroke-width="2" opacity="0.8">
+      <line x1="602" y1="556" x2="602" y2="668"/>
+      <line x1="562" y1="580" x2="642" y2="644"/>
+      <line x1="562" y1="644" x2="642" y2="580"/>
+    </g>
+    <circle cx="602" cy="612" r="10" fill="#EEF0F4"/>
+    <!-- engine highlight -->
+    <path d="M 660 566 Q 720 560 800 578" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.55" stroke-linecap="round"/>
+  </g>
+
+  <!-- small forward winglet root fairing -->
+  <path d="M 900 480 L 960 468 L 960 480 L 900 490 Z" fill="url(#wing)" opacity="0.9"/>
+
+  <text x="900" y="800" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="34" fill="#EEF0F4" letter-spacing="2">HCM AIRWAYS — AUTONOMOUS ULR CONCEPT</text>
+</svg>
