@@ -76,7 +76,7 @@ const planets = [
     label: "Titan",
     color: "var(--color-titan)",
     hex: "#d97706",
-    solidColor: "#c8811f",
+    proceduralTexture: "titan",
   },
 ];
 
@@ -217,7 +217,7 @@ export default function Careers() {
           <Globe
             key={planet}
             textureUrl={active.texture}
-            solidColor={active.solidColor}
+            proceduralTexture={active.proceduralTexture}
             color={active.hex}
             markers={
               planet === "earth"
@@ -235,7 +235,7 @@ export default function Careers() {
             {planet === "moon" && "Real NASA lunar surface data."}
             {planet === "mars" && "Real NASA Mars surface data."}
             {planet === "titan" &&
-              "Titan's surface is permanently hidden under haze — shown here as it actually appears from outside: a featureless amber globe."}
+              "Titan's surface is permanently hidden under haze — this shows how it actually looks from outside, based on real Cassini imagery: a hazy amber globe with soft atmospheric banding, not a fabricated surface."}
           </p>
 
           {planet === "earth" && (

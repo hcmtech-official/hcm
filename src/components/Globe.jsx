@@ -15,7 +15,49 @@ function latLonToVector3(lat, lon, radius) {
   );
 }
 
-export default function Globe({ textureUrl, color = "#5B57FF", solidColor, markers = [] }) {
+// Titan has no real global surface photo — its surface is permanently
+// hidden under thick haze. This generates a texture matching how it
+// actually looks from outside in real Cassini imagery: a hazy amber
+// globe with soft latitudinal banding and a darker north polar hood,
+// rather than either a flat color or a fabricated "surface."
+function buildTitanTexture() {
+  const w = 1024, h = 512;
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d");
+
+  const bands = [
+    [0.0, "#E8A55C"],
+    [0.18, "#E2A052"],
+    [0.34, "#D89240"],
+    [0.5, "#D48A38"],
+    [0.66, "#CE7F30"],
+    [0.82, "#B9702A"],
+    [0.92, "#8C5A28"],
+    [1.0, "#6E4722"],
+  ];
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  bands.forEach(([stop, c]) => grad.addColorStop(stop, c));
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, w, h);
+
+  // soft horizontal haze streaks
+  ctx.globalAlpha = 0.14;
+  for (let i = 0; i < 60; i++) {
+    const y = Math.random() * h;
+    const bandH = 4 + Math.random() * 10;
+    ctx.fillStyle = Math.random() > 0.5 ? "#FFE7B8" : "#7A5220";
+    ctx.fillRect(0, y, w, bandH);
+  }
+  ctx.globalAlpha = 1;
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+export default function Globe({ textureUrl, color = "#5B57FF", proceduralTexture, markers = [] }) {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -44,8 +86,8 @@ export default function Globe({ textureUrl, color = "#5B57FF", solidColor, marke
     const radius = 1;
     const geometry = new THREE.SphereGeometry(radius, 64, 64);
     let material;
-    if (solidColor) {
-      material = new THREE.MeshStandardMaterial({ color: solidColor, roughness: 0.9 });
+    if (proceduralTexture === "titan") {
+      material = new THREE.MeshStandardMaterial({ map: buildTitanTexture(), roughness: 0.85 });
     } else {
       material = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.95 });
       new THREE.TextureLoader().load(textureUrl, (tex) => {
@@ -134,7 +176,7 @@ export default function Globe({ textureUrl, color = "#5B57FF", solidColor, marke
       glowMat.dispose();
       if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement);
     };
-  }, [textureUrl, color, solidColor, markers]);
+  }, [textureUrl, color, proceduralTexture, markers]);
 
   return (
     <div
