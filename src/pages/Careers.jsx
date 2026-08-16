@@ -43,9 +43,9 @@ const offWorld = [
     img: "https://commons.wikimedia.org/wiki/Special:FilePath/PIA23302-FirstHumansOnMars-ArtistConcept.jpg?width=1200",
   },
   {
-    city: "Selk Crater",
-    region: "Titan, Saturn's largest moon",
-    note: "The likely next stop after Mars — Titan has a dense atmosphere that actually shields against radiation, unlike Mars, plus abundant organic chemistry. NASA's Dragonfly rotorcraft lands there in 2034.",
+    city: "Kraken Station",
+    region: "Selk Crater, Titan",
+    note: "A name for the future — Kraken Mare, Titan's largest known sea, is what this outpost would take its name from. The likely next stop after Mars: Titan has a dense atmosphere that actually shields against radiation, unlike Mars, plus abundant organic chemistry. NASA's Dragonfly rotorcraft lands at Selk Crater in 2034.",
     img: "https://commons.wikimedia.org/wiki/Special:FilePath/Df-aerial.jpg?width=1200",
   },
 ];
@@ -104,7 +104,7 @@ const openRoles = [
   },
   {
     title: "Off-World Operations Scout",
-    location: "Selk Crater, Titan",
+    location: "Kraken Station, Titan",
     body: "The furthest-out version of the role — Titan is the realistic candidate after Mars, and this one starts the groundwork decades before anyone else even gets there.",
   },
 ];
@@ -131,7 +131,7 @@ const futureRoles = [
     ],
   },
   {
-    tag: "Open now · Earth-based, Titan operations",
+    tag: "Open now · Earth-based, Kraken Station operations",
     title: "Deep-Time Mission Steward",
     subtitle: "Titan is roughly 70 light-minutes from Earth — too far for a joystick.",
     body: [
@@ -269,16 +269,16 @@ export default function Careers() {
 
           {planet === "titan" && (
             <>
-              <StaticPlanet image={active.image} color={active.hex} x={50} y={45} label="Selk Crater" />
+              <StaticPlanet image={active.image} color={active.hex} x={50} y={45} label="Kraken Station" />
               <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-dim)]">
                 Real Cassini photograph of Titan — its surface is
                 permanently hidden under haze, so this hazy amber disc is
                 genuinely how it looks from outside, not a stand-in.
               </p>
               <div className="mt-6 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3">
-                <div className="font-display text-sm font-bold">Selk Crater</div>
+                <div className="font-display text-sm font-bold">Kraken Station</div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[var(--color-ink-dim)]">
-                  Dragonfly landing site, 2034
+                  Selk Crater · Dragonfly landing site, 2034
                 </div>
               </div>
             </>
