@@ -312,6 +312,16 @@ export const divisions = [
       "HCM Airways — a fully autonomous ULR concept airline. No pilot, no cabin crew, no human anywhere in the journey.",
   },
   {
+    key: "themepark",
+    code: "PARK",
+    name: "HCM Theme Park",
+    tagline: "It's your other world.",
+    path: "/themepark",
+    color: "var(--color-themepark)",
+    summary:
+      "A fully AI-run theme park — zero human staff, robot hosts, and zones built to let you live inside different worlds of AI for a day.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

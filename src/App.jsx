@@ -34,6 +34,7 @@ import Bank from "./pages/Bank";
 import Drones from "./pages/Drones";
 import Green from "./pages/Green";
 import Aerospace from "./pages/Aerospace";
+import ThemePark from "./pages/ThemePark";
 import Podcast from "./pages/Podcast";
 import University from "./pages/University";
 import Certification from "./pages/Certification";
@@ -88,6 +89,7 @@ function Shell() {
           <Route path="/drones" element={<Drones />} />
           <Route path="/green" element={<Green />} />
           <Route path="/aerospace" element={<Aerospace />} />
+          <Route path="/themepark" element={<ThemePark />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/university" element={<University />} />
           <Route path="/certification" element={<Certification />} />
