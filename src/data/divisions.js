@@ -350,6 +350,26 @@ export const divisions = [
     color: "var(--color-film)",
     summary: "Stories made to be watched, not scrolled past.",
   },
+  {
+    key: "cloud",
+    code: "CLOUD",
+    name: "HCM Cloud",
+    tagline: "It's your infrastructure.",
+    path: "/cloud",
+    color: "var(--color-cloud)",
+    summary:
+      "Where HCM actually runs — tracking AWS, Azure, and Google Cloud, and building real deployments on top of them.",
+  },
+  {
+    key: "security",
+    code: "SEC",
+    name: "HCM Security",
+    tagline: "It's your perimeter.",
+    path: "/security",
+    color: "var(--color-security)",
+    summary:
+      "Cybersecurity coverage for an agentic AI world — the latest breaches, Black Hat and DEF CON research, and what actually keeps a system safe.",
+  },
 ];
 
 export const socials = [

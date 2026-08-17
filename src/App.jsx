@@ -44,6 +44,8 @@ import Certification from "./pages/Certification";
 import Games from "./pages/Games";
 import Music from "./pages/Music";
 import Film from "./pages/Film";
+import Cloud from "./pages/Cloud";
+import Security from "./pages/Security";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -102,6 +104,8 @@ function Shell() {
           <Route path="/games" element={<Games />} />
           <Route path="/music" element={<Music />} />
           <Route path="/film" element={<Film />} />
+          <Route path="/cloud" element={<Cloud />} />
+          <Route path="/security" element={<Security />} />
         </Routes>
       </main>
       <Footer />
