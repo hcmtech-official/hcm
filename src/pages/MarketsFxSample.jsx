@@ -2,10 +2,12 @@ import { useMemo } from "react";
 import {
   ComposedChart,
   Bar,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
   ResponsiveContainer,
   ReferenceLine,
 } from "recharts";
@@ -156,6 +158,33 @@ export default function MarketsFxSample() {
 
   const yMin = support - 0.0018;
   const yMax = resistance + 0.0018;
+
+  // Second view: moving averages + swing structure — the other things
+  // traders scan a chart for beyond a single support/resistance line.
+  const trendData = useMemo(() => {
+    const closes = CANDLES.map((c) => c.close);
+    return CANDLES.map((c, i) => {
+      const sma5 =
+        i >= 4 ? closes.slice(i - 4, i + 1).reduce((a, b) => a + b, 0) / 5 : null;
+      const sma20 =
+        i >= 19 ? closes.slice(i - 19, i + 1).reduce((a, b) => a + b, 0) / 20 : null;
+      const isPivotHigh =
+        i > 0 && i < CANDLES.length - 1 &&
+        c.high > CANDLES[i - 1].high && c.high > CANDLES[i + 1].high;
+      const isPivotLow =
+        i > 0 && i < CANDLES.length - 1 &&
+        c.low < CANDLES[i - 1].low && c.low < CANDLES[i + 1].low;
+      return {
+        ...c,
+        sma5,
+        sma20,
+        pivotHigh: isPivotHigh ? c.high : null,
+        pivotLow: isPivotLow ? c.low : null,
+      };
+    });
+  }, []);
+
+  const trendUp = trendData.at(-1).sma5 > trendData.at(-1).sma20;
 
   return (
     <>
@@ -328,6 +357,109 @@ export default function MarketsFxSample() {
           <p className="mt-6 font-mono text-[11px] text-[var(--color-ink-dim)]">
             Sample data snapshot, not a live feed — general market information for a general audience,
             not trading or financial advice.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Second view
+          </h2>
+          <h3 className="mt-3 font-display text-2xl font-bold sm:text-3xl">Trend & structure</h3>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            Same candles, different lens: a fast (5-day) and slow (20-day) moving average to read
+            trend direction, plus swing highs and lows flagged automatically — the pivot points
+            traders use to see market structure, not just a single price line.
+          </p>
+
+          <div
+            style={{
+              marginTop: 24,
+              background: PALETTE.bg,
+              color: PALETTE.text,
+              fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+              borderRadius: 16,
+              border: `1px solid ${PALETTE.grid}`,
+              padding: "20px 16px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: 14,
+                flexWrap: "wrap",
+                gap: 10,
+              }}
+            >
+              <div style={{ fontSize: 11, color: PALETTE.textDim, letterSpacing: "0.08em" }}>
+                5-DAY / 20-DAY SMA · SWING PIVOTS
+              </div>
+              <div
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  padding: "4px 10px",
+                  borderRadius: 999,
+                  border: `1px solid ${trendUp ? PALETTE.up : PALETTE.down}`,
+                  color: trendUp ? PALETTE.up : PALETTE.down,
+                }}
+              >
+                {trendUp ? "SMA5 above SMA20 — uptrend bias" : "SMA5 below SMA20 — downtrend bias"}
+              </div>
+            </div>
+
+            <div style={{ background: PALETTE.panel, border: `1px solid ${PALETTE.grid}`, borderRadius: 4, padding: "12px 8px" }}>
+              <ResponsiveContainer width="100%" height={340}>
+                <ComposedChart data={trendData} margin={{ top: 14, right: 10, left: 0, bottom: 0 }}>
+                  <CartesianGrid stroke={PALETTE.grid} strokeDasharray="0" vertical={false} />
+                  <XAxis
+                    dataKey="date"
+                    tick={{ fill: PALETTE.textDim, fontSize: 10, fontFamily: "monospace" }}
+                    axisLine={{ stroke: PALETTE.grid }}
+                    tickLine={false}
+                    interval="preserveStartEnd"
+                    minTickGap={36}
+                  />
+                  <YAxis
+                    domain={[yMin, yMax]}
+                    tick={{ fill: PALETTE.textDim, fontSize: 10, fontFamily: "monospace" }}
+                    axisLine={false}
+                    tickLine={false}
+                    width={58}
+                    tickFormatter={(v) => v.toFixed(4)}
+                  />
+                  <Tooltip content={<CandleTooltip />} cursor={{ fill: "rgba(91,87,255,0.06)" }} />
+                  <Bar dataKey="range" shape={<Candle />} isAnimationActive={false} />
+                  <Line type="monotone" dataKey="sma5" stroke="#5B57FF" strokeWidth={1.5} dot={false} isAnimationActive={false} name="SMA 5" />
+                  <Line type="monotone" dataKey="sma20" stroke="#E8B84C" strokeWidth={1.5} dot={false} isAnimationActive={false} name="SMA 20" />
+                  <Line
+                    dataKey="pivotHigh"
+                    stroke="none"
+                    dot={{ r: 4, fill: PALETTE.down, stroke: PALETTE.bg, strokeWidth: 1 }}
+                    isAnimationActive={false}
+                    name="Swing high"
+                    connectNulls={false}
+                  />
+                  <Line
+                    dataKey="pivotLow"
+                    stroke="none"
+                    dot={{ r: 4, fill: PALETTE.up, stroke: PALETTE.bg, strokeWidth: 1 }}
+                    isAnimationActive={false}
+                    name="Swing low"
+                    connectNulls={false}
+                  />
+                  <Legend wrapperStyle={{ fontSize: 10, color: PALETTE.textDim }} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          <p className="mt-6 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Swing highs/lows and moving averages are computed automatically from the same data —
+            not manually drawn. Sample data, not a live feed.
           </p>
         </div>
       </section>
