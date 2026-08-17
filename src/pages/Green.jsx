@@ -25,6 +25,11 @@ const worlds = [
     img: wm("OSIRIS Mars true color.jpg"),
     note: "The same forward-contamination questions apply here as anywhere else humans are about to show up — except this time we might actually get the framework in place before the first permanent footprint.",
   },
+  {
+    name: "Titan",
+    img: wm("Titan in true color.jpg"),
+    note: "The realistic next stop after Mars — dense atmosphere, abundant organic chemistry, and NASA's real Dragonfly mission already headed to Selk Crater for 2034. If there's ever a world where 'get the rules in place before people arrive' is actually achievable, it's this one.",
+  },
 ];
 
 export default function Green() {
@@ -34,7 +39,7 @@ export default function Green() {
         code={d.code}
         name={d.name}
         tagline={d.tagline}
-        description="Not just protecting Earth — building the framework now so Earth, the Moon, and Mars all stay protected once people are actually living on more than one of them."
+        description="Not just protecting Earth — building the framework now so Earth, the Moon, Mars, and Titan all stay protected once people are actually living on more than one of them."
         color={d.color}
       />
 
@@ -63,10 +68,10 @@ export default function Green() {
           <div className="mb-2 flex items-center gap-3">
             <Globe2 size={22} style={{ color: d.color }} />
             <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
-              Three worlds, one framework
+              Four worlds, one framework
             </h2>
           </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-3">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {worlds.map((w) => (
               <div
                 key={w.name}
@@ -90,20 +95,20 @@ export default function Green() {
           <div className="mb-2 flex items-center gap-3">
             <Rocket size={22} style={{ color: d.color }} />
             <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
-              After Mars, the same rule applies
+              Beyond four, the same rule applies
             </h2>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+            The point of building this framework now, for four worlds,
+            isn't really about the number four. It's so the same
+            protection thinking is already in place the next time
+            humanity picks a new world — Europa, Enceladus, wherever it
+            ends up being — instead of being written after the fact,
+            once again. See where HCM already operates on{" "}
             <Link to="/careers" className="underline decoration-dotted underline-offset-4" style={{ color: d.color }}>
-              Titan
-            </Link>{" "}
-            is the realistic next stop after Mars — dense atmosphere,
-            abundant organic chemistry, and NASA's real Dragonfly mission
-            already headed there for 2034. The point of building this
-            framework now, for three worlds, isn't really about the
-            number three. It's so the same protection thinking is already
-            in place the next time humanity picks a new world, instead of
-            being written after the fact, once again.
+              the Careers page
+            </Link>
+            .
           </p>
           <a
             href="https://cosparhq.cnes.fr"
