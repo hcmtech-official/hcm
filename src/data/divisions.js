@@ -342,6 +342,16 @@ export const divisions = [
       "3D printing, tracked properly — multi-material, metal, and construction-scale printing, and where it's actually headed.",
   },
   {
+    key: "architecture",
+    code: "ARCH",
+    name: "HCM Architecture",
+    tagline: "It's your skyline.",
+    path: "/architecture",
+    color: "var(--color-architecture)",
+    summary:
+      "Futuristic towers, real and built — tracking where skyscraper design is actually headed.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",
