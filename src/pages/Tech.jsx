@@ -202,6 +202,78 @@ export default function Tech() {
           </div>
         </div>
       </section>
+
+      <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Projects
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+            Small, real automation work — the kind that saves a few minutes
+            a day, every day, which adds up to a lot more than it looks
+            like at first.
+          </p>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]">
+            <div className="p-8 sm:p-10">
+              <div
+                className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+                style={{ borderColor: d.color, color: d.color }}
+              >
+                Personal automation · Zapier
+              </div>
+              <h3 className="mt-4 font-display text-2xl font-bold">
+                Work calendar → personal calendar, automatically
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                The problem: a work calendar invite lands in Outlook, but
+                the event that actually matters for planning a personal
+                day — picking someone up, being home in time for
+                something — needs to be in a personal Google Calendar too.
+                Copying it across by hand every time is exactly the kind
+                of small, repeated task automation exists for.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                The fix took one Zap. Forwarding the Outlook calendar email
+                to a personal inbox triggers it — Zapier reads the
+                forwarded email and creates the matching event directly in
+                Google Calendar, with no manual re-entry and no separate
+                app to open.
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.15em]" style={{ color: d.color }}>
+                    Trigger
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                    A work Outlook calendar email, forwarded to a personal
+                    inbox.
+                  </p>
+                </div>
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.15em]" style={{ color: d.color }}>
+                    Action
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                    Zapier reads the email and creates a matching event in
+                    Google Calendar.
+                  </p>
+                </div>
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.15em]" style={{ color: d.color }}>
+                    Result
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                    One event, two calendars, zero manual entry — forward
+                    and forget.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <AppBadges color={d.color} />
     </>
   );
