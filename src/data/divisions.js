@@ -352,6 +352,16 @@ export const divisions = [
       "Futuristic towers, real and built — tracking where skyscraper design is actually headed.",
   },
   {
+    key: "art",
+    code: "ART",
+    name: "HCM Art",
+    tagline: "It's your masterpiece.",
+    path: "/art",
+    color: "var(--color-art)",
+    summary:
+      "Some of the most famous paintings ever made, gathered in one gallery — the benchmark before HCM makes its own case in art.",
+  },
+  {
     key: "film",
     code: "FILM",
     name: "HCM Motion Pictures",

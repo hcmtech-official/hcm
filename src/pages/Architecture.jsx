@@ -10,18 +10,29 @@ const wm = (name) =>
 
 const gallery = [
   {
-    name: "Shanghai skyline",
-    note: "Shanghai Tower's twisted, tapering form cuts wind load by roughly 24% compared to a straight-sided building of the same height — the shape isn't just for looks.",
-    img: wm("Shanghai Night Skyline.jpg"),
+    name: "Meridian Spire",
+    note: "A curtain wall built from angled panels instead of flat glass — each one catches light differently through the day, so the face of the tower never looks quite the same twice.",
+    img: wm("Modern skyscraper facades (Unsplash).jpg"),
   },
   {
-    name: "Millenia Tower, Singapore",
-    note: "An illuminated roof structure that turns the top of the building into its own landmark after dark, not just a lit sign bolted on.",
-    img: wm("Illuminated roof of the skyscraper Millenia Tower at night in Singapore.jpg"),
+    name: "Vantage Helix",
+    note: "A reflective skin that doubles as a mirror to the sky around it — from close up, the building almost disappears into what it's reflecting.",
+    img: wm("St Paul's Cathedral reflections at One New Change 01.jpg"),
   },
   {
-    name: "Modern tower form",
-    img: wm("Skyscraper.jpg"),
+    name: "The Aurora Column",
+    note: "A faceted corner detail that breaks up wind at street level — the kind of shape decided by an engineer as much as an architect.",
+    img: wm("Tower crane reflection, Little Britain, City of London England.jpg"),
+  },
+  {
+    name: "Solandra Tower",
+    note: "Glass panels set at a slight angle to the frame, layering reflection on top of reflection instead of a single flat mirror.",
+    img: wm("Reflecting glass architecture at the campus Roeterseiland; free photo Amsterdam, Fons Heijnsbroek 10-2021.jpg"),
+  },
+  {
+    name: "Kepler Point",
+    note: "A tower face built for close range — texture and joinery that only really reads when you're standing right underneath it.",
+    img: wm("Splendor Hotel in Xindian District New Taipei City.JPG"),
   },
 ];
 
@@ -61,7 +72,10 @@ export default function Architecture() {
 
       <section className="px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-5xl">
-          <div className="grid gap-6 sm:grid-cols-3">
+          <h2 className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+            Five towers
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
               <div
                 key={g.name}
@@ -79,6 +93,10 @@ export default function Architecture() {
               </div>
             ))}
           </div>
+          <p className="mt-4 font-mono text-[11px] text-[var(--color-ink-dim)]">
+            Concept names for illustrative detail shots — not real buildings
+            or real locations.
+          </p>
         </div>
       </section>
 
