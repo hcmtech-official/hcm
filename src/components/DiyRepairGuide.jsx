@@ -8,36 +8,102 @@ import {
   CircleDot,
 } from "lucide-react";
 
+/* Original line-art illustrations — not product photos.
+   Retailer photos are one tap away via the Buy link on each card. */
+function ToolArt({ kind, color }) {
+  const stroke = color;
+  const common = { fill: "none", stroke, strokeWidth: 2.2, strokeLinecap: "round", strokeLinejoin: "round" };
+  if (kind === "spudger") {
+    return (
+      <svg viewBox="0 0 120 120" className="h-16 w-16">
+        <path d="M30 100 L78 52" {...common} strokeWidth={5} />
+        <path d="M78 52 L96 34 C100 30 100 24 96 20 C92 16 86 16 82 20 L64 38 Z" {...common} />
+        <path d="M30 100 L22 108" {...common} strokeWidth={5} />
+      </svg>
+    );
+  }
+  if (kind === "tweezers") {
+    return (
+      <svg viewBox="0 0 120 120" className="h-16 w-16">
+        <path d="M40 18 C30 40 30 40 44 62 L58 84" {...common} />
+        <path d="M80 18 C90 40 90 40 76 62 L58 84" {...common} />
+        <path d="M58 84 L50 100" {...common} />
+        <path d="M58 84 L66 100" {...common} />
+        <path d="M46 34 L74 34" stroke={stroke} strokeWidth={1.4} opacity={0.5} />
+      </svg>
+    );
+  }
+  if (kind === "keycap") {
+    return (
+      <svg viewBox="0 0 120 120" className="h-16 w-16">
+        <rect x="24" y="24" width="72" height="52" rx="8" {...common} />
+        <path d="M40 76 C40 90 44 96 60 96 C76 96 80 90 80 76" {...common} strokeWidth={2} />
+        <text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="700" fill={stroke} stroke="none">K</text>
+      </svg>
+    );
+  }
+  if (kind === "air") {
+    return (
+      <svg viewBox="0 0 120 120" className="h-16 w-16">
+        <rect x="40" y="38" width="32" height="66" rx="6" {...common} />
+        <path d="M48 38 L48 26 C48 20 52 16 56 16 L60 16" {...common} />
+        <path d="M64 16 L72 16 L72 28 L60 30 L48 26" {...common} strokeWidth={1.6} />
+        <path d="M78 50 L92 46 M80 60 L94 60 M78 70 L92 74" stroke={stroke} strokeWidth={1.8} opacity={0.6} strokeLinecap="round" />
+      </svg>
+    );
+  }
+  // isopropyl
+  return (
+    <svg viewBox="0 0 120 120" className="h-16 w-16">
+      <rect x="38" y="42" width="34" height="58" rx="5" {...common} />
+      <path d="M48 42 L48 28 L62 28 L62 42" {...common} />
+      <rect x="45" y="60" width="20" height="14" stroke={stroke} strokeWidth={1.4} opacity={0.5} fill="none" />
+      <path d="M84 50 L96 42 M84 60 L98 60 M84 70 L96 78" stroke={stroke} strokeWidth={1.6} opacity={0.4} strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const tools = [
   {
-    name: "Replacement key kit (keycap + hinge clip, + rubber cup if needed)",
-    note: "Must match your exact model — see Step 1 before ordering.",
-    cost: "$8 – $20 per key",
-    source: "Macfixit Australia, or eBay AU (search your model number + \"keycap\")",
+    key: "keycap",
+    name: "MacBook OEM keycap + hinge kit",
+    note: "Genuine part harvested from an original keyboard — exact font, texture and \"snap-in\" fit. Order the matching key + your MacBook model number.",
+    price: "$29.99",
+    retailer: "Macfixit Australia",
+    href: "https://www.macfixit.com.au/products/macbook-replacement-keycap",
+    budgetNote: "Budget option: generic keycap + clip kits run ~$8–19 on eBay AU (search your model number + \"keycap\") — cheaper, but fit quality varies.",
   },
   {
-    name: "Plastic spudger / pry tool",
-    note: "Never use metal — it scratches the case and can short the keyboard.",
-    cost: "$8 – $15",
-    source: "iFixit, Jaycar, or any phone-repair tool kit",
+    key: "spudger",
+    name: "Nylon spudger — non-marking pry tool",
+    note: "The actual Apple service-part spudger (922-5065). Never use metal — it scratches the case and can short the keyboard.",
+    price: "$1.99",
+    retailer: "Macfixit Australia",
+    href: "https://www.macfixit.com.au/products/3m-spudger-apple-pry-tool-non-marking-nylon-black-stick-922-5065",
   },
   {
-    name: "Fine-point tweezers",
-    note: "For placing the small hinge clip pieces.",
-    cost: "$5 – $10",
-    source: "Jaycar, Officeworks, or a phone-repair tool kit",
+    key: "tweezers",
+    name: "iFixit angled precision tweezers",
+    note: "Anti-static stainless steel, fine angled tip — for placing the small hinge clip pieces.",
+    price: "$19.99",
+    retailer: "Macfixit Australia",
+    href: "https://www.macfixit.com.au/products/ifixit-angled-precision-tweezers",
   },
   {
-    name: "Canned air",
-    note: "Clears crumbs/dust from the switch well before refitting.",
-    cost: "~$10",
-    source: "Officeworks, Bunnings, JB Hi-Fi",
+    key: "air",
+    name: "Pressurised air duster, 400mL",
+    note: "Clears crumbs and dust from the switch well before refitting the new key.",
+    price: "$10.00",
+    retailer: "Officeworks",
+    href: "https://www.officeworks.com.au/shop/officeworks/p/laser-clean-range-pressurised-air-duster-400ml-lascl1827f",
   },
   {
-    name: "Isopropyl alcohol + cotton swabs",
-    note: "Only if there's sticky residue — let it fully dry before reassembly.",
-    cost: "~$5",
-    source: "Chemist or supermarket",
+    key: "isopropyl",
+    name: "Isocol rubbing alcohol, 345mL (64%)",
+    note: "Only needed if there's sticky residue in the well — dab on a cotton swab and let it fully dry before reassembly.",
+    price: "$9.99",
+    retailer: "Chemist Warehouse",
+    href: "https://www.chemistwarehouse.com.au/buy/40678/isocol-rubbing-alcohol-345ml",
   },
 ];
 
@@ -79,8 +145,8 @@ const steps = [
 const comparison = [
   {
     label: "DIY (this guide)",
-    price: "$15 – $35",
-    detail: "Parts + tools, one key. Reusable tools if more keys need doing later.",
+    price: "$15 – $65",
+    detail: "Budget eBay parts land near the low end; OEM parts + proper tools from Macfixit (as priced above) land near the high end. Either way, the tools are reusable if more keys need doing later.",
     highlight: true,
   },
   {
@@ -163,24 +229,54 @@ export default function DiyRepairGuide({ color }) {
                   Tools &amp; parts
                 </h4>
               </div>
-              <div className="mt-4 divide-y divide-[var(--color-line)] overflow-hidden rounded-xl border border-[var(--color-line)]">
+              <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink-dim)]">
+                Real current prices from real AU retailers. The icons are our
+                own illustrations, not the retailers' photos — tap "View at{" "}
+                {"{retailer}"}" on any card to see the actual product photo
+                before buying.
+              </p>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {tools.map((t) => (
-                  <div key={t.name} className="flex flex-col gap-1 p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-                    <div>
-                      <div className="text-sm font-semibold">{t.name}</div>
-                      <p className="mt-1 text-xs leading-relaxed text-[var(--color-ink-dim)]">
-                        {t.note}
-                      </p>
-                      <p className="mt-1 text-xs text-[var(--color-ink-dim)]">
-                        Buy: {t.source}
-                      </p>
+                  <div
+                    key={t.key}
+                    className="flex flex-col rounded-xl border border-[var(--color-line)] p-5"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div
+                        className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg"
+                        style={{ background: `${color}14` }}
+                      >
+                        <ToolArt kind={t.key} color={color} />
+                      </div>
+                      <div
+                        className="whitespace-nowrap rounded-full px-2.5 py-1 font-mono text-sm font-bold"
+                        style={{ background: `${color}14`, color }}
+                      >
+                        {t.price}
+                      </div>
                     </div>
-                    <div
-                      className="whitespace-nowrap font-mono text-sm font-semibold sm:text-right"
+
+                    <div className="mt-4 text-sm font-semibold">{t.name}</div>
+                    <p className="mt-1 flex-1 text-xs leading-relaxed text-[var(--color-ink-dim)]">
+                      {t.note}
+                    </p>
+                    {t.budgetNote && (
+                      <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink-dim)] opacity-80">
+                        {t.budgetNote}
+                      </p>
+                    )}
+
+                    <a
+                      href={t.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold"
                       style={{ color }}
                     >
-                      {t.cost}
-                    </div>
+                      View at {t.retailer}
+                      <ExternalLink size={12} />
+                    </a>
                   </div>
                 ))}
               </div>
