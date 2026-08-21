@@ -1,4 +1,5 @@
-import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard, KanbanSquare, Users, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard, KanbanSquare, Users, ShieldCheck, MessageSquareText, Link2, Sparkles } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
 import { divisions } from "../data/divisions";
@@ -83,6 +84,89 @@ const showcases = [
     ],
   },
 ];
+
+const spotIt = {
+  prompt:
+    "A Sydney home-bakery needs to take a card payment with no terminal in sight. Watch the clip, then guess what this is called.",
+  video: "/hcm/videos/square-payment-links-tutorial.mp4",
+  answer: "Square Payment Links",
+  explanation:
+    "A payment link is a one-off checkout page a business generates and sends however suits — text, DM, email. The customer taps it, lands on a secure Square-hosted checkout, and pays by card or Express Checkout (Google Pay / Apple Pay). No card reader, no app install, no manual invoice — just a link.",
+  points: [
+    { icon: MessageSquareText, title: "Sent like a message", body: "Texted straight to the customer's phone — no separate app or portal for them to open." },
+    { icon: Link2, title: "Hosted checkout", body: "The link opens a secure, Square-hosted page — the business never handles raw card details." },
+    { icon: Sparkles, title: "Express checkout built in", body: "Google Pay and Apple Pay sit right alongside manual card entry, so paying takes one tap." },
+  ],
+};
+
+function SpotIt({ color }) {
+  const [revealed, setRevealed] = useState(false);
+
+  return (
+    <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
+          What is this called?
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)]">
+          {spotIt.prompt}
+        </p>
+
+        <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] sm:grid sm:grid-cols-[280px_1fr]">
+          <div className="bg-black/40 p-4 sm:p-5">
+            <video
+              className="mx-auto w-full max-w-[220px] rounded-xl border border-[var(--color-line)]"
+              src={spotIt.video}
+              controls
+              playsInline
+              preload="metadata"
+            />
+          </div>
+
+          <div className="p-8 sm:p-10">
+            {!revealed ? (
+              <button
+                type="button"
+                onClick={() => setRevealed(true)}
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-85"
+                style={{ background: color, color: "var(--color-void)" }}
+              >
+                Reveal the answer
+              </button>
+            ) : (
+              <>
+                <div
+                  className="inline-block rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em]"
+                  style={{ borderColor: color, color }}
+                >
+                  Answer
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-bold sm:text-3xl">
+                  {spotIt.answer}
+                </h3>
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-ink-dim)] sm:text-base">
+                  {spotIt.explanation}
+                </p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  {spotIt.points.map((p) => (
+                    <div key={p.title}>
+                      <p.icon size={20} style={{ color }} />
+                      <h4 className="mt-3 font-display text-base font-bold">{p.title}</h4>
+                      <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                        {p.body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Tech() {
   return (
@@ -274,6 +358,9 @@ export default function Tech() {
           </div>
         </div>
       </section>
+
+      <SpotIt color={d.color} />
+
       <AppBadges color={d.color} />
     </>
   );
