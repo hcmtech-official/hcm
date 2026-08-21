@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000">
+  <defs>
+    <radialGradient id="skyGlow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2A2470" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#0F0F2A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#08090d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14121f"/>
+      <stop offset="100%" stop-color="#08090d"/>
+    </linearGradient>
+    <linearGradient id="archGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B88FF"/>
+      <stop offset="100%" stop-color="#4038D6"/>
+    </linearGradient>
+    <radialGradient id="portalGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C4C2FF" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#726FFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#726FFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="botGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDEFF3"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1800" height="1000" fill="#08090d"/>
+  <rect width="1800" height="1000" fill="url(#skyGlow)"/>
+
+  <!-- stars -->
+  <g fill="#EEF0F4">
+    <circle cx="120" cy="90" r="2"/><circle cx="260" cy="150" r="1.5"/><circle cx="1620" cy="110" r="2"/>
+    <circle cx="1500" cy="180" r="1.5"/><circle cx="1720" cy="240" r="2"/><circle cx="80" cy="260" r="1.5"/>
+    <circle cx="1400" cy="70" r="1.5"/><circle cx="380" cy="90" r="1.5"/><circle cx="900" cy="60" r="1.5"/>
+  </g>
+
+  <!-- ground -->
+  <rect x="0" y="760" width="1800" height="240" fill="url(#groundGrad)"/>
+  <ellipse cx="900" cy="760" rx="900" ry="60" fill="#4038D6" opacity="0.12"/>
+
+  <!-- distant skyline silhouettes (park structures, no people) -->
+  <g fill="#151233" opacity="0.9">
+    <rect x="120" y="560" width="70" height="220"/>
+    <polygon points="120,560 155,500 190,560"/>
+    <rect x="1550" y="580" width="90" height="200"/>
+    <circle cx="1595" cy="540" r="42"/>
+    <rect x="1420" y="640" width="60" height="140"/>
+  </g>
+
+  <!-- main archway -->
+  <path d="M 660 780 L 660 420 Q 660 300 900 300 Q 1140 300 1140 420 L 1140 780"
+        fill="none" stroke="url(#archGrad)" stroke-width="26" stroke-linecap="round"/>
+  <path d="M 660 780 L 660 420 Q 660 300 900 300 Q 1140 300 1140 420 L 1140 780"
+        fill="none" stroke="#C4C2FF" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- portal glow inside arch -->
+  <ellipse cx="900" cy="560" rx="230" ry="260" fill="url(#portalGlow)"/>
+
+  <!-- HCM orbit mark above arch -->
+  <g transform="translate(900,240) scale(1.1)">
+    <g stroke="#EEF0F4" stroke-opacity="0.85" stroke-width="8" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-42"/>
+      <line x1="0" y1="0" x2="36" y2="21"/>
+      <line x1="0" y1="0" x2="-36" y2="21"/>
+    </g>
+    <circle cx="0" cy="-42" r="10" fill="#EEF0F4"/>
+    <circle cx="36" cy="21" r="10" fill="#EEF0F4"/>
+    <circle cx="-36" cy="21" r="10" fill="#EEF0F4"/>
+    <circle cx="0" cy="0" r="16" fill="#EEF0F4"/>
+  </g>
+  <text x="900" y="345" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="30" fill="#EEF0F4" letter-spacing="6">HCM THEME PARK</text>
+
+  <!-- robot host, standing beside the arch, no humans anywhere -->
+  <g transform="translate(1230,700)">
+    <ellipse cx="0" cy="78" rx="60" ry="12" fill="#000000" opacity="0.4"/>
+    <rect x="-28" y="-40" width="56" height="90" rx="18" fill="url(#botGrad)" stroke="#5C6472" stroke-width="2"/>
+    <circle cx="0" cy="-78" r="34" fill="url(#botGrad)" stroke="#5C6472" stroke-width="2"/>
+    <circle cx="-11" cy="-80" r="6" fill="#726FFF"/>
+    <circle cx="11" cy="-80" r="6" fill="#726FFF"/>
+    <rect x="-38" y="-30" width="14" height="60" rx="7" fill="#C3C9D3"/>
+    <rect x="24" y="-30" width="14" height="60" rx="7" fill="#C3C9D3"/>
+    <rect x="-20" y="50" width="16" height="40" rx="6" fill="#8B93A3"/>
+    <rect x="4" y="50" width="16" height="40" rx="6" fill="#8B93A3"/>
+  </g>
+
+  <text x="900" y="920" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="700" font-size="22" fill="#9AA0AD" letter-spacing="2">NO HUMANS PAST THIS GATE</text>
+</svg>
