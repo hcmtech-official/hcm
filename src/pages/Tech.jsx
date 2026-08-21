@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ExternalLink, Globe, Wrench, Smartphone, ShoppingBag, Truck, CreditCard, KanbanSquare, Users, ShieldCheck, MessageSquareText, Link2, Sparkles } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import AppBadges from "../components/AppBadges";
+import DiyRepairGuide from "../components/DiyRepairGuide";
 import { divisions } from "../data/divisions";
 
 function GithubMark(props) {
@@ -200,6 +201,8 @@ export default function Tech() {
           </div>
         </div>
       </section>
+
+      <DiyRepairGuide color={d.color} />
 
       <section className="border-t border-[var(--color-line)] px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-5xl">
