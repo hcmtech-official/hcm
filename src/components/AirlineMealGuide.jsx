@@ -15,6 +15,15 @@ const airlines = [
       href: "https://commons.wikimedia.org/wiki/File:Vietnam_Airlines_Airbus_A350-941_VN-A886.JPG",
     },
     officialLink: "https://www.vietnamairlines.com/us/en/travel-information/special-services/special-meals",
+    mealPhoto: {
+      src: "https://commons.wikimedia.org/wiki/Special:FilePath/A_Vietnam_Airlines_Economy_Class_meal.jpg",
+      credit: {
+        text: "Photo: Taiyo FUJII, CC BY 2.0, via Wikimedia Commons",
+        href: "https://commons.wikimedia.org/wiki/File:A_Vietnam_Airlines_Economy_Class_meal.jpg",
+      },
+      disclaimer:
+        "A real Vietnam Airlines economy meal, shown for general reference only. Presentation, portions and dishes vary by route, aircraft, cabin class and date — this photo may not match the exact vegetarian tray served on your flight.",
+    },
     mealCategories: [
       {
         key: "vegetarian",
@@ -211,6 +220,33 @@ export default function AirlineMealGuide({ color }) {
                             Meals
                           </h4>
                         </div>
+
+                        {/* Real meal photo, with disclaimer since presentation varies */}
+                        {airline.mealPhoto && (
+                          <div className="mt-3">
+                            <div className="overflow-hidden rounded-xl">
+                              <img
+                                src={airline.mealPhoto.src}
+                                alt={`${airline.name} in-flight meal, shown for reference`}
+                                className="h-48 w-full object-cover sm:h-64"
+                                loading="lazy"
+                              />
+                            </div>
+                            <div className="mt-1.5 flex flex-col gap-0.5 sm:flex-row sm:items-start sm:justify-between">
+                              <p className="text-xs italic text-[var(--color-ink-dim)]">
+                                {airline.mealPhoto.disclaimer}
+                              </p>
+                              <a
+                                href={airline.mealPhoto.credit.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="shrink-0 text-[10px] text-[var(--color-ink-dim)] hover:underline"
+                              >
+                                {airline.mealPhoto.credit.text}
+                              </a>
+                            </div>
+                          </div>
+                        )}
 
                         {/* How to actually spot it on the plane */}
                         <div
