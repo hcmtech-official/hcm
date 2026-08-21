@@ -5,6 +5,8 @@ import {
   LineChart,
   ShieldCheck,
   Calendar,
+  ExternalLink,
+  GraduationCap,
 } from "lucide-react";
 import DivisionHero from "../components/DivisionHero";
 import { divisions } from "../data/divisions";
@@ -129,6 +131,19 @@ export default function Finance() {
                   </div>
                 </div>
 
+                {report.sourceUrl && (
+                  <a
+                    href={report.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors"
+                    style={{ borderColor: d.color, color: d.color }}
+                  >
+                    <ExternalLink size={12} />
+                    {report.sourceLabel || "Read the original release"}
+                  </a>
+                )}
+
                 <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {report.stats.map((s) => (
                     <div
@@ -198,6 +213,44 @@ export default function Finance() {
                       ))}
                     </ul>
                   </div>
+
+                  {report.readingGuide && (
+                    <div>
+                      <div
+                        className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em]"
+                        style={{ color: d.color }}
+                      >
+                        <GraduationCap size={14} /> How to read this release
+                      </div>
+                      <p className="mt-2 text-xs text-[var(--color-ink-dim)]">
+                        The skill this section builds: reading the primary
+                        source itself, not just a summary of it.
+                      </p>
+                      <ol className="mt-3 space-y-4">
+                        {report.readingGuide.map((step, i) => (
+                          <li key={i} className="flex gap-3">
+                            <span
+                              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold"
+                              style={{
+                                background: d.color,
+                                color: "#06080e",
+                              }}
+                            >
+                              {i + 1}
+                            </span>
+                            <div>
+                              <div className="text-sm font-semibold">
+                                {step.title}
+                              </div>
+                              <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                                {step.content}
+                              </p>
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

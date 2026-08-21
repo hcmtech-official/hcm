@@ -19,6 +19,30 @@ export const reports = [
     company: "Apple Inc.",
     exchange: "NASDAQ",
     fiscalYear: "FY2025, year ended September 30, 2025",
+    sourceUrl: "https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/",
+    sourceLabel: "Apple Newsroom — Q1 FY2026 results release",
+    readingGuide: [
+      {
+        title: "Start with the headline pair",
+        content:
+          "The first paragraph always gives you two numbers: revenue and EPS, each with a year-over-year percent. Read both before anything else — revenue tells you if more money came in, EPS tells you if more of it reached each share after costs. If EPS grows faster than revenue, costs or share count are working in shareholders' favour.",
+      },
+      {
+        title: "Read the CEO quote for where growth came from",
+        content:
+          "Executives quote specific products or regions on purpose — it tells you what they want investors to notice. Cross-check that against the segment breakdown further down: if the quote highlights iPhone but the segment table shows Services actually grew faster, that's worth sitting with.",
+      },
+      {
+        title: "Find the cash flow and capital return lines",
+        content:
+          "Near the CFO's quote, look for operating cash flow and how much was 'returned to shareholders' — that's dividends plus buybacks. A company can report rising profit while cash flow stalls, so this is the check that profit is real, not just accounting.",
+      },
+      {
+        title: "Note the dividend line, then stop reading into the boilerplate",
+        content:
+          "The declared dividend and payment date are routine, factual, and worth noting for a portfolio. Everything after the forward-looking statements disclaimer is legal boilerplate — you can skip it every time.",
+      },
+    ],
     stats: [
       { label: "Full-year revenue", value: "≈ $416B" },
       { label: "Full-year net income", value: "≈ $112B" },
@@ -48,6 +72,30 @@ export const reports = [
     company: "Samsung Electronics",
     exchange: "KRX",
     fiscalYear: "FY2025, year ended December 31, 2025",
+    sourceUrl: "https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2025-results",
+    sourceLabel: "Samsung Newsroom — Q4 & FY2025 results release",
+    readingGuide: [
+      {
+        title: "Separate the quarter from the full year",
+        content:
+          "Samsung's release states both the December-quarter numbers and the full 2025 total in the same paragraph — read them as two different questions. The full year tells you how the whole business did; the quarter tells you the current trend, which can be moving in the opposite direction to the year's average.",
+      },
+      {
+        title: "Read revenue by division, not as one number",
+        content:
+          "Samsung is really several businesses sharing one stock ticker — Device Solutions (chips), Device eXperience (phones/TVs), Display, Harman (automotive audio). The release breaks growth out by division. When one division swings the total, that's a concentration signal, not diversified strength.",
+      },
+      {
+        title: "Watch for 'all-time high' language, then ask why",
+        content:
+          "Record language is genuinely useful but it's also the easiest thing to spin. Check what specifically hit the record — a whole-company number is more meaningful than a single division's record within a weak overall quarter.",
+      },
+      {
+        title: "R&D spend tells you where confidence sits",
+        content:
+          "A company cutting R&D while reporting record profit is often protecting a number for this quarter at the expense of next year. Rising R&D alongside rising profit — as here — is a healthier combination.",
+      },
+    ],
     stats: [
       { label: "Full-year revenue", value: "₩333.6T (+11%)" },
       { label: "Full-year operating profit", value: "₩43.6T (+33%)" },
@@ -76,6 +124,30 @@ export const reports = [
     company: "Sea Limited",
     exchange: "NYSE",
     fiscalYear: "FY2025, year ended December 31, 2025",
+    sourceUrl: "https://cdn.sea.com/investor/4Q2025/JcKns4LaJC8bxcQdJwXz/2026.03.03%20Sea%20Fourth%20Quarter%20and%20Full%20Year%202025%20Results.pdf",
+    sourceLabel: "Sea Limited investor site — Q4 & FY2025 results (PDF)",
+    readingGuide: [
+      {
+        title: "This one has three businesses — read each segment section fully",
+        content:
+          "Sea reports Shopee (e-commerce), Monee (fintech/lending) and Garena (gaming) as separate segments with their own revenue and cost tables. Don't average them mentally — a fast-growing lending book and a mature gaming business carry completely different risk, even inside one 'total revenue' figure.",
+      },
+      {
+        title: "GAAP revenue vs GMV vs bookings — know which number you're reading",
+        content:
+          "Sea's release mixes GAAP revenue (what accounting recognises as sales) with GMV (total value of goods sold through Shopee, most of which isn't Sea's revenue) and 'bookings' (a gaming-industry measure that isn't GAAP revenue either). A beginner's most common mistake with releases like this is quoting GMV as if it were revenue — check the label on every number.",
+      },
+      {
+        title: "Find loan quality metrics for the lending segment",
+        content:
+          "When a segment includes consumer or SME lending, look specifically for loan volume growth versus provisions for credit losses — fast loan growth without matching detail on loan quality is the single thing worth double-checking against a later quarter.",
+      },
+      {
+        title: "Adjusted EBITDA is not the same as net income",
+        content:
+          "Sea reports both. Adjusted EBITDA strips out items management doesn't count as 'core' — useful for seeing operating trend, but net income (further down, GAAP) is the number that actually reflects what shareholders earned after everything.",
+      },
+    ],
     stats: [
       { label: "Full-year revenue", value: "$22.9B (+36%)" },
       { label: "Full-year net income", value: "$1.61B (up ~260%)" },
@@ -103,6 +175,30 @@ export const reports = [
     company: "WiseTech Global",
     exchange: "ASX",
     fiscalYear: "FY2025, year ended June 30, 2025",
+    sourceUrl: "https://www.wisetechglobal.com/media/i4ib0p11/wtc-fy25-results-investor-presentation.pdf",
+    sourceLabel: "WiseTech Global investor site — FY2025 results presentation (PDF)",
+    readingGuide: [
+      {
+        title: "ASX releases lean on the investor presentation, not just a press release",
+        content:
+          "Australian companies typically pair a short ASX announcement with a longer slide-deck presentation — that deck is where the real detail sits: segment tables, guidance ranges, and reconciliations between statutory and 'underlying' profit. Read the deck, not just the headline announcement.",
+      },
+      {
+        title: "Underlying vs statutory — always check which is quoted",
+        content:
+          "WiseTech, like many companies, reports 'underlying NPAT' alongside statutory net profit, adjusting out one-off items like acquisition costs. Underlying numbers are useful for comparing normal trading year to year, but statutory is the number that's actually, legally, the company's profit — check both are moving the same direction.",
+      },
+      {
+        title: "A guidance downgrade mid-year is a release worth reading twice",
+        content:
+          "When a company revises full-year guidance down, the release usually gives a reason in careful, lawyer-reviewed language. Read that sentence slowly — words like 'organisational restructuring' or 'delays' are doing a lot of work, and it's worth checking news coverage from that period for the fuller story a release alone won't give you.",
+      },
+      {
+        title: "Operating cash flow is the tie-breaker during a controversy",
+        content:
+          "When headline profit is messy or guidance is being cut, cash flow generation is the hardest number to dress up. If it's still growing, the underlying business is probably still healthy even while the headline story looks bad.",
+      },
+    ],
     stats: [
       { label: "Guided FY25 revenue", value: "A$1.2B–$1.3B (downgraded)" },
       { label: "Operating cash flow", value: "A$436.5m (+25%)" },
@@ -130,6 +226,30 @@ export const reports = [
     company: "Tata Consultancy Services",
     exchange: "NSE/BSE",
     fiscalYear: "FY2025, year ended March 31, 2025",
+    sourceUrl: "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2025",
+    sourceLabel: "TCS Newsroom — Q4 & FY2025 results release",
+    readingGuide: [
+      {
+        title: "Indian IT releases quote two executives for a reason",
+        content:
+          "TCS quotes the CEO on growth and client wins, then the CFO on margin and cost discipline, in that order every quarter. Reading both tells you whether growth and profitability are moving together or trading off against each other that period.",
+      },
+      {
+        title: "\"Order book\" is a forward signal, not a current-quarter fact",
+        content:
+          "IT services companies report signed deal value ('order book' or 'total contract value') separately from revenue already earned. A strong order book is a leading indicator worth tracking, but it converts to revenue over months or years — it isn't money in the bank yet.",
+      },
+      {
+        title: "Watch headcount and attrition figures, not just revenue",
+        content:
+          "Because TCS is a services company, its main cost is people. Employee count, hiring pace, and attrition rate (how many staff leave and need replacing) tell you about margin pressure ahead of when it shows up in the profit line.",
+      },
+      {
+        title: "Promoter shareholding is usually a separate disclosure, not in the earnings release",
+        content:
+          "Ownership concentration data like Tata Sons' stake typically comes from exchange shareholding filings, not the quarterly results release itself. Good practice is to check both documents — the earnings release for performance, a separate shareholding pattern filing for who owns how much.",
+      },
+    ],
     stats: [
       { label: "Annual revenue", value: "Crossed $30B for the first time" },
       { label: "Promoter (Tata Sons) holding", value: "≈ 71.7%" },
@@ -157,6 +277,30 @@ export const reports = [
     company: "Tencent Holdings",
     exchange: "HKEX",
     fiscalYear: "FY2025, year ended December 31, 2025",
+    sourceUrl: "https://static.www.tencent.com/uploads/2026/03/18/e6a646796d0d869acc76271c9ee1a6a5.pdf",
+    sourceLabel: "Tencent investor site — Annual & Q4 2025 results release (PDF)",
+    readingGuide: [
+      {
+        title: "IFRS vs non-IFRS — Tencent shows both, on purpose",
+        content:
+          "Tencent's release presents results twice: once under standard accounting (IFRS) and once with certain non-cash or one-off items excluded ('non-IFRS'). Neither is 'the real number' — IFRS is the legal figure, non-IFRS is management's view of core trading. Reading the gap between the two tells you how much one-off noise is in a given quarter.",
+      },
+      {
+        title: "Segment revenue (VAS, ads, fintech, cloud) tells the real growth story",
+        content:
+          "'Total revenue' hides which business is doing the work. Tencent breaks out Value-Added Services (games, social), online advertising, and fintech/business services — check whether growth is broad across segments or concentrated in one, the same read as any diversified company's release.",
+      },
+      {
+        title: "Buybacks and dividend changes are a direct signal from management",
+        content:
+          "A company raising its buyback size or dividend is telling you, in the clearest way available, that it believes its own shares are attractively priced relative to future cash generation. It's not proof of anything, but it's a costlier, more credible signal than words in a quote.",
+      },
+      {
+        title: "For a Cayman-incorporated, HK-listed company, ownership sits in a separate filing",
+        content:
+          "Like TCS, major shareholder stakes (here, Prosus/Naspers) are disclosed through separate regulatory filings, not the earnings release. When ownership concentration matters to your read of a stock, that's a second document to check, not something the earnings release itself will tell you.",
+      },
+    ],
     stats: [
       { label: "Full-year revenue", value: "RMB 751.8B (+14%)" },
       { label: "Full-year net profit", value: "RMB 224.8B (+16%)" },
