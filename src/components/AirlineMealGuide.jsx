@@ -33,6 +33,7 @@ const airlines = [
             code: "VLML",
             name: "Vegetarian Lacto-Ovo Meal",
             altName: "Lacto Avo",
+            meaning: "\u201CLacto-ovo\u201D means the diet still includes dairy (lacto) and eggs (ovo) \u2014 just no meat, poultry, or fish. It's the most common type of vegetarian diet.",
             icon: Egg,
             highlight: true,
             recommendedFor: "Non-meat eaters (dairy and eggs acceptable)",
@@ -157,6 +158,12 @@ function MealCard({ meal, color }) {
             </div>
           </div>
         </div>
+
+        {meal.meaning && (
+          <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink-dim)] opacity-80">
+            {meal.meaning}
+          </p>
+        )}
 
         <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-dim)]">
           <span className="text-[var(--color-ink)]">Who it's for: </span>
