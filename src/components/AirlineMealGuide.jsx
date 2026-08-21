@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Plane, ExternalLink, Leaf } from "lucide-react";
+import { ChevronDown, Plane, ExternalLink, Leaf, Tag, Egg, Sprout, Soup, Flame } from "lucide-react";
 
 // Add more airlines here later — the UI below is driven entirely by this array.
 const airlines = [
@@ -24,33 +24,43 @@ const airlines = [
             code: "VLML",
             name: "Vegetarian Lacto-Ovo Meal",
             altName: "Lacto Avo",
+            icon: Egg,
             highlight: true,
             recommendedFor: "Non-meat eaters (dairy and eggs acceptable)",
             prohibited: "Meat, seafood, fish, fowl, lard, gelatin",
+            sayThis: "\u201CVegetarian, dairy and eggs are fine\u201D",
           },
           {
             code: "AVML",
             name: "Asian / Hindu Vegetarian Meal",
+            icon: Flame,
             recommendedFor: "Asian / Hindu vegetarians",
             prohibited: "Meat, fish, fowl, lard or gelatin, egg",
+            sayThis: "\u201CAsian vegetarian, no egg\u201D",
           },
           {
             code: "VGML",
             name: "Vegetarian Vegan Meal",
+            icon: Sprout,
             recommendedFor: "Strict vegetarians",
             prohibited: "Animal products, meat, seafood, fish, fowl, lard, gelatin, eggs, dairy, honey",
+            sayThis: "\u201CVegan \u2014 no dairy, no eggs\u201D",
           },
           {
             code: "VJML",
             name: "Vegetarian Jain Meal",
+            icon: Leaf,
             recommendedFor: "Jain vegetarians",
             prohibited: "Meat, poultry, seafood, fish, eggs, dairy, root and bulbous vegetables",
+            sayThis: "\u201CJain vegetarian \u2014 no onion or garlic\u201D",
           },
           {
             code: "VOML",
             name: "Vegetarian Oriental Meal",
+            icon: Soup,
             recommendedFor: "Eastern vegetarians",
             prohibited: "Meat, poultry, seafood, fish, eggs, dairy, root and bulbous vegetables",
+            sayThis: "\u201COriental vegetarian, no dairy or eggs\u201D",
           },
         ],
       },
@@ -59,6 +69,7 @@ const airlines = [
 ];
 
 function MealCard({ meal, color }) {
+  const Icon = meal.icon;
   return (
     <div
       className="relative rounded-2xl border p-5"
@@ -77,23 +88,40 @@ function MealCard({ meal, color }) {
           Also called "{meal.altName}"
         </span>
       )}
-      <div className="flex items-center justify-between gap-3">
-        <h4 className="font-display text-base font-bold">{meal.name}</h4>
-        <span
-          className="shrink-0 rounded-md border px-2 py-0.5 font-mono text-xs"
-          style={{ borderColor: color, color }}
+      <div className="flex items-start gap-3">
+        <div
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+          style={{ background: `color-mix(in srgb, ${color} 18%, var(--color-surface))` }}
         >
-          {meal.code}
-        </span>
+          <Icon size={20} style={{ color }} />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center justify-between gap-2">
+            <h4 className="font-display text-base font-bold leading-tight">{meal.name}</h4>
+            <span
+              className="shrink-0 rounded-md border px-2 py-0.5 font-mono text-xs"
+              style={{ borderColor: color, color }}
+            >
+              {meal.code}
+            </span>
+          </div>
+        </div>
       </div>
+
       <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink-dim)]">
-        <span className="text-[var(--color-ink)]">Recommended for: </span>
+        <span className="text-[var(--color-ink)]">Who it's for: </span>
         {meal.recommendedFor}
       </p>
       <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-ink-dim)]">
-        <span className="text-[var(--color-ink)]">Prohibited: </span>
+        <span className="text-[var(--color-ink)]">Won't contain: </span>
         {meal.prohibited}
       </p>
+      {meal.sayThis && (
+        <p className="mt-3 rounded-lg bg-[var(--color-surface)] px-3 py-2 text-sm leading-relaxed text-[var(--color-ink)]">
+          <span className="text-[var(--color-ink-dim)]">Say to crew: </span>
+          {meal.sayThis}
+        </p>
+      )}
     </div>
   );
 }
@@ -182,6 +210,21 @@ export default function AirlineMealGuide({ color }) {
                           <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-ink-dim)]">
                             Meals
                           </h4>
+                        </div>
+
+                        {/* How to actually spot it on the plane */}
+                        <div
+                          className="mt-3 flex items-start gap-3 rounded-xl border p-4"
+                          style={{ borderColor: "var(--color-line)", background: `color-mix(in srgb, ${color} 6%, var(--color-surface))` }}
+                        >
+                          <Tag size={18} className="mt-0.5 shrink-0" style={{ color }} />
+                          <p className="text-sm leading-relaxed text-[var(--color-ink-dim)]">
+                            <span className="text-[var(--color-ink)] font-medium">How to spot it on the plane: </span>
+                            special meals come sealed with a small printed label on the lid showing the
+                            code and the passenger's name — crew hand it out separately from the regular
+                            trolley pass. You don't need to remember any code: just tell the crew the
+                            phrase under "Say to crew" below, or point at the card on this page.
+                          </p>
                         </div>
 
                         {/* Horizontal scroll of meal categories */}
