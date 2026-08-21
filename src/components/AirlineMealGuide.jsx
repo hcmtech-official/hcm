@@ -1,6 +1,65 @@
 import { useState } from "react";
 import { ChevronDown, Plane, ExternalLink, Leaf, Tag, Egg, Sprout, Soup, Flame } from "lucide-react";
 
+/* Original flat-style illustrations for meal types without a verified real photo yet.
+   Not actual plating — just a plain-language "what to expect" picture. */
+function MealIllustration({ code, color }) {
+  const line = { stroke: "#3a2f28", strokeWidth: 1.4, strokeLinecap: "round", strokeLinejoin: "round" };
+  if (code === "VGML") {
+    return (
+      <svg viewBox="0 0 200 120" className="h-full w-full">
+        <rect width="200" height="120" fill="#EDE6D8" />
+        <ellipse cx="100" cy="62" rx="58" ry="34" fill="#F7F2E7" stroke="#3a2f28" strokeWidth="1.4" />
+        <ellipse cx="100" cy="62" rx="42" ry="24" fill="#FBF8F1" />
+        {/* rice */}
+        <ellipse cx="78" cy="60" rx="16" ry="10" fill="#FFFFFF" {...line} />
+        {/* mixed veg mound */}
+        <circle cx="112" cy="54" r="7" fill="#7CA65B" {...line} />
+        <circle cx="122" cy="60" r="6" fill="#E0863B" {...line} />
+        <circle cx="114" cy="66" r="6" fill="#7CA65B" {...line} />
+        <circle cx="126" cy="50" r="5" fill="#C94F3C" {...line} />
+        {/* tofu cubes */}
+        <rect x="90" y="70" width="10" height="10" rx="1.5" fill="#F5EED8" {...line} />
+        <rect x="101" y="72" width="10" height="10" rx="1.5" fill="#F5EED8" {...line} />
+      </svg>
+    );
+  }
+  if (code === "VJML") {
+    return (
+      <svg viewBox="0 0 200 120" className="h-full w-full">
+        <rect width="200" height="120" fill="#EDE6D8" />
+        <ellipse cx="100" cy="62" rx="58" ry="34" fill="#F7F2E7" stroke="#3a2f28" strokeWidth="1.4" />
+        <ellipse cx="100" cy="62" rx="42" ry="24" fill="#FBF8F1" />
+        {/* dal bowl */}
+        <circle cx="82" cy="58" r="15" fill="#E7A33B" {...line} />
+        <ellipse cx="82" cy="54" rx="12" ry="6" fill="#F2BE5E" />
+        {/* rice */}
+        <ellipse cx="122" cy="66" rx="15" ry="9" fill="#FFFFFF" {...line} />
+        {/* above-ground greens, no root veg */}
+        <path d="M104 48 q4 -8 10 -8 q-2 6 -8 10 Z" fill="#7CA65B" {...line} />
+        <path d="M112 44 q5 -6 11 -4 q-3 6 -9 8 Z" fill="#8FBB6C" {...line} />
+      </svg>
+    );
+  }
+  if (code === "VOML") {
+    return (
+      <svg viewBox="0 0 200 120" className="h-full w-full">
+        <rect width="200" height="120" fill="#EDE6D8" />
+        <ellipse cx="100" cy="62" rx="58" ry="34" fill="#F7F2E7" stroke="#3a2f28" strokeWidth="1.4" />
+        <ellipse cx="100" cy="62" rx="42" ry="24" fill="#FBF8F1" />
+        {/* noodles */}
+        <path d="M70 56 q6 10 0 18 M78 54 q6 10 0 18 M86 54 q6 10 0 18 M94 56 q6 10 0 18" fill="none" stroke="#E7B84B" strokeWidth="2.2" strokeLinecap="round" />
+        {/* bok choy */}
+        <ellipse cx="122" cy="58" rx="7" ry="10" fill="#7CA65B" {...line} />
+        <ellipse cx="132" cy="62" rx="6" ry="9" fill="#8FBB6C" {...line} />
+        {/* tofu */}
+        <rect x="108" y="70" width="10" height="9" rx="1.5" fill="#F5EED8" {...line} />
+      </svg>
+    );
+  }
+  return null;
+}
+
 // Add more airlines here later — the UI below is driven entirely by this array.
 const airlines = [
   {
@@ -128,24 +187,22 @@ function MealCard({ meal, color }) {
           </span>
         </div>
       ) : (
-        <div
-          className="flex h-16 items-center gap-2 px-5 pt-1 text-xs text-[var(--color-ink-dim)]"
-        >
-          <Icon size={16} style={{ color }} />
-          No verified photo of this meal available yet
+        <div className="relative h-40 w-full">
+          <MealIllustration code={meal.code} color={color} />
+          <span className="absolute bottom-1.5 right-2 rounded bg-black/60 px-1.5 py-0.5 text-[9px] text-white">
+            Illustration, not an actual photo
+          </span>
         </div>
       )}
 
       <div className="p-5 pt-4">
         <div className="flex items-start gap-3">
-          {meal.photo && (
-            <div
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
-              style={{ background: `color-mix(in srgb, ${color} 18%, var(--color-surface))` }}
-            >
-              <Icon size={18} style={{ color }} />
-            </div>
-          )}
+          <div
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+            style={{ background: `color-mix(in srgb, ${color} 18%, var(--color-surface))` }}
+          >
+            <Icon size={18} style={{ color }} />
+          </div>
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-between gap-2">
               <h4 className="font-display text-base font-bold leading-tight">{meal.name}</h4>
