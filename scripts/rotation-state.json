@@ -1,0 +1,12 @@
+{
+  "marketOrder": ["us", "korea", "singapore", "australia", "india", "china"],
+  "marketIndex": 1,
+  "tickerIndexByMarket": {
+    "us": 1,
+    "korea": 1,
+    "singapore": 1,
+    "australia": 1,
+    "india": 1,
+    "china": 1
+  }
+}

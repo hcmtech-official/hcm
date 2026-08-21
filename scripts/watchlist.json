@@ -1,0 +1,8 @@
+{
+  "us": ["AAPL", "MSFT", "GOOGL", "NVDA", "AMZN", "META", "AVGO", "CRM"],
+  "korea": ["005930 (Samsung Electronics)", "000660 (SK Hynix)", "035420 (Naver)", "035720 (Kakao)", "066570 (LG Electronics)"],
+  "singapore": ["SE (Sea Limited)", "GRAB (Grab Holdings)", "D05.SI (DBS Group)", "Z74.SI (Singtel)"],
+  "australia": ["WTC (WiseTech Global)", "XRO (Xero)", "TEAM (Atlassian)", "CSL (CSL Limited)", "APT (Block/Afterpay)"],
+  "india": ["TCS (Tata Consultancy Services)", "INFY (Infosys)", "WIT (Wipro)", "HCLTECH (HCL Technologies)", "RELIANCE (Reliance Industries)"],
+  "china": ["0700 (Tencent Holdings)", "BABA (Alibaba Group)", "BIDU (Baidu)", "3690 (Meituan)", "JD (JD.com)"]
+}

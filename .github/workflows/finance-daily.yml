@@ -1,0 +1,52 @@
+name: HCM Finance daily report
+
+on:
+  schedule:
+    # 21:00 UTC = 7:00 AM AEST (Sydney, standard time, UTC+10).
+    # During AEDT (UTC+11, roughly Oct-Apr) this fires at 8:00 AM local
+    # instead of 7:00 — GitHub Actions cron doesn't follow DST.
+    - cron: "0 21 * * *"
+  workflow_dispatch: {} # lets Harish trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate today's report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-daily-report.mjs
+
+      - name: Commit new report data to main
+        run: |
+          git config user.name "HCM Finance Bot"
+          git config user.email "hcmuniverse@gmail.com"
+          git add src/data/finance-reports.json scripts/rotation-state.json
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "HCM Finance: daily report $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy dist/ to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          keep_files: true
