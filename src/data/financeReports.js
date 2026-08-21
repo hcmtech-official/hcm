@@ -21,6 +21,13 @@ export const reports = [
     fiscalYear: "FY2025, year ended September 30, 2025",
     sourceUrl: "https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/",
     sourceLabel: "Apple Newsroom — Q1 FY2026 results release",
+    releaseExcerpt: {
+      context: "From Tim Cook's opening remarks in the release",
+      paraphrase:
+        "Cook called it a standout, record quarter well ahead of Apple's own expectations, pointing to unprecedented iPhone demand that set records in every region, a fresh all-time high for Services, and an installed base that has now passed 2.5 billion active devices.",
+      lesson:
+        "Notice what's specific versus vague: 'records in every region' is a checkable, falsifiable claim you could verify against the geographic breakdown further down the release — that's a stronger statement than a general 'great quarter.' Learn to weight quotes by how specific and checkable they are.",
+    },
     readingGuide: [
       {
         title: "Start with the headline pair",
@@ -74,6 +81,13 @@ export const reports = [
     fiscalYear: "FY2025, year ended December 31, 2025",
     sourceUrl: "https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2025-results",
     sourceLabel: "Samsung Newsroom — Q4 & FY2025 results release",
+    releaseExcerpt: {
+      context: "From Samsung's shareholder letter for 2025",
+      paraphrase:
+        "Management described 2025 as a year that tested the company's resilience through trade issues and a difficult external environment, but said Samsung still delivered its highest-ever annual revenue, with the share price rising enough to push market capitalisation past KRW 1,000 trillion for the first time for a Korean company.",
+      lesson:
+        "Management almost always frames a hard year as a triumph over adversity — that's not dishonest, but it's a pattern to recognise. Separate the narrative ('we overcame challenges') from the number being narrated (record revenue). The number is what you can check; the framing is what management wants you to feel about it.",
+    },
     readingGuide: [
       {
         title: "Separate the quarter from the full year",
@@ -126,6 +140,13 @@ export const reports = [
     fiscalYear: "FY2025, year ended December 31, 2025",
     sourceUrl: "https://cdn.sea.com/investor/4Q2025/JcKns4LaJC8bxcQdJwXz/2026.03.03%20Sea%20Fourth%20Quarter%20and%20Full%20Year%202025%20Results.pdf",
     sourceLabel: "Sea Limited investor site — Q4 & FY2025 results (PDF)",
+    releaseExcerpt: {
+      context: "From CEO Forrest Li's comments in the release",
+      paraphrase:
+        "Li said all three businesses scaled beyond initial expectations in 2025, describing the growth as broad-based and sustainable because it's underpinned by real growth in the number of users each business serves — around 400 million active Shopee buyers, over 20 million first-time Monee borrowers, and more than 100 million average daily Garena players.",
+      lesson:
+        "Notice how the CEO backs the word 'sustainable' with user counts, not just revenue growth. That's a stronger claim than growth alone, because user-count growth is harder to manufacture short-term than revenue can sometimes be (through pricing or one-off promotions). When a release ties a growth claim to a user or customer metric, that's usually worth more trust than a revenue number by itself.",
+    },
     readingGuide: [
       {
         title: "This one has three businesses — read each segment section fully",
@@ -177,6 +198,13 @@ export const reports = [
     fiscalYear: "FY2025, year ended June 30, 2025",
     sourceUrl: "https://www.wisetechglobal.com/media/i4ib0p11/wtc-fy25-results-investor-presentation.pdf",
     sourceLabel: "WiseTech Global investor site — FY2025 results presentation (PDF)",
+    releaseExcerpt: {
+      context: "From the FY25 results presentation's operating highlights",
+      paraphrase:
+        "The presentation noted operating cash flow rose 25% versus the prior year, framed as proof of how cash-generative the underlying operating model remains, alongside a note that product development stayed at 64% of total headcount, slightly higher than the year before.",
+      lesson:
+        "This is a company using operational metrics to redirect attention away from a rougher headline story that year. Neither number is false, but a beginner should ask: why is management emphasising cash flow and R&D headcount specifically, in a year guidance was cut? Usually because those are the numbers that still look strong. Learn to notice which metrics get emphasised versus buried.",
+    },
     readingGuide: [
       {
         title: "ASX releases lean on the investor presentation, not just a press release",
@@ -228,6 +256,13 @@ export const reports = [
     fiscalYear: "FY2025, year ended March 31, 2025",
     sourceUrl: "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2025",
     sourceLabel: "TCS Newsroom — Q4 & FY2025 results release",
+    releaseExcerpt: {
+      context: "From CEO K Krithivasan's comments in the release",
+      paraphrase:
+        "The CEO highlighted crossing $30 billion in annual revenue and achieving a strong order book for a second straight quarter, pointing to TCS's AI and digital innovation expertise combined with deep customer knowledge as the reason clients lean on TCS during uncertain macroeconomic conditions.",
+      lesson:
+        "'Second consecutive quarter' of a strong order book is doing real work in this sentence — it's management pre-empting the obvious follow-up question ('is this a one-off?') before an analyst can ask it. When a release volunteers a consistency claim like that unprompted, it's often because the number alone wouldn't have been convincing on its own.",
+    },
     readingGuide: [
       {
         title: "Indian IT releases quote two executives for a reason",
@@ -279,6 +314,13 @@ export const reports = [
     fiscalYear: "FY2025, year ended December 31, 2025",
     sourceUrl: "https://static.www.tencent.com/uploads/2026/03/18/e6a646796d0d869acc76271c9ee1a6a5.pdf",
     sourceLabel: "Tencent investor site — Annual & Q4 2025 results release (PDF)",
+    releaseExcerpt: {
+      context: "From Chairman and CEO Ma Huateng's comments in the release",
+      paraphrase:
+        "Ma pointed to AI as the thread running through the year's growth — better ad targeting, stronger game engagement, and improving cloud revenue and profitability — and framed the company's cash-generative core businesses as what funds continued AI investment, including hiring senior AI talent and building out infrastructure.",
+      lesson:
+        "Watch how one theme (AI) gets applied across every segment in the quote — ads, games, and cloud all get tied back to it. That's a genuinely useful signal about company strategy, but a beginner should still check the segment numbers independently rather than accepting that AI explains all the growth; some of it, in any given quarter, is ordinary product cycles or one-off comparisons.",
+    },
     readingGuide: [
       {
         title: "IFRS vs non-IFRS — Tencent shows both, on purpose",

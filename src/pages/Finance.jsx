@@ -214,6 +214,33 @@ export default function Finance() {
                     </ul>
                   </div>
 
+                  {report.releaseExcerpt && (
+                    <div
+                      className="rounded-xl border p-4"
+                      style={{ borderColor: "var(--color-line)" }}
+                    >
+                      <div className="text-[11px] font-mono uppercase tracking-[0.15em] text-[var(--color-ink-dim)]">
+                        From the release · {report.releaseExcerpt.context}
+                      </div>
+                      <p className="mt-2 text-sm italic leading-relaxed">
+                        {report.releaseExcerpt.paraphrase}
+                      </p>
+                      <p className="mt-2 text-[11px] text-[var(--color-ink-dim)]">
+                        Paraphrased — read the original release above for
+                        exact wording.
+                      </p>
+                      <div
+                        className="mt-3 flex items-start gap-2 text-sm leading-relaxed"
+                        style={{ color: d.color }}
+                      >
+                        <span className="shrink-0">→</span>
+                        <span className="text-[var(--color-ink-dim)]">
+                          {report.releaseExcerpt.lesson}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
                   {report.readingGuide && (
                     <div>
                       <div
