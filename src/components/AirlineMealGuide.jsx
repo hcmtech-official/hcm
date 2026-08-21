@@ -130,6 +130,14 @@ const airlines = [
             recommendedFor: "Strict vegetarians",
             prohibited: "Animal products, meat, seafood, fish, fowl, lard, gelatin, eggs, dairy, honey",
             sayThis: "\u201CVegan \u2014 no dairy, no eggs\u201D",
+            photo: {
+              src: "https://commons.wikimedia.org/wiki/Special:FilePath/El_Al_vegan_meal_-_VGML_3141.JPG",
+              credit: {
+                text: "Photo: El Al vegan (VGML) meal, CC BY-SA 3.0, via Wikimedia Commons",
+                href: "https://commons.wikimedia.org/wiki/File:El_Al_vegan_meal_-_VGML_3141.JPG",
+              },
+              note: "Shown from El Al — the same meal type, not Vietnam Airlines' own plating.",
+            },
           },
           {
             code: "VJML",
