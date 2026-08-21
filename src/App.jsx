@@ -9,6 +9,7 @@ import Travel from "./pages/Travel";
 import Education from "./pages/Education";
 import Automobile from "./pages/Automobile";
 import Markets from "./pages/Markets";
+import Finance from "./pages/Finance";
 import MarketsFxSample from "./pages/MarketsFxSample";
 import Property from "./pages/Property";
 import Health from "./pages/Health";
@@ -71,6 +72,7 @@ function Shell() {
           <Route path="/education" element={<Education />} />
           <Route path="/automobile" element={<Automobile />} />
           <Route path="/markets" element={<Markets />} />
+          <Route path="/finance" element={<Finance />} />
           <Route path="/markets/fx-sample" element={<MarketsFxSample />} />
           <Route path="/property" element={<Property />} />
           <Route path="/health" element={<Health />} />

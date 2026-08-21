@@ -82,6 +82,16 @@ export const divisions = [
       "FX, derivatives, bonds and equities — market coverage and analysis in plain English.",
   },
   {
+    key: "finance",
+    code: "FIN",
+    name: "HCM Finance",
+    tagline: "It's your annual report.",
+    path: "/finance",
+    color: "var(--color-finance)",
+    summary:
+      "One stock, one annual report, every day — a daily training ground for reading company health across US, Korea, Singapore, Australia, India and China.",
+  },
+  {
     key: "property",
     code: "PROP",
     name: "HCM Property",
